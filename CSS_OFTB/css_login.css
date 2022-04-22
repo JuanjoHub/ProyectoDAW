@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300");
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100');
+@import url('https://fonts.googleapis.com/css?family=Lato:100&display=swap');
+
+.container-halfs {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+}
+
+.efecto {
+
+    display: grid;
+    grid-template-columns: 1fr 0%;
+    height: 100vh;
+}
+
+
+
+.left {
+    background-color: #262626;
+
+}
+
+.right {
+    background-image: url(../Imagenes_OFTB/Imagenes/pkb2.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+}
+
+.email_color {
+    background-color: #212121;
+}
+
+
+.efecto {
+
+    display: grid;
+    grid-template-columns: 1fr 0%;
+    height: 100vh;
+}
+
+
+/*Hover boton del login*/
+
+  .btn {
+    height: 50px;
+    cursor: pointer;
+    background: red;
+  
+  }
+  
+  .btn:hover {
+    transition: 1s;
+    background: green;
+  }
+  
+  .cruz{
+
+    color: red;
+    height: 50px;
+    width: 50px;
+  }
+  
+  
+
