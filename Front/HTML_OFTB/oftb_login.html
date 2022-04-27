@@ -35,13 +35,10 @@
       
         <div class="left text-white text-center">
 
-              <!--Boton X para volver al home-->
-            <div class="d-flex align-items-end flex-column " style="height: 200px;">
-                <div class="p-4"> <a href="index.html"><i class="fa-solid fa-xmark cruz"></i></a>
-                </div>
+            <div  style="height: 130px;">
             </div>
-
-            <div class="container mt-3">
+            
+            <div class="container mt-5">
                 <div class="div_logo1">
                     <img src="../Imagenes_OFTB/Logos/Logo_OFTB_gris2.PNG" alt="Logo">
                 </div>
@@ -64,8 +61,10 @@
                      </button>
                 </form>          
             </div>
-            
-               
+
+            <!--Enlace para ir al registro-->
+            <div class="p-4"> <a href="oftb_registro.html" class="text-white"><i class="fa-solid fa-user-tie fa-2x mr-3 icon_color"></i>Si no tienes cuenta click aqui</a>
+            </div>
               
         </div>
 
@@ -77,6 +76,11 @@
 
         <div class="right">
 
+            <div class="d-flex align-items-end flex-column " style="height: 150px;">
+                <div class="p-4"> <a href="index.html"><i class="fa-solid fa-xmark fa-3x icon_color"></i></a>
+                </div>
+            </div>
+            
         </div>
 
 
@@ -85,25 +89,23 @@
 
 
     <script>
-        function doblediv() {
+        
+        function doblediv_login() {
 
             if (ancho.matches || alto.matches) {
                 divPrincipal.classList.add("efecto");
                 console.log("Entro en el if");
-
-
             } else {
                 divPrincipal.classList.remove("efecto");
             }
-
         }
         var ancho = window.matchMedia("(max-width:1050px)");
         var alto = window.matchMedia("(max-height:200px)");
         var elefecto = document.getElementsByClassName("efecto");
         var divPrincipal = document.getElementById("test");
 
-        ancho.addListener(doblediv);
-        alto.addListener(doblediv);
+        ancho.addListener(doblediv_login);
+        alto.addListener(doblediv_login);
 
     </script>
 

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Out of the box</title>
+    <link rel="stylesheet" href="../CSS_OFTB/css_index.css">
+    <link rel="stylesheet" href="../CSS_OFTB/css_pedidos.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            background-color: rgb(40, 40, 40);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!------------------------------------------------------------------->
+    <!-------------------------PRIMER NAVBAR----------------------------->
+    <!------------------------------------------------------------------->
+
+    <nav class="navbar navbar-expand-lg mynav">
+        <div class="container">
+            <a class="navbar-brand text-white" href="index.html">Out of the box</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                    <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+                </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav ml-auto mr-auto text-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ultimas novedades</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Productos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pedidos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+
+                </ul>
+                <div class="mt-2 text-center">
+                    <a class="btn btn-success" href="oftb_login.html" role="button">Sign in</a>
+                    <a class="btn btn-danger" style="background-color: red;" href="oftb_registro.html" role="button"
+                        id="button">Sign up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    
+
+
+    <!------------------------------------------------------------------->
+    <!------------------------SEGUNDO NAVBAR----------------------------->
+    <!------------------------------------------------------------------->
+
+    <!--Este div container sirve para que el navbar no ocupe el 100% de la longitud-->
+    <!-- Sticky top para que se mantenga arriba cuando scrolleamos hacia abajo-->
+    <!--justify-content-center para alinear el navbar con el logo y que quede justo en el centro asdasdsa-->
+
+    <div class="mydiv container mt-2 sticky-top">
+
+        <div class="sticky-top d-flex justify-content-center ">
+
+            <nav class="navbar navbar-dark navbar-expand-md rounded-right rounded-left d-inline-flex mt-2 ">
+
+                <a class="navbar-brand" href="#">Categorias</a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+                    </span>
+                </button>
+
+                <div class="collapse navbar-collapse mynav2" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto ">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-expanded="false">
+                                Peliculas
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="oftb_peliculas_esdla.html">El señor de los anillos</a>
+                                <a class="dropdown-item" href="oftb_peliculas_starwars.html">Star Wars</a>
+                                <a class="dropdown-item" href="oftb_peliculas_dc.html">DC</a>
+                                <!--<div class="dropdown-divider"></div>-->
+                                <a class="dropdown-item" href="oftb_peliculas_marvel.html">Marvel</a>
+                            </div>
+                      </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-expanded="false">
+                                Series
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="oftb_series_got.html">Game of thrones</a>
+                                <a class="dropdown-item" href="oftb_series_walkingdead.html">Walking Dead</a>
+                                <a class="dropdown-item" href="oftb_series_peakyblinders.html">Peaky Blinders</a>
+                                <a class="dropdown-item" href="oftb_series_theboys.html">The Boys</a>
+                              </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-expanded="false">
+                                Videojuegos
+                              </a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="oftb_juegos_mk.html">Mortal Kombat</a>
+                                <a class="dropdown-item" href="oftb_juegos_dmc.html">Devil May Cry</a>
+                                <a class="dropdown-item" href="oftb_juegos_gow.html">God Of War</a>
+                                <a class="dropdown-item" href="oftb_juegos_re.html">Resident Evil</a>
+                              </div>
+                        </li>
+
+                    </ul>
+                    <!----------------------------------------------------------------------->
+                    <!---------------------------------SEARCH-------------------------------->
+                    <!----------------------------------------------------------------------->
+                    <form class="d-flex">
+                        <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
+                        <a href="index.html" class="mt-2"><i class="fa-solid fa-magnifying-glass fa-lg"></i></a>
+                    </form>
+                </div>
+            </nav>
+        </div>
+        <!--FIN DEL SEGUNDO NAVBAR-->
+    </div>
+
+
+
+    <!------------------------------------------------------------------->
+    <!------------------------JUMBOTRON 1-------------------------------->
+    <!------------------------------------------------------------------->
+    <div class="jumbotron jumbotron-fluid bg-transparent">
+        <div class="container">
+            <h1 class="display-4 text-white">Mis pedidos</h1>
+        </div>
+    </div>
+
+   <!--PEDIDOS-->
+   <div class="container p-0 mb-5">
+    <div class="row text-center mt-2 ">
+        
+        <div class="col-xl-3 col-md-6 col-sm-6 col-xs-4 text-white p-0 "><p class="titulos_pedidos">Fecha pedido</p><hr class="bg-light">
+            <p>25/04/2022</p>
+            <p>25/04/2022</p>
+            <p>25/04/2022</p>
+            <p>25/04/2022</p>
+            <p>25/04/2022</p>
+            <p>25/04/2022</p>
+            <p>25/04/2022</p>
+        </div>
+        
+        <div class="col-xl-3 col-md-6 col-sm-6 col-xs-4 text-white p-0"><p class="titulos_pedidos">Codigo Pedido</p><hr class="bg-light">
+            <p>0000001</p>
+            <p>0000001</p>
+            <p>0000001</p>
+            <p>0000001</p>
+            <p>0000001</p>
+            <p>0000001</p>
+            <p>0000001</p>
+        </div>
+
+        <div class="col-xl-3 col-md-6 col-sm-6 col-xs-4 text-white p-0"><p class="titulos_pedidos">Total Pedido</p>  <hr class="bg-light">
+            <p> 00,00€</p>
+            <p> 00,00€</p>
+            <p> 00,00€</p>
+            <p> 00,00€</p>
+            <p> 00,00€</p>
+            <p> 00,00€</p>
+            <p> 00,00€</p>
+        </div>
+
+        <div class="col-xl-3 col-md-6 col-sm-6 col-xs-4 text-white p-0"><p class="titulos_pedidos">Estado Pedido</p>  <hr class="bg-light">
+            <p>Entregado</p>
+            <p>Entregado</p>
+            <p>Entregado</p>
+            <p>Entregado</p>
+            <p>Entregado</p>
+            <p>Entregado</p>
+            <p>Entregado</p>
+        </div>
+        <hr class="bg-light p-0">
+    </div>
+    
+</div>
+
+
+
+
+
+
+    <!------------------------------------------------------------------->
+    <!--------------------------FOOTER----------------------------------->
+    <!------------------------------------------------------------------->
+
+
+    <!--------------------------primera parte----------------------------------->
+    <footer class="page-footer my2footer">
+
+        <div class="my2footer ">
+            <div class="container">
+                <div class="row py-4 d-flex align-items-center">
+                    <div class="col-md-12 text-center">
+                        <a href="#"><i class="fa-brands fa-facebook fa-3x mr-4 icon-red"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram fa-3x mr-4 icon-red"></i></a>
+                        <a href="#"><i class="fa-brands fa-github fa-3x mr-4 icon-red"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin fa-3x mr-4 icon-red"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--------------------------segunda parte----------------------------------->
+
+        <div class="container text-center text-md-left mt-5 text-white ">
+            <div class="row">
+
+                <div class="col-md-3 mx-auto mb-4">
+                    <h6 class="text uppercase font-weight-bold">Out of the box</h6>
+                    <hr class="myhrfooter mb-4 mt-0 d-inline-block mx-auto" style="width: 115px; height: 2px;">
+                    <p class="mt-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Doloremque porro veritatis accusamus magnam ab deserunt res molestias, autem placeat
+                        laudantium cumque laborum ipsum.</p>
+                </div>
+
+                <div class="col-md-3 mx-auto mb-4">
+                    <h6 class="text uppercase font-weight-bold">Products</h6>
+                    <hr class="myhrfooter mb-4 mt-0 d-inline-block mx-auto" style="width: 70px; height: 2px;">
+                    <ul class="list-unstyled">
+                        <li class="my-2"><a href="#" class="text-white">Peliculas</a></li>
+                        <li class="my-2"><a href="#" class="text-white">Series</a></li>
+                        <li class="my-2"><a href="#" class="text-white">Videojuegos</a></li>
+                        <li class="my-2"><a href="#" class="text-white">Otros</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 mx-auto mb-4">
+                    <h6 class="text uppercase font-weight-bold">Usefull links</h6>
+                    <hr class="myhrfooter mb-4 mt-0 d-inline-block mx-auto" style="width: 95px; height: 2px;">
+                    <ul class="list-unstyled">
+                        <li class="my-2"><a href="#" class="text-white">Home</a></li>
+                        <li class="my-2"><a href="#" class="text-white">About</a></li>
+                        <li class="my-2"><a href="#" class="text-white">Services</a></li>
+                        <li class="my-2"><a href="#" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-3 mx-auto mb-4">
+                    <h6 class="text uppercase font-weight-bold">Contact</h6>
+                    <hr class="myhrfooter mb-4 mt-0 d-inline-block mx-auto" style="width: 65px; height: 2px;">
+                    <ul class="list-unstyled">
+                        <li class="my-2"><i class="fas fa-home mr-2"></i>C/Demostenes,32 Las Rozas</li>
+                        <li class="my-2"><i class="fas fa-envelope mr-2"></i>juanjose.caviedes@gmail.com</li>
+                        <li class="my-2"><i class="fa-solid fa-phone mr-2"></i>+34630529565</i></li>
+                        <li class="my-2"><i class="fa-solid fa-location-dot mr-2"></i>Av.Europa,26</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--------------------------tercera parte----------------------------------->
+
+        <div class="footer-copyright text-center py-3 my3footer">
+            <p>&copy; Copyright
+                <a href="#">outofthebox.com</a>
+            </p>
+            <p>Designed By: Juan Jose Cogollo Caviedes</p>
+        </div>
+
+
+    </footer>
+
+    <!--
+     <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-danger" type="submit">Search</button>
+                    </form>
+-->
+
+
+    <!--Estos Scrips los necesitamos para poder usar las funcionalidades del bootstrap-->
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <!-- POPPER -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <!-- BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>
