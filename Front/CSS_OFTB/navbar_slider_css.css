@@ -1,0 +1,74 @@
+
+
+
+.navbar-toggler{
+    background-color: white;
+}
+
+/*
+.navbar{
+    letter-spacing: .1rem ;
+}
+*/
+.mydiv{
+    /* this is the only relevant part: */
+    border-radius: 500px;
+
+    /* this is irrelevant, and just so the element can be visualised/displayed: */
+    width: 40%;
+    height: 5em;
+    margin: 2em auto;
+    background-color: grey;
+    opacity: 0,5;
+    font-weight: bold;
+}
+
+
+
+@media only screen and (max-width: 767px){
+    .navbar-inverse .navbar-brand{
+        font-size: 30px;
+        padding: 20x 15px;
+    }
+    .navbar-collapse{
+        background: rgba(0, 0, 0, 0.5);
+    }
+}
+
+/*
+header .carrousel-inner .item{
+    height: 100vh;
+}
+*/
+
+body{
+    overflow-x: hidden;
+    
+}
+
+
+.carousel-item{
+    height: 100vh;
+    background-repeat: no-repeat;
+    
+    
+    
+}
+
+
+.carousel-caption{
+    padding-bottom: 250px;
+   
+}
+
+.carousel-caption h1{
+
+    font-size: 70px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+
+
+

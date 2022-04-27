@@ -58,12 +58,17 @@
     background: green;
   }
   
-  .cruz{
+/*Estilos del enlace para volver al login*/
+a:link, a:visited, a:active {
+  text-decoration:none !important;
+}
 
-    color: red;
-    height: 50px;
-    width: 50px;
-  }
+a{
+color: white !important;
+}
+a:hover{
+  transition: 1s;
+  color: red !important;
   
-  
+}
 
