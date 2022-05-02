@@ -1,6 +1,14 @@
+/*Import de las fuentes*/
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Berkshire+Swash&family=Orelega+One&family=Paytone+One&display=swap');
+
+
+
+
 /*********************************************************************************/
 /**********************************PELICULAS**************************************/
 /*********************************************************************************/
+
+
 .jumbotron_esdla {
     background-image: url(../Imagenes_OFTB/Images_jumbotron/Peliculas/esdla_jumbotron.jpg);
     background-size: cover;
@@ -10,7 +18,7 @@
 
 
 .jumbotron_starwars {
-    background-image: url(../Imagenes_OFTB/Images_jumbotron/Peliculas/starwars3_jumbotron.png);
+    background-image: url(../Imagenes_OFTB/Images_jumbotron/Peliculas/starwars4_jumbotron.png);
     background-size: cover;
     height: 650px;
 
@@ -35,7 +43,7 @@
 /*********************************************************************************/
 
 .jumbotron_got {
-  background-image: url(../Imagenes_OFTB/Images_jumbotron/Series/got2_jumbotron.jpg);
+  background-image: url(../Imagenes_OFTB/Images_jumbotron/Series/got5_jumbotron.jpg);
   background-size: cover;
   height: 650px;
 
@@ -81,11 +89,12 @@
   background-image: url(../Imagenes_OFTB/Images_jumbotron/Videojuegos/dmc3_jumbotron.jpg);
   background-size: cover;
   height: 650px;
+ 
 
 }
 
 .jumbotron_gow {
-  background-image: url(../Imagenes_OFTB/Images_jumbotron/Videojuegos/gow_jumbotron.jpg);
+  background-image: url(../Imagenes_OFTB/Images_jumbotron/Videojuegos/gow2_jumbotron.jpg);
   background-size: cover;
   height: 650px;
 
@@ -98,8 +107,8 @@
 
 }
 
-/*********************************************************************************/
-/*********************************VIDEOJUEGOS*************************************/
+/**********************************************************************************/
+/******************************ESTILOS JUMBOTRON**********************************/
 /*********************************************************************************/
 
 .jumbotron_pedidos {
@@ -112,12 +121,21 @@
 
 .jumbotron h1{
   position: absolute;
-  bottom: 300px;
-  left: 10px;
+  bottom: 30%;
+  left: 3%;
+  
 }
 
 
-  
+@media only screen and (max-width: 800px) {
+  .jumbotron h1 {
+    position: absolute;
+    bottom: 30%;
+   
+  }
+}
+
+
 /*Estilos de los enlaces*/
   a:link, a:visited, a:active {
     text-decoration:none !important;
@@ -131,3 +149,6 @@
     color: red !important;
     
   }
+
+
+  

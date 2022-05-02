@@ -1,0 +1,36 @@
+.div_img {
+
+    background-image: url(../Imagenes_OFTB/Imagenes_contacto/jack_nicolson_2.jpg);
+    background-size: 100%;
+    height: 270px;
+    background-repeat: no-repeat;
+}
+
+.div_jumbotron{
+    background-color: #424242 !important;
+}
+
+
+.myhrfooter_contacto {
+    background-color: red;
+    height: 2px;
+    width: 75px;
+}
+
+.myhrfooter_aboutus {
+    background-color: red;
+    height: 2px;
+    width: 120px;
+}
+
+
+a.navbar-brand {
+    font-size: 22.40px;
+    font-weight: bold !important;
+}
+
+#navbarSupportedContent {
+    /* margin-left: 0px;*/
+    font-weight: bold;
+    font-size: 14.3px;
+}

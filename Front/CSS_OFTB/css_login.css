@@ -5,70 +5,94 @@
 
 .container-halfs {
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
 }
 
 .efecto {
 
-    display: grid;
-    grid-template-columns: 1fr 0%;
-    height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 0%;
+  height: 100vh;
 }
 
 
 
 .left {
-    background-color: #262626;
+  background-color: #262626;
 
 }
 
 .right {
-    background-image: url(../Imagenes_OFTB/Imagenes/pkb2.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
+  background-image: url(../Imagenes_OFTB/Imagenes/pkb2.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
 
 }
 
 .email_color {
-    background-color: #212121;
+  background-color: #212121;
 }
 
 
 .efecto {
 
-    display: grid;
-    grid-template-columns: 1fr 0%;
-    height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 0%;
+  height: 100vh;
 }
 
 
 /*Hover boton del login*/
 
-  .btn {
-    height: 50px;
-    cursor: pointer;
-    background: red;
-  
-  }
-  
-  .btn:hover {
-    transition: 1s;
-    background: green;
-  }
-  
-/*Estilos del enlace para volver al login*/
-a:link, a:visited, a:active {
-  text-decoration:none !important;
+.btn {
+  height: 50px;
+  cursor: pointer;
+  background: red;
+
 }
 
-a{
-color: white !important;
+.btn:hover {
+  transition: 1.5s;
+  background: green;
+  
 }
-a:hover{
+
+/*Estilos del enlace para volver al login*/
+a:link,
+a:visited,
+a:active {
+  text-decoration: none !important;
+}
+
+a {
+  color: white !important;
+}
+
+a:hover {
   transition: 1s;
   color: red !important;
-  
+
 }
 
+/*Tamaño de los imputs del form*/
+form {
+  width: 455px !important;
+  margin: auto !important;
+}
+
+
+.form-control:focus {
+  border-color: red !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: red !important;
+}
+
+.form-control:hover {
+  border-width: 1px;
+  transition: 0.5s;
+  border-color: red !important;
+  box-shadow: red !important;
+}
