@@ -7,7 +7,7 @@
     <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Out of the box</title>
-    <link rel="stylesheet" href="../CSS_OFTB/css_index.css">
+    <link rel="stylesheet" href="../CSS_OFTB/css_plantilla.css">
     <link rel="stylesheet" href="../CSS_OFTB/css_categorias.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -15,99 +15,110 @@
 
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
+    <!--CSS animado-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 
-    <style>
-        body {
-            background-color: rgb(40, 40, 40);
-        }
-    </style>
 </head>
 
 <body>
 
   <!------------------------------------------------------------------->
-  <!--------------------------NAVBAR----------------------------------->
-  <!------------------------------------------------------------------->
+    <!--------------------------NAVBAR----------------------------------->
+    <!------------------------------------------------------------------->
 
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" style= "background:rgba(0, 0, 0, 0.5);">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-drop" style="background: rgba(0, 0, 0, 0.5);">
 
-    <a class="navbar-brand" href="index.html">
-        Out of the box
-    </a>
+        <a class="navbar-brand" href="index.html">
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon">
-      <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
-    </span>
-  </button>
+            Out of the box
+        </a>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto ml-auto text-center">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+                <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+            </span>
+        </button>
 
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home </a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                    data-toggle="dropdown" aria-expanded="false">
-                    Peliculas
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="oftb_peliculas_esdla.html">El señor de los anillos</a>
-                    <a class="dropdown-item" href="oftb_peliculas_starwars.html">Star Wars</a>
-                    <a class="dropdown-item" href="oftb_peliculas_dc.html">DC</a>
-                    <!--<div class="dropdown-divider"></div>-->
-                    <a class="dropdown-item" href="oftb_peliculas_marvel.html">Marvel</a>
-                </div>
-            </li>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto ml-auto text-center">
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                    data-toggle="dropdown" aria-expanded="false">
-                    Series
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="oftb_series_got.html">Game of thrones</a>
-                    <a class="dropdown-item" href="oftb_series_walkingdead.html">Walking Dead</a>
-                    <a class="dropdown-item" href="oftb_series_peakyblinders.html">Peaky Blinders</a>
-                    <a class="dropdown-item" href="oftb_series_theboys.html">The Boys</a>
-                </div>
-            </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-search"></i>
+                    </a>
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                    data-toggle="dropdown" aria-expanded="false">
-                    Videojuegos
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="oftb_juegos_mk.html">Mortal Kombat</a>
-                    <a class="dropdown-item" href="oftb_juegos_dmc.html">Devil May Cry</a>
-                    <a class="dropdown-item" href="oftb_juegos_gow.html">God Of War</a>
-                    <a class="dropdown-item" href="oftb_juegos_re.html">Resident Evil</a>
-                </div>
-            </li>
+                    <div class="dropdown-menu slideIn" aria-labelledby="navbarDropdown">
+                        <form class="form mr-2 ml-2 form-inline my-2 my-lg-0">
+                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                           
+                          </form>
+                    </div>
+                </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="oftb_pedidos.html">Pedidos</a>
-            </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-expanded="false">
+                        Films
+                    </a>
+                    <div class="dropdown-menu slideIn" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="oftb_peliculas_esdla.html">The Lords Of The Rings</a>
+                        <a class="dropdown-item" href="oftb_peliculas_starwars.html">Star Wars</a>
+                        <a class="dropdown-item" href="oftb_peliculas_dc.html">DC</a>
+                        <!--<div class="dropdown-divider"></div>-->
+                        <a class="dropdown-item" href="oftb_peliculas_marvel.html">Marvel</a>
+                    </div>
+                </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-            </li>
-        </ul>
-        <div class="text-center">
-            <a href="oftb_login.html" class="text-white mr-2"><i
-                    class="fa-solid fa-arrow-right-to-bracket mr-2"></i>Sign in</a>
-            <a href="oftb_registro.html" class="text-white"><i class="fa-solid fa-address-card mr-2"></i>Sing up</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-expanded="false">
+                        Series
+                    </a>
+                    <div class="dropdown-menu slideIn" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="oftb_series_got.html">Game of thrones</a>
+                        <a class="dropdown-item" href="oftb_series_walkingdead.html">Walking Dead</a>
+                        <a class="dropdown-item" href="oftb_series_peakyblinders.html">Peaky Blinders</a>
+                        <a class="dropdown-item" href="oftb_series_theboys.html">The Boys</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-expanded="false">
+                        Videogames
+                    </a>
+                    <div class="dropdown-menu slideIn" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="oftb_juegos_mk.html">Mortal Kombat</a>
+                        <a class="dropdown-item" href="oftb_juegos_dmc.html">Devil May Cry</a>
+                        <a class="dropdown-item" href="oftb_juegos_gow.html">God Of War</a>
+                        <a class="dropdown-item" href="oftb_juegos_re.html">Resident Evil</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="oftb_pedidos.html">Orders</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="oftb_contacto.html">Contact</a>
+                </li>
+            </ul>
+            <div class="text-center">
+                <a href="oftb_login.html" class="text-white mr-2"><i class="fa-solid fa-user-tie mr-2"></i>Sign in</a>
+                <a href="oftb_registro.html" class="text-white"><i class="fa-solid fa-address-card mr-2"></i>Sing up</a>
+            </div>
         </div>
-    </div>
-    
-</nav>
+
+    </nav>
 
 
 
@@ -116,145 +127,112 @@
     <!------------------------------------------------------------------->
     <div class="jumbotron jumbotron-fluid jumbotron_starwars">
         <div class="container">
-            <h1 class="display-4 text-white">Star Wars</h1>
+            <h1 class="display-4 text-white animate__animated animate__fadeInDown">Star Wars</h1>
         </div>
     </div>
 
 
 <!--CARTAS DE PRODUCTOS-->
-  <!-- 
-            col-lg-3  -> tamaño de la columna en tamaño grande(lg)
-            col-md-6  -> tamanio de la columna en tamaño medio(md)
-            col-xs-12 -> tamaño de la columna en tamaño pequeño(xs)
-            ¡ REVISAR TAMAÑO RESPONSIVE DE LAS CARTAS !
-        -->
-        <div class="container">
-            <div class="row mb-2 mt-1">
-    
-                <div class="col-md-6 col-lg-4"> 
-                    <div class="card bg-transparent">
-                        <img src="../Imagenes_OFTB/Imagen_cards/the-lord-of-the-rings.jpg" class="card-img" alt="...">
+<div class="container">
+    <div class="row mb-2">
+        <div class="col-md-6 col-lg-4 mb-4 mb-4">
+            <div class="card p-3 text-right bg-transparent" style="border: none;">
+                <blockquote class="blockquote mb-0">
+                    <div class="d-flex justify-content-between">
+                        <p>El señor de los anillos.</p>
+                        <p class="font-weight-bold">88,65€</p>
                     </div>
-                    <div class="card p-3 text-right bg-transparent" style="border: none;">
-                        <blockquote class="blockquote mb-0">
-                            <div class="d-flex justify-content-between">
-                                <p>El señor de los anillos.</p>
-                                <p class="font-weight-bold">88,65€</p>
-                            </div>
-                            <footer class="blockquote-footer">
-                                <small class="text-muted">
-                                    Someone famous in <cite title="Source Title">Source Title</cite>
-                                </small>
-                            </footer>
-                        </blockquote>
-                    </div>
-                 </div>  
-    
-    
-    
-    
-                 <div class="col-md-6 col-lg-4"> 
-                    <div class="card bg-transparent">
-                        <img src="../Imagenes_OFTB/Imagen_cards/the-lord-of-the-rings.jpg" class="card-img" alt="...">
-                    </div>
-                    <div class="card p-3 text-right bg-transparent" style="border: none;">
-                        <blockquote class="blockquote mb-0">
-                            <div class="d-flex justify-content-between">
-                                <p>El señor de los anillos.</p>
-                                <p class="font-weight-bold">88,65€</p>
-                            </div>
-                            <footer class="blockquote-footer">
-                                <small class="text-muted">
-                                    Someone famous in <cite title="Source Title">Source Title</cite>
-                                </small>
-                            </footer>
-                        </blockquote>
-                    </div>
-                 </div>  
-    
-    
-    
-                 <div class="col-md-6 col-lg-4"> 
-                    <div class="card bg-transparent">
-                        <img src="../Imagenes_OFTB/Imagen_cards/the-lord-of-the-rings.jpg" class="card-img" alt="...">
-                    </div>
-                    <div class="card p-3 text-right bg-transparent" style="border: none;">
-                        <blockquote class="blockquote mb-0">
-                            <div class="d-flex justify-content-between">
-                                <p>El señor de los anillos.</p>
-                                <p class="font-weight-bold">88,65€</p>
-                            </div>
-                            <footer class="blockquote-footer">
-                                <small class="text-muted">
-                                    Someone famous in <cite title="Source Title">Source Title</cite>
-                                </small>
-                            </footer>
-                        </blockquote>
-                    </div>
-                 </div>  
-    
-    
-                 <div class="col-md-6 col-lg-4"> 
-                    <div class="card bg-transparent">
-                        <img src="../Imagenes_OFTB/Imagen_cards/the-lord-of-the-rings.jpg" class="card-img" alt="...">
-                    </div>
-                    <div class="card p-3 text-right bg-transparent" style="border: none;">
-                        <blockquote class="blockquote mb-0">
-                            <div class="d-flex justify-content-between">
-                                <p>El señor de los anillos.</p>
-                                <p class="font-weight-bold">88,65€</p>
-                            </div>
-                            <footer class="blockquote-footer">
-                                <small class="text-muted">
-                                    Someone famous in <cite title="Source Title">Source Title</cite>
-                                </small>
-                            </footer>
-                        </blockquote>
-                    </div>
-                 </div> 
-    
-                 <div class="col-md-6 col-lg-4"> 
-                    <div class="card bg-transparent">
-                        <img src="../Imagenes_OFTB/Imagen_cards/the-lord-of-the-rings.jpg" class="card-img" alt="...">
-                    </div>
-                    <div class="card p-3 text-right bg-transparent" style="border: none;">
-                        <blockquote class="blockquote mb-0">
-                            <div class="d-flex justify-content-between">
-                                <p>El señor de los anillos.</p>
-                                <p class="font-weight-bold">88,65€</p>
-                            </div>
-                            <footer class="blockquote-footer">
-                                <small class="text-muted">
-                                    Someone famous in <cite title="Source Title">Source Title</cite>
-                                </small>
-                            </footer>
-                        </blockquote>
-                    </div>
-                 </div> 
-    
-                 <div class="col-md-6 col-lg-4"> 
-                    <div class="card bg-transparent">
-                        <img src="../Imagenes_OFTB/Imagen_cards/the-lord-of-the-rings.jpg" class="card-img" alt="...">
-                    </div>
-                    <div class="card p-3 text-right bg-transparent" style="border: none;">
-                        <blockquote class="blockquote mb-0">
-                            <div class="d-flex justify-content-between">
-                                <p>El señor de los anillos.</p>
-                                <p class="font-weight-bold">88,65€</p>
-                            </div>
-                            <footer class="blockquote-footer">
-                                <small class="text-muted">
-                                    Someone famous in <cite title="Source Title">Source Title</cite>
-                                </small>
-                            </footer>
-                        </blockquote>
-                    </div>
-                 </div> 
-    
-    
+                </blockquote>
             </div>
         </div>
 
+
+
+
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card p-3 text-right bg-transparent" style="border: none;">
+                <blockquote class="blockquote mb-0">
+                    <div class="d-flex justify-content-between">
+                        <p>El señor de los anillos.</p>
+                        <p class="font-weight-bold">88,65€</p>
+                    </div>
+                </blockquote>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card p-3 text-right bg-transparent" style="border: none;">
+                <blockquote class="blockquote mb-0">
+                    <div class="d-flex justify-content-between">
+                        <p>El señor de los anillos.</p>
+                        <p class="font-weight-bold">88,65€</p>
+                    </div>
+                </blockquote>
+            </div>
+        </div>
+
+
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card p-3 text-right bg-transparent" style="border: none;">
+                <blockquote class="blockquote mb-0">
+                    <div class="d-flex justify-content-between">
+                        <p>El señor de los anillos.</p>
+                        <p class="font-weight-bold">88,65€</p>
+                    </div>
+                </blockquote>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card p-3 text-right bg-transparent" style="border: none;">
+                <blockquote class="blockquote mb-0">
+                    <div class="d-flex justify-content-between">
+                        <p>El señor de los anillos.</p>
+                        <p class="font-weight-bold">88,65€</p>
+                    </div>
+                </blockquote>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">  
+            <div class="card p-3 text-right bg-transparent" style="border: none;">
+                <blockquote class="blockquote mb-0">
+                    <div class="d-flex justify-content-between">
+                        <p>El señor de los anillos.</p>
+                        <p class="font-weight-bold">88,65€</p>
+                    </div>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</div>
+
+ 
+
+ <!------------------------------------------------------------------->
+    <!--------------------------PAGINATION------------------------------->
+    <!------------------------------------------------------------------->
+   
+    <div class="container text-center mb-5">
+        <nav>
+            <ul class="pagination pagination-lg justify-content-center ">
+                <!--PREVIO-->
+                <li class="page-item mr-2">
+                    <a class="page-link" href="#"><i class="fa-solid fa-angle-left"></i></a>
+                </li>
+                <!--PAGINAS-->
+                <li class="page-item mr-1"><a class="page-link" href="#">1</a></li>
+                <li class="page-item "><a class="page-link current_page" href="#">2</a></li>
+                <li class="page-item ml-1"><a class="page-link" href="#">3</a></li>
+                 <!--NEXT-->
+                <li class="page-item ml-2">
+                    <a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 
 
 
@@ -286,7 +264,7 @@
         <div class="container text-center text-md-left mt-5 text-white ">
             <div class="row">
 
-                <div class="col-md-3 mx-auto mb-4">
+                <div class="col-md-4 mx-auto mb-4">
                     <h6 class="text uppercase font-weight-bold">Out of the box</h6>
                     <hr class="myhrfooter mb-4 mt-0 d-inline-block mx-auto" style="width: 115px; height: 2px;">
                     <p class="mt-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -294,7 +272,7 @@
                         laudantium cumque laborum ipsum.</p>
                 </div>
 
-                <div class="col-md-3 mx-auto mb-4">
+                <div class="col-md-2 mx-auto mb-4">
                     <h6 class="text uppercase font-weight-bold">Products</h6>
                     <hr class="myhrfooter mb-4 mt-0 d-inline-block mx-auto" style="width: 70px; height: 2px;">
                     <ul class="list-unstyled">
@@ -305,7 +283,7 @@
                     </ul>
                 </div>
 
-                <div class="col-md-3 mx-auto mb-4">
+                <div class="col-md-2 mx-auto mb-4">
                     <h6 class="text uppercase font-weight-bold">Usefull links</h6>
                     <hr class="myhrfooter mb-4 mt-0 d-inline-block mx-auto" style="width: 95px; height: 2px;">
                     <ul class="list-unstyled">
@@ -316,12 +294,12 @@
                     </ul>
                 </div>
 
-                <div class="col-md-3 mx-auto mb-4">
+                <div class="col-md-4 mx-auto mb-4">
                     <h6 class="text uppercase font-weight-bold">Contact</h6>
                     <hr class="myhrfooter mb-4 mt-0 d-inline-block mx-auto" style="width: 65px; height: 2px;">
                     <ul class="list-unstyled">
                         <li class="my-2"><i class="fas fa-home mr-2"></i>C/Demostenes,32 Las Rozas</li>
-                        <li class="my-2"><i class="fas fa-envelope mr-2"></i>juanjose.caviedes@gmail.com</li>
+                        <li class="my-2"><i class="fas fa-envelope mr-2"></i>juanjose.cogollo.caviedes@gmail.com</li>
                         <li class="my-2"><i class="fa-solid fa-phone mr-2"></i>+34630529565</i></li>
                         <li class="my-2"><i class="fa-solid fa-location-dot mr-2"></i>Av.Europa,26</li>
                     </ul>
