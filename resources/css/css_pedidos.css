@@ -1,0 +1,19 @@
+
+.titulos_pedidos{
+    
+    background: rgba(0, 0, 0, 0.5) !important;
+
+}
+
+
+.cells_pedidos{
+    
+    background-color: #616161 ;
+
+}
+
+/*Hover de la tabla de pedidos*/
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    transition: 0.5s;
+    background-color: #424242;
+  }

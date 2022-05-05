@@ -1,0 +1,154 @@
+/*Import de las fuentes*/
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Berkshire+Swash&family=Orelega+One&family=Paytone+One&display=swap');
+
+
+
+
+/*********************************************************************************/
+/**********************************PELICULAS**************************************/
+/*********************************************************************************/
+
+
+.jumbotron_esdla {
+    background-image: url(../Imagenes_OFTB/Images_jumbotron/Peliculas/esdla_jumbotron.jpg);
+    background-size: cover;
+    height: 650px;
+
+}
+
+
+.jumbotron_starwars {
+    background-image: url(../Imagenes_OFTB/Images_jumbotron/Peliculas/starwars4_jumbotron.png);
+    background-size: cover;
+    height: 650px;
+
+}
+
+.jumbotron_dc {
+    background-image: url(../Imagenes_OFTB/Images_jumbotron/Peliculas/suicide_squad_jumbotron.jpg);
+    background-size: cover;
+    height: 650px;
+
+}
+
+.jumbotron_marvel {
+    background-image: url(../Imagenes_OFTB/Images_jumbotron/Peliculas/marvel5_jumbotron.jpg);
+    background-size: cover;
+    height: 650px;
+
+}
+
+/*********************************************************************************/
+/************************************SERIES***************************************/
+/*********************************************************************************/
+
+.jumbotron_got {
+  background-image: url(../Imagenes_OFTB/Images_jumbotron/Series/got5_jumbotron.jpg);
+  background-size: cover;
+  height: 650px;
+
+}
+
+
+.jumbotron_wd {
+  background-image: url(../Imagenes_OFTB/Images_jumbotron/Series/wd_jumbotron.jpg);
+  background-size: cover;
+  height: 650px;
+
+}
+
+.jumbotron_pk {
+  background-image: url(../Imagenes_OFTB/Images_jumbotron/Series/pk_jumbotron.jpg);
+  background-size: cover;
+  height: 650px;
+
+}
+
+.jumbotron_tb {
+  background-image: url(../Imagenes_OFTB/Images_jumbotron/Series/tb_jumbotron.jpg);
+  background-size: cover;
+  height: 650px;
+
+}
+
+
+
+/*********************************************************************************/
+/*********************************VIDEOJUEGOS*************************************/
+/*********************************************************************************/
+
+.jumbotron_mk {
+  background-image: url(../Imagenes_OFTB/Images_jumbotron/Videojuegos/mk11_2_jumbotron.jpg);
+  background-size: cover;
+  height: 650px;
+
+}
+
+
+.jumbotron_dmc {
+  background-image: url(../Imagenes_OFTB/Images_jumbotron/Videojuegos/dmc3_jumbotron.jpg);
+  background-size: cover;
+  height: 650px;
+ 
+
+}
+
+.jumbotron_gow {
+  background-image: url(../Imagenes_OFTB/Images_jumbotron/Videojuegos/gow2_jumbotron.jpg);
+  background-size: cover;
+  height: 650px;
+
+}
+
+.jumbotron_re {
+  background-image: url(../Imagenes_OFTB/Images_jumbotron/Videojuegos/re3_jumbotron.jpg);
+  background-size: cover;
+  height: 650px;
+
+}
+
+/**********************************************************************************/
+/******************************ESTILOS JUMBOTRON**********************************/
+/*********************************************************************************/
+
+.jumbotron_pedidos {
+  background-image: url(../Imagenes_OFTB/Images_jumbotron/pedidos2_jumbotron.jpg);
+  background-size: cover;
+  height: 650px;
+
+}
+
+
+.jumbotron h1{
+  position: absolute;
+  bottom: 30%;
+  left: 3%;
+  
+}
+
+
+@media only screen and (max-width: 800px) {
+  .jumbotron h1 {
+    position: absolute;
+    bottom: 30%;
+   
+  }
+}
+
+
+/*Estilos de los enlaces*/
+  a:link, a:visited, a:active {
+    text-decoration:none !important;
+  }
+  
+  a{
+  color: white !important;
+  }
+  a:hover{
+    transition: 1s;
+    color: red !important;
+    
+  }
+
+
+  

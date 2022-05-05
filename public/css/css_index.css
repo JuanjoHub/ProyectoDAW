@@ -1,0 +1,46 @@
+
+/*******************************************************/
+/********************CAROUSEL**************************/
+/*****************************************************/
+body {
+
+    overflow-x: hidden;
+}
+
+
+.carousel-item {
+    height: 100vh;
+    background-repeat: no-repeat;
+
+}
+
+
+.carousel-caption {
+    padding-bottom: 250px;
+
+}
+
+.carousel-caption h1 {
+    font-size: 70px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+.carousel-item {
+    height: 100vh;
+    background-repeat: no-repeat;
+
+}
+
+
+.carousel-caption {
+    padding-bottom: 250px;
+
+}
+
+.carousel-caption h1 {
+    font-size: 70px;
+    text-transform: uppercase;
+    font-weight: bold;
+}

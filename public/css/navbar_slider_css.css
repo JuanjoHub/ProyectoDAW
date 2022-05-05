@@ -1,0 +1,263 @@
+
+
+
+/*
+header .carrousel-inner .item{
+    height: 100vh;
+}
+*/
+
+body{
+    overflow-x: hidden;
+    
+}
+
+
+.carousel-item{
+    height: 100vh;
+    background-repeat: no-repeat;
+    
+    
+    
+}
+
+
+.carousel-caption{
+    padding-bottom: 250px;
+   
+}
+
+.carousel-caption h1{
+
+    font-size: 70px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/*************PLANTILLA*********************/
+
+
+
+
+
+/****************************************************/
+/*****************ELEMENTOS BASICOS******************/
+/****************************************************/
+
+
+body {
+    overflow-x: hidden;
+    background-color: rgb(40, 40, 40) !important;
+}
+
+p,tr,td,th {
+    color: white;
+}
+
+
+/*****************************************************/
+/********************NAVBAR**************************/
+/****************************************************/
+
+a.navbar-brand {
+    font-size: 25px;
+    font-weight: bold !important;
+}
+
+.mynav a {
+
+    color: white !important;
+    /*Important para hacer override a bootstrap*/
+    font-weight: bold;
+    /*
+    border-bottom: 2px solid transparent;
+    transition-duration: 0.6s;
+    */
+}
+
+
+@media only screen and (max-width: 0px) {
+    .navbar-inverse .navbar-brand {
+        font-size: 30px;
+        padding: 20x 15px;
+    }
+
+    .navbar-collapse {
+        background: rgba(0, 0, 0, 0.5) !important;
+    }
+}
+
+/*El div que separa el brand del menu en el segundo navbar*/
+#navbarSupportedContent {
+    /* margin-left: 0px;*/
+    font-weight: bold;
+}
+
+
+
+/*DROPDOWNS*/
+
+
+.navbar-drop .navbar-nav > li > .dropdown-menu {
+    background: rgba(0, 0, 0, 0.5) !important;
+    margin-top: 16px;
+    margin-right: 200px;
+  }
+  .navbar-drop .navbar-nav > li > .dropdown-menu > li > a {
+    color: #d7e2e9;
+  }
+  .navbar-drop .navbar-nav > li > .dropdown-menu > li > a:hover,
+  .navbar-drop .navbar-nav > li > .dropdown-menu > li > a:focus {
+    color: #e5dbdb;
+    background: rgba(0, 0, 0, 0.5) !important;
+    
+  }
+  .navbar-drop .navbar-nav > li > .dropdown-menu > li > .divider {
+    background: rgba(0, 0, 0, 0.5) !important;
+  }
+
+ 
+  
+  
+
+
+/*******************************************************/
+/********************ENLACES***************************/
+/*****************************************************/
+
+
+/*Estilos de los enlaces*/
+a:link,
+a:visited,
+a:active {
+    text-decoration: none !important;
+}
+
+a {
+    color: white !important;
+}
+
+a:hover {
+    transition: 1s;
+    color: red !important;
+
+}
+
+
+
+
+/*****************************FOOTER******************************/
+
+
+/*Color del 1 footer*/
+.my1footer {
+    background-color: #616161 !important;
+}
+
+/*Color del 2 footer*/
+.my2footer {
+    background-color: #424242;
+}
+
+/*Color del 3 footer*/
+.my3footer {
+
+    background-color: #212121;
+}
+
+/*Color de los hr del footer*/
+.myhrfooter {
+    background-color: red;
+}
+
+/*Color de los iconos */
+.icon-red {
+    color: white;
+}
+
+
+.icon-red:hover{
+    transition: 1s;
+    color: red;
+}
+
+
+
+
+
+/*********************POSIBLE BOTON DEL SEARCH***********************/
+.searchbar {
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: red;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.search_input {
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color: transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+}
+
+.searchbar:hover>.search_input {
+    padding: 0 10px;
+    width: 540px;
+    caret-color: red;
+    transition: width 0.4s linear;
+    
+}
+
+
+.search_icon {
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+}
+
+
+/*****************************************************/
+/*****************Barra de busqueda*******************/
+/****************************************************/
+
+/*Estilos para la barra de busqueda*/
+.form-control {
+    width: 540px !important;
+    margin: auto !important;
+    background-color: #212121 !important;
+    color: white !important;
+  }
+  
+  
+  .form-control:focus {
+    border-color: red !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: red !important;
+  }
+  
+  .form-control:hover {
+    border-width: 1px;
+    transition: 0.5s;
+    border-color: red !important;
+    box-shadow: red !important;
+  }
+
+
+  @media only screen and (max-width: 620px) {
+    .form-control {
+      width: 400px !important;
+    }
+  }

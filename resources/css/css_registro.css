@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300");
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100');
+@import url('https://fonts.googleapis.com/css?family=Lato:100&display=swap');
+
+.container-halfs {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+}
+
+.efecto {
+
+    display: grid;
+    grid-template-columns: 1fr 0%;
+    height: 100vh;
+}
+
+
+
+.left {
+  background-color: rgb(40, 40, 40) !important;
+
+}
+
+.right {
+
+    background-image: url(../Imagenes_OFTB/Imagenes/joker1.2.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  
+ 
+
+}
+
+.email_color {
+    background-color: #212121;
+}
+
+
+.efecto {
+
+    display: grid;
+    grid-template-columns: 1fr 0%;
+    height: 100vh;
+}
+
+
+/*Hover boton del login*/
+
+  .btn {
+    margin-top: 10px;
+    height: 50px;
+    cursor: pointer;
+    background: red;
+    
+  
+  }
+  
+  /*Efecto del boton del regisdtro*/
+  .btn:hover {
+    transition: 0,5s;
+    background: green;
+
+  }
+  
+  .icon_color{
+
+    color: red !important;
+   
+  }
+  
+/*Estilos del enlace para volver al login*/
+a:link, a:visited, a:active {
+    text-decoration:none !important;
+}
+
+a{
+  color: white !important;
+}
+a:hover{
+    transition: 1s;
+    color: red !important;
+    
+}
+
+
+/*Tamaño de los imputs del form*/
+form {
+  width: 455px !important;
+  margin: auto !important;
+}
+
+/*Color del fondode los imputs*/
+.form-control {
+  background: #212121 !important;
+}
+
+.form-control:focus {
+  border-color: red !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: red !important;
+}
+
+.form-control:hover {
+  border-width: 1px;
+  transition: 0.5s;
+  border-color: red !important;
+  box-shadow: red !important;
+}
+  
+
