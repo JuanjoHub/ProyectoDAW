@@ -8,7 +8,7 @@
     <!------------------------------------------------------------------->
     <!------------------------JUMBOTRON 1-------------------------------->
     <!------------------------------------------------------------------->
-    <div class="jumbotron jumbotron-fluid jumbotron_{{$nombre}}">
+    <div class="jumbotron jumbotron-fluid jumbotron_re">
         <div class="container">
             <h1 class="display-4 text-white animate__animated animate__fadeInDown">Resident Evil</h1>
         </div>

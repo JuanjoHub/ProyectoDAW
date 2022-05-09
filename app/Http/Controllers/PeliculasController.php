@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Articulo;
 class PeliculasController extends Controller
 {
 
     public function selectfranquicia($saga_peliculas)
     {
         $url = "Peliculas.oftb_peliculas_";
+        $articulo = Articulo::all();
+        
 
         switch ($saga_peliculas) {
             case 'esdla':
@@ -18,7 +20,7 @@ class PeliculasController extends Controller
             case 'dc':
                 /*Crear funcion que me devuelva las peliculas que vengan de la variable saga_peliculas,y pasarselo a la vista en la linea 20
                 como un array */
-                return view($url . $saga_peliculas, ['nombre' => $saga_peliculas]);
+                return view($url . $saga_peliculas, ['nombre' => $saga_peliculas],['articulo_peliculas' => $articulo]);
                 break;
         default:
                 return view('home');
@@ -26,7 +28,7 @@ class PeliculasController extends Controller
         }
     }
 
-
+    
 }
 
 

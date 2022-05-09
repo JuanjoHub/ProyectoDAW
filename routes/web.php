@@ -29,33 +29,8 @@ Route::get('Peliculas/{saga_peliculas}', [PeliculasController::class,'selectfran
 
 Route::get('Series/{saga_serie}', [SeriesController::class,'selectSeries']);
 
+Route::get('Videojuegos/{saga_juego}', [VideojuegosController::class,'selectJuegos']);
 
-Route::get('Videojuegos/{saga_juego}', [SeriesController::class,'selectSeries']);
-
-
-
-
-
-/*Juegos */
-
-/*
-Route::get('/Videojuegos/dmc', function () {
-    
-    return view('Videojuegos.oftb_juegos_dmc');
-});
-
-Route::get('/Videojuegos/gow', function () {
-    return view('Videojuegos.oftb_juegos_gow');
-});
-
-Route::get('/Videojuegos/mk', function () {
-    return view('Videojuegos.oftb_juegos_mk');
-});
-
-Route::get('/Videojuegos/re', function () {
-    return view('Videojuegos.oftb_juegos_re');
-});
-*/
 
 /*Contacto */
 

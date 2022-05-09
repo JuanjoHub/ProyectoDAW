@@ -9,15 +9,15 @@
     <title>Out of the box</title>
 
     <!--Links de nuestros CSS-->
-    <link rel="stylesheet"  type="text/css" href="{!! asset('css/css_index.css') !!}">
-    <link rel="stylesheet"  type="text/css" href="{!! asset('css/css_plantilla.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('css/css_index.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('css/css_plantilla.css') !!}">
 
     <!--CSS animado-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
@@ -26,7 +26,7 @@
 </head>
 
 <body>
-    
+
     <!------------------------------------------------------------------->
     <!--------------------------NAVBAR----------------------------------->
     <!------------------------------------------------------------------->
@@ -49,8 +49,8 @@
             <ul class="navbar-nav mr-auto ml-auto">
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-expanded="false">
                         <i class="fas fa-search"></i>
                     </a>
 
@@ -120,7 +120,7 @@
 
     </nav>
 
-   
+
 
     <!------------------------------------------------------------------->
     <!--------------------------CAROUSEL--------------------------------->
@@ -134,7 +134,7 @@
         </ol>
         <div class="carousel-inner" role="listbox">
 
-           
+
             <!--Primer slider-->
             <div class="carousel-item active"
                 style="background-image:url(../Imagenes_OFTB/Imagenes_carrusel/sauron_carousel.jpg)">
@@ -178,7 +178,7 @@
         </div>
     </div>
 
-    
+
     <!------------------------------------------------------------------->
     <!------------------------JUMBOTRON 1-------------------------------->
     <!------------------------------------------------------------------->
@@ -188,13 +188,9 @@
         </div>
     </div>
 
- @foreach ( $datos as $dato)
-        <p>{{ $dato->nombre_articulo }}</p>
- @endforeach
- 
-<!------------------------------------------------------------------->
-<!-----------------------CARTAS DE PRODUCTOS------------------------->
-<!------------------------------------------------------------------->
+    <!------------------------------------------------------------------->
+    <!-----------------------CARTAS DE PRODUCTOS------------------------->
+    <!------------------------------------------------------------------->
 
     <div class="container">
         <div class="row mb-2">
@@ -202,15 +198,16 @@
                 <div class="card p-3 text-right bg-transparent" style="border: none;">
                     <blockquote class="blockquote mb-0">
                         <div class="d-flex justify-content-between">
-                            <a href="oftb_prev_prod.html"> <p>El señor de los anillos.</p></a>
-                            <a href="oftb_prev_prod.html"> <p class="font-weight-bold">88,65€</p></a>
+                            <a href="oftb_prev_prod.html">
+                                <p>El señor de los anillos.</p>
+                            </a>
+                            <a href="oftb_prev_prod.html">
+                                <p class="font-weight-bold">88,65€</p>
+                            </a>
                         </div>
                     </blockquote>
                 </div>
             </div>
-
-
-
 
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card p-3 text-right bg-transparent" style="border: none;">
@@ -222,20 +219,6 @@
                     </blockquote>
                 </div>
             </div>
-
-
-
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card p-3 text-right bg-transparent" style="border: none;">
-                    <blockquote class="blockquote mb-0">
-                        <div class="d-flex justify-content-between">
-                            <p>El señor de los anillos.</p>
-                            <p class="font-weight-bold">88,65€</p>
-                        </div>
-                    </blockquote>
-                </div>
-            </div>
-
 
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card p-3 text-right bg-transparent" style="border: none;">
@@ -259,7 +242,18 @@
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-4 mb-4">  
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card p-3 text-right bg-transparent" style="border: none;">
+                    <blockquote class="blockquote mb-0">
+                        <div class="d-flex justify-content-between">
+                            <p>El señor de los anillos.</p>
+                            <p class="font-weight-bold">88,65€</p>
+                        </div>
+                    </blockquote>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card p-3 text-right bg-transparent" style="border: none;">
                     <blockquote class="blockquote mb-0">
                         <div class="d-flex justify-content-between">
@@ -285,7 +279,7 @@
         <div class="row">
 
             <div class="col-md-6 col-lg-4 mb-4">
-                
+
                 <div class="card p-3 text-right bg-transparent" style="border: none;">
                     <blockquote class="blockquote mb-0">
                         <div class="d-flex justify-content-between">
@@ -296,10 +290,7 @@
                 </div>
             </div>
 
-
-
-
-            <div class="col-md-6 col-lg-4 mb-4 mb-4"> 
+            <div class="col-md-6 col-lg-4 mb-4 mb-4">
                 <div class="card p-3 text-right bg-transparent" style="border: none;">
                     <blockquote class="blockquote mb-0">
                         <div class="d-flex justify-content-between">
@@ -309,20 +300,6 @@
                     </blockquote>
                 </div>
             </div>
-
-
-
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card p-3 text-right bg-transparent" style="border: none;">
-                    <blockquote class="blockquote mb-0">
-                        <div class="d-flex justify-content-between">
-                            <p>El señor de los anillos.</p>
-                            <p class="font-weight-bold">88,65€</p>
-                        </div>
-                    </blockquote>
-                </div>
-            </div>
-
 
             <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card p-3 text-right bg-transparent" style="border: none;">
@@ -346,7 +323,18 @@
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-4 mb-4">               
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card p-3 text-right bg-transparent" style="border: none;">
+                    <blockquote class="blockquote mb-0">
+                        <div class="d-flex justify-content-between">
+                            <p>El señor de los anillos.</p>
+                            <p class="font-weight-bold">88,65€</p>
+                        </div>
+                    </blockquote>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card p-3 text-right bg-transparent" style="border: none;">
                     <blockquote class="blockquote mb-0">
                         <div class="d-flex justify-content-between">
@@ -358,28 +346,10 @@
             </div>
         </div>
     </div>
-
-    <!--PRUEBAS-->
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-xl-4 col-md-6 col-sm-6 col-xs-4">1</div>
-            <div class="col-xl-4 col-md-6 col-sm-6 col-xs-4">2</div>
-            <div class="col-xl-4 col-md-6 col-sm-6 col-xs-4">3</div>
-            <div class="col-xl-4 col-md-6 col-sm-6 col-xs-4">4</div>
-            <div class="col-xl-4 col-md-6 col-sm-6 col-xs-4">5</div>
-            <div class="col-xl-4 col-md-6 col-sm-6 col-xs-4">6</div>
-        </div>
-    </div>
-
-
-
-
-
 
     <!------------------------------------------------------------------->
     <!--------------------------FOOTER----------------------------------->
     <!------------------------------------------------------------------->
-
 
     <!--------------------------primera parte----------------------------------->
     <footer class="page-footer my2footer ">
@@ -437,7 +407,8 @@
                     <hr class="myhrfooter mb-4 mt-0 d-inline-block mx-auto" style="width: 65px; height: 2px;">
                     <ul class="list-unstyled">
                         <li class="my-2"><i class="fas fa-home mr-2"></i>C/Demostenes,32 Las Rozas</li>
-                        <li class="my-2"><i class="fas fa-envelope mr-2"></i>juanjose.cogollo.caviedes@gmail.com</li>
+                        <li class="my-2"><i
+                                class="fas fa-envelope mr-2"></i>juanjose.cogollo.caviedes@gmail.com</li>
                         <li class="my-2"><i class="fa-solid fa-phone mr-2"></i>+34630529565</i></li>
                         <li class="my-2"><i class="fa-solid fa-location-dot mr-2"></i>Av.Europa,26</li>
                     </ul>
@@ -467,16 +438,16 @@
     <!--Estos Scrips los necesitamos para poder usar las funcionalidades del bootstrap-->
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
     <!-- POPPER -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
     <!-- BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
 
 
 

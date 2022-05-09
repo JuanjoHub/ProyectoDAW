@@ -14,82 +14,24 @@
     </div>
 
 <!--CARTAS DE PRODUCTOS-->
-<div class="container">
-    <div class="row mb-2">
-        <div class="col-md-6 col-lg-4 mb-4 mb-4">
-            <div class="card p-3 text-right bg-transparent" style="border: none;">
-                <blockquote class="blockquote mb-0">
-                    <div class="d-flex justify-content-between">
-                        <p>El señor de los anillos.</p>
-                        <p class="font-weight-bold">88,65€</p>
+    <div class="container">
+        <div class="row mb-2">
+            @foreach ($articulo_series as $articulo)
+                @if ($articulo->cod_categoria == 6)
+                    <div class="col-md-6 col-lg-4 mb-4 mb-4">
+                        <div class="card p-3 text-right bg-transparent" style="border: none;">
+                            <blockquote class="blockquote mb-0">
+                                <div class="d-flex justify-content-between">
+                                    <p>{{ $articulo->nombre_articulo }}</p>
+                                    <p class="font-weight-bold">{{ $articulo->precio }} €</p>
+                                </div>
+                            </blockquote>
+                        </div>
                     </div>
-                </blockquote>
-            </div>
-        </div>
-
-
-
-
-        <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card p-3 text-right bg-transparent" style="border: none;">
-                <blockquote class="blockquote mb-0">
-                    <div class="d-flex justify-content-between">
-                        <p>El señor de los anillos.</p>
-                        <p class="font-weight-bold">88,65€</p>
-                    </div>
-                </blockquote>
-            </div>
-        </div>
-
-
-
-        <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card p-3 text-right bg-transparent" style="border: none;">
-                <blockquote class="blockquote mb-0">
-                    <div class="d-flex justify-content-between">
-                        <p>El señor de los anillos.</p>
-                        <p class="font-weight-bold">88,65€</p>
-                    </div>
-                </blockquote>
-            </div>
-        </div>
-
-
-        <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card p-3 text-right bg-transparent" style="border: none;">
-                <blockquote class="blockquote mb-0">
-                    <div class="d-flex justify-content-between">
-                        <p>El señor de los anillos.</p>
-                        <p class="font-weight-bold">88,65€</p>
-                    </div>
-                </blockquote>
-            </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card p-3 text-right bg-transparent" style="border: none;">
-                <blockquote class="blockquote mb-0">
-                    <div class="d-flex justify-content-between">
-                        <p>El señor de los anillos.</p>
-                        <p class="font-weight-bold">88,65€</p>
-                    </div>
-                </blockquote>
-            </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 mb-4">  
-            <div class="card p-3 text-right bg-transparent" style="border: none;">
-                <blockquote class="blockquote mb-0">
-                    <div class="d-flex justify-content-between">
-                        <p>El señor de los anillos.</p>
-                        <p class="font-weight-bold">88,65€</p>
-                    </div>
-                </blockquote>
-            </div>
+                @endif
+            @endforeach
         </div>
     </div>
-</div>
- 
  <!------------------------------------------------------------------->
     <!--------------------------PAGINATION------------------------------->
     <!------------------------------------------------------------------->
