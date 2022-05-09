@@ -7,7 +7,6 @@
     <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Out of the box</title>
-
     <!--CSS animado-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
@@ -21,7 +20,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 </head>
 
-<body>
+<body style="margin-top: -24px;">
     
     <!------------------------------------------------------------------->
     <!--------------------------NAVBAR----------------------------------->
@@ -29,7 +28,7 @@
 
     <nav class="navbar navbar-expand-lg fixed-top navbar-drop" style="background: rgba(0, 0, 0, 0.5);">
 
-        <a class="navbar-brand" href="home">
+        <a class="navbar-brand" href="/home">
             Out of the box
         </a>
 
@@ -44,7 +43,7 @@
             <ul class="navbar-nav mr-auto ml-auto">
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    <a class="nav-link dropdown-toggle" href="/home" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-search"></i>
                     </a>
@@ -57,7 +56,7 @@
                 </li>
 
                 <li class="nav-item active">
-                    <a class="nav-link" href="home">Home </a>
+                    <a class="nav-link" href="/home">Home </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -65,11 +64,11 @@
                         Films
                     </a>
                     <div class="dropdown-menu slideIn" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="esdla">The Lords Of The Rings</a>
-                        <a class="dropdown-item" href="sw">Star Wars</a>
-                        <a class="dropdown-item" href="dc">DC</a>
+                        <a class="dropdown-item" href="/Peliculas/esdla">The Lords Of The Rings</a>
+                        <a class="dropdown-item" href="/Peliculas/starwars">Star Wars</a>
+                        <a class="dropdown-item" href="/Peliculas/dc">DC</a>
                         <!--<div class="dropdown-divider"></div>-->
-                        <a class="dropdown-item" href="marvel">Marvel</a>
+                        <a class="dropdown-item" href="/Peliculas/marvel">Marvel</a>
                     </div>
                 </li>
 
@@ -78,11 +77,14 @@
                         data-toggle="dropdown" aria-expanded="false">
                         Series
                     </a>
+
                     <div class="dropdown-menu slideIn" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="got">Game of thrones</a>
-                        <a class="dropdown-item" href="wd">Walking Dead</a>
-                        <a class="dropdown-item" href="pk">Peaky Blinders</a>
-                        <a class="dropdown-item" href="tb">The Boys</a>
+
+                        <a class="dropdown-item" href="/Series/got">Game of thrones</a>
+                        <a class="dropdown-item" href="/Series/walkingdead">Walking Dead</a>
+                        <a class="dropdown-item" href="/Series/peakyblinders">Peaky Blinders</a>
+                        <a class="dropdown-item" href="/Series/theboys">The Boys</a>
+                        
                     </div>
                 </li>
 
@@ -92,19 +94,19 @@
                         Videogames
                     </a>
                     <div class="dropdown-menu slideIn" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="mk">Mortal Kombat</a>
-                        <a class="dropdown-item" href="dmc">Devil May Cry</a>
-                        <a class="dropdown-item" href="gow">God Of War</a>
-                        <a class="dropdown-item" href="re">Resident Evil</a>
+                        <a class="dropdown-item" href="/Videojuegos/mk">Mortal Kombat</a>
+                        <a class="dropdown-item" href="/Videojuegos/dmc">Devil May Cry</a>
+                        <a class="dropdown-item" href="/Videojuegos/gow">God Of War</a>
+                        <a class="dropdown-item" href="/Videojuegos/re">Resident Evil</a>
                     </div>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="pedidos">Orders</a>
+                    <a class="nav-link" href="oftb_pedidos">Orders</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="contacto">Contact</a>
+                    <a class="nav-link" href="oftb_contacto">Contact</a>
                 </li>
             </ul>
             <div class="text-center">

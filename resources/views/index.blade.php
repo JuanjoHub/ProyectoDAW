@@ -33,7 +33,7 @@
 
     <nav class="navbar navbar-expand-lg fixed-top navbar-drop" style="background: rgba(0, 0, 0, 0.5);">
 
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="/home">
 
             Out of the box
         </a>
@@ -57,8 +57,7 @@
                     <div class="dropdown-menu slideIn" aria-labelledby="navbarDropdown">
                         <form class="form mr-2 ml-2 form-inline my-2 my-lg-0">
                             <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                           
-                          </form>
+                        </form>
                     </div>
                 </li>
 
@@ -71,11 +70,11 @@
                         Films
                     </a>
                     <div class="dropdown-menu slideIn" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="esdla">The Lords Of The Rings</a>
-                        <a class="dropdown-item" href="sw">Star Wars</a>
-                        <a class="dropdown-item" href="dc">DC</a>
+                        <a class="dropdown-item" href="Peliculas/esdla">The Lords Of The Rings</a>
+                        <a class="dropdown-item" href="Peliculas/starwars">Star Wars</a>
+                        <a class="dropdown-item" href="Peliculas/dc">DC</a>
                         <!--<div class="dropdown-divider"></div>-->
-                        <a class="dropdown-item" href="marvel">Marvel</a>
+                        <a class="dropdown-item" href="Peliculas/marvel">Marvel</a>
                     </div>
                 </li>
 
@@ -85,10 +84,10 @@
                         Series
                     </a>
                     <div class="dropdown-menu slideIn" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="got">Game of thrones</a>
-                        <a class="dropdown-item" href="wd">Walking Dead</a>
-                        <a class="dropdown-item" href="pk">Peaky Blinders</a>
-                        <a class="dropdown-item" href="tb">The Boys</a>
+                        <a class="dropdown-item" href="Series/got">Game of thrones</a>
+                        <a class="dropdown-item" href="Series/walkingdead">Walking Dead</a>
+                        <a class="dropdown-item" href="Series/peakyblinders">Peaky Blinders</a>
+                        <a class="dropdown-item" href="Series/theboys">The Boys</a>
                     </div>
                 </li>
 
@@ -98,10 +97,10 @@
                         Videogames
                     </a>
                     <div class="dropdown-menu slideIn" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="mk">Mortal Kombat</a>
-                        <a class="dropdown-item" href="dmc">Devil May Cry</a>
-                        <a class="dropdown-item" href="gow">God Of War</a>
-                        <a class="dropdown-item" href="re">Resident Evil</a>
+                        <a class="dropdown-item" href="Videojuegos/mk">Mortal Kombat</a>
+                        <a class="dropdown-item" href="Videojuegos/dmc">Devil May Cry</a>
+                        <a class="dropdown-item" href="Videojuegos/gow">God Of War</a>
+                        <a class="dropdown-item" href="Videojuegos/re">Resident Evil</a>
                     </div>
                 </li>
 

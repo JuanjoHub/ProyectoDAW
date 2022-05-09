@@ -23,58 +23,22 @@ Route::get('/', function () {
 /*Index */
 Route::get('/home', HomeController::class);
 
-/*Peliculas 
-Route::get('Peliculas/{nombre}', PeliculasController::class,'oftb_peliculas_dc');
-Route::get('Peliculas/{nombre}', PeliculasController::class,'oftb_peliculas_marvel');
-Route::get('Peliculas/{nombre}', PeliculasController::class,'oftb_peliculas_esdla');
-Route::get('Peliculas/{nombre}', PeliculasController::class,'oftb_peliculas_starwars');
-*/
 
-Route::get('Peliculas/{franquicia}', [PeliculasController::class,'selectfranquicia']);
+/* Ruta para las peliculas */
+Route::get('Peliculas/{saga_peliculas}', [PeliculasController::class,'selectfranquicia']);
 
-/*
-Route::get('Peliculas/dc', [PeliculasController::class,'dc']);
-Route::get('Peliculas/marvel', [PeliculasController::class,'marvel']);
-Route::get('Peliculas/esdla', [PeliculasController::class,'tlotr']);
-Route::get('Peliculas/sw', [PeliculasController::class,'sw']);
-*/
-/*
-Route::get('/dc', function () {
-    return view('oftb_peliculas_dc');
-});
+Route::get('Series/{saga_serie}', [SeriesController::class,'selectSeries']);
 
-Route::get('/esdla', function () {
-    return view('oftb_peliculas_esdla');
-});
 
-Route::get('/marvel', function () {
-    return view('oftb_peliculas_marvel');
-});
+Route::get('Videojuegos/{saga_juego}', [SeriesController::class,'selectSeries']);
 
-Route::get('/sw', function () {
-    return view('oftb_peliculas_starwars');
-});
-*/
-/*Series */
 
-Route::get('/got', function () {
-    return view('oftb_series_got');
-});
 
-Route::get('/pk', function () {
-    return view('oftb_series_peakyblinders');
-});
 
-Route::get('/tb', function () {
-    return view('oftb_series_theboys');
-});
-
-Route::get('/wd', function () {
-    return view('oftb_series_walkingdead');
-});
 
 /*Juegos */
 
+/*
 Route::get('/Videojuegos/dmc', function () {
     
     return view('Videojuegos.oftb_juegos_dmc');
@@ -91,6 +55,7 @@ Route::get('/Videojuegos/mk', function () {
 Route::get('/Videojuegos/re', function () {
     return view('Videojuegos.oftb_juegos_re');
 });
+*/
 
 /*Contacto */
 
