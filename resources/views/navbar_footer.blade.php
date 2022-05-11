@@ -65,10 +65,10 @@
                         Films
                     </a>
                     <div class="dropdown-menu slideIn" aria-labelledby="navbarDropdown">
+                    
                         <a class="dropdown-item" href="/Peliculas/esdla">The Lords Of The Rings</a>
                         <a class="dropdown-item" href="/Peliculas/starwars">Star Wars</a>
                         <a class="dropdown-item" href="/Peliculas/dc">DC</a>
-                        <!--<div class="dropdown-divider"></div>-->
                         <a class="dropdown-item" href="/Peliculas/marvel">Marvel</a>
                     </div>
                 </li>
@@ -95,6 +95,7 @@
                         Videogames
                     </a>
                     <div class="dropdown-menu slideIn" aria-labelledby="navbarDropdown">
+
                         <a class="dropdown-item" href="/Videojuegos/mk">Mortal Kombat</a>
                         <a class="dropdown-item" href="/Videojuegos/dmc">Devil May Cry</a>
                         <a class="dropdown-item" href="/Videojuegos/gow">God Of War</a>

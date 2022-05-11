@@ -7,7 +7,8 @@
     <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Out of the box</title>
-    <link rel="stylesheet" href="../CSS_OFTB/css_login.css">
+    <link rel="stylesheet" href="../css/css_login.css">
+  
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -78,7 +79,7 @@
         <div class="right">
 
             <div class="d-flex align-items-end flex-column " style="height: 150px;">
-                <div class="p-4"> <a href="index.html"><i class="fa-solid fa-xmark fa-3x icon_color"></i></a>
+                <div class="p-4"> <a href="/home"><i class="fa-solid fa-xmark fa-3x icon_color"></i></a>
                 </div>
             </div>
             

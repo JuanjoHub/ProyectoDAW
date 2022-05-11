@@ -12,7 +12,7 @@
 .jumbotron_esdla {
     background-image: url(../Imagenes_OFTB/Images_jumbotron/Peliculas/esdla_jumbotron.jpg);
     background-size: cover;
-    height: 650px;
+    height: 625px;
 
 }
 
@@ -20,21 +20,21 @@
 .jumbotron_starwars {
     background-image: url(../Imagenes_OFTB/Images_jumbotron/Peliculas/starwars4_jumbotron.png);
     background-size: cover;
-    height: 650px;
+    height: 625px;
 
 }
 
 .jumbotron_dc {
     background-image: url(../Imagenes_OFTB/Images_jumbotron/Peliculas/suicide_squad_jumbotron.jpg);
     background-size: cover;
-    height: 650px;
+    height: 625px;
 
 }
 
 .jumbotron_marvel {
     background-image: url(../Imagenes_OFTB/Images_jumbotron/Peliculas/marvel5_jumbotron.jpg);
     background-size: cover;
-    height: 650px;
+    height: 625px;
 
 }
 
@@ -45,7 +45,7 @@
 .jumbotron_got {
   background-image: url(../Imagenes_OFTB/Images_jumbotron/Series/got5_jumbotron.jpg);
   background-size: cover;
-  height: 650px;
+  height: 625px;
 
 }
 
@@ -53,21 +53,21 @@
 .jumbotron_wd {
   background-image: url(../Imagenes_OFTB/Images_jumbotron/Series/wd_jumbotron.jpg);
   background-size: cover;
-  height: 650px;
+  height: 625px;
 
 }
 
 .jumbotron_pk {
   background-image: url(../Imagenes_OFTB/Images_jumbotron/Series/pk_jumbotron.jpg);
   background-size: cover;
-  height: 650px;
+  height: 625px;
 
 }
 
 .jumbotron_tb {
   background-image: url(../Imagenes_OFTB/Images_jumbotron/Series/tb_jumbotron.jpg);
   background-size: cover;
-  height: 650px;
+  height: 625px;
 
 }
 
@@ -80,7 +80,7 @@
 .jumbotron_mk {
   background-image: url(../Imagenes_OFTB/Images_jumbotron/Videojuegos/mk11_2_jumbotron.jpg);
   background-size: cover;
-  height: 650px;
+  height: 625px;
 
 }
 
@@ -88,7 +88,7 @@
 .jumbotron_dmc {
   background-image: url(../Imagenes_OFTB/Images_jumbotron/Videojuegos/dmc3_jumbotron.jpg);
   background-size: cover;
-  height: 650px;
+  height: 625px;
  
 
 }
@@ -96,14 +96,14 @@
 .jumbotron_gow {
   background-image: url(../Imagenes_OFTB/Images_jumbotron/Videojuegos/gow2_jumbotron.jpg);
   background-size: cover;
-  height: 650px;
+  height: 625px;
 
 }
 
 .jumbotron_re {
   background-image: url(../Imagenes_OFTB/Images_jumbotron/Videojuegos/re3_jumbotron.jpg);
   background-size: cover;
-  height: 650px;
+  height: 625px;
 
 }
 
@@ -114,14 +114,14 @@
 .jumbotron_pedidos {
   background-image: url(../Imagenes_OFTB/Images_jumbotron/pedidos2_jumbotron.jpg);
   background-size: cover;
-  height: 650px;
+  height: 625px;
 
 }
 
 
 .jumbotron h1{
   position: absolute;
-  bottom: 30%;
+  bottom: 33%;
   left: 3%;
   
 }

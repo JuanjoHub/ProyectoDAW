@@ -28,6 +28,9 @@ class PeliculasController extends Controller
         }
     }
 
+
+   
+
     
 }
 

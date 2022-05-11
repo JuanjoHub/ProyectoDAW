@@ -23,7 +23,6 @@ Route::get('/', function () {
 /*Index */
 Route::get('/home', HomeController::class);
 
-
 /* Ruta para las peliculas */
 Route::get('Peliculas/{saga_peliculas}', [PeliculasController::class,'selectfranquicia']);
 

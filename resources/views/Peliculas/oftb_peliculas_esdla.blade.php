@@ -21,15 +21,15 @@
         <div class="row mb-2">
             @foreach ($articulo_peliculas as $articulo)
                 @if ($articulo->cod_categoria == 3)
-                    <div class="col-md-6 col-lg-4 mb-4 mb-4">
-                        <div class="card p-3 text-right bg-transparent" style="border: none;">
-                            <blockquote class="blockquote mb-0">
+                    <div class="col-md-6 col-lg-4  col-sm-6 mb-4">
+                        <div class="card p-3 text-right bg-transparent" style="border: none; background-image:url(..{{$articulo->imagen}});">
+                        </div>
+                         <blockquote class="blockquote mt-1">
                                 <div class="d-flex justify-content-between">
                                     <p>{{ $articulo->nombre_articulo }}</p>
                                     <p class="font-weight-bold">{{ $articulo->precio }} €</p>
                                 </div>
                             </blockquote>
-                        </div>
                     </div>
                 @endif
             @endforeach

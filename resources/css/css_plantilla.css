@@ -163,7 +163,7 @@ a:hover {
 /*********************CARTAS***********************/
 .card {
 
-  background-image: url(../Imagenes_OFTB/Imagen_cards/peacemakerhelmet3.jpg);
+  /*background-image: url(../Imagenes_OFTB/Imagen_cards/peacemakerhelmet3.jpg);*/
   background-size: 100%;
   background-repeat: no-repeat;
   height: 170px;
