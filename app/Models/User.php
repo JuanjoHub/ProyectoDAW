@@ -17,10 +17,14 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+     /* Metodo que proporciona laravel para en el que indicamos que campos va a rellenar cuando ingresemos un usario */
     protected $fillable = [
-        'name',
         'email',
+        'nombre_usuario',
         'password',
+        'fecha_nacimiento',
+        'telefono',
     ];
 
     /**
@@ -41,4 +45,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    /* Metodo para poder encriptar la contraseña */
+    /*Mutator */
+    public function setPasswordAttribute($value){
+        $this->attributes['password'] = bcrypt($value);
+    }
 }

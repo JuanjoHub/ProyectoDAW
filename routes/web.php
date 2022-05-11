@@ -3,8 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PeliculasController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SeriesController;
 use App\Http\Controllers\VideojuegosController;
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,9 +43,9 @@ Route::get('/login', function () {
     return view('oftb_login');
 });
 
-Route::get('/registro', function () {
-    return view('oftb_registro');
-});
+Route::get('/registro', [RegisterController::class,'show']);
+
+Route::post('/registro', [RegisterController::class,'register']);
 
 Route::get('/prev_prod', function () {
     return view('oftb_prev_prod');
