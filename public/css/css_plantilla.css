@@ -57,29 +57,53 @@ a.navbar-brand {
   font-weight: bold;
 }
 
-
-
 /*********************DROPDOWNS NAVBAR***********************/
-
-
 .navbar-drop .navbar-nav>li>.dropdown-menu {
   background: rgba(0, 0, 0, 0.5) !important;
   margin-top: 16px;
+   
 }
 
-.navbar-drop .navbar-nav>li>.dropdown-menu>li>a {
-  color: white;
+/*******************************************************/
+/********************ENLACES***************************/
+/*****************************************************/
+
+
+/*Estilos de los enlaces*/
+a:link,
+a:visited,
+a:active {
+  text-decoration: none !important;
+}
+
+a {
+  color: white !important;
+}
+
+a:hover {
+  transition: 1s;
+  color: red !important;
+  border-radius: 50px;
+
+}
+
+
+
+/* .navbar-drop .navbar-nav>li>.dropdown-menu>li>a {
+  color: red;
+  
 }
 
 .navbar-drop .navbar-nav>li>.dropdown-menu>li>a:hover,
 .navbar-drop .navbar-nav>li>.dropdown-menu>li>a:focus {
-  color: white;
+  color: white !important;
   background: rgba(0, 0, 0, 0.5) !important;
+  
 }
 
 .navbar-drop .navbar-nav>li>.dropdown-menu>li>.divider {
   background: rgba(0, 0, 0, 0.5) !important;
-}
+} */
 
 /**************ANIMACION DE LOS DROPDOWNS*******************/
 
@@ -132,31 +156,6 @@ a.navbar-brand {
   .form-control {
     width: 400px !important;
   }
-}
-
-
-
-
-/*******************************************************/
-/********************ENLACES***************************/
-/*****************************************************/
-
-
-/*Estilos de los enlaces*/
-a:link,
-a:visited,
-a:active {
-  text-decoration: none !important;
-}
-
-a {
-  color: white !important;
-}
-
-a:hover {
-  transition: 1s;
-  color: red !important;
-
 }
 
 /*********************CARTAS***********************/

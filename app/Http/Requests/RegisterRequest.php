@@ -25,12 +25,11 @@ class RegisterRequest extends FormRequest
     {
         return [
             //reglas que implementaremos para la validacion
-            'email'=>'required',
-            'nombre_usuario'=>'required|unique:users,nombre_usuario',
+            'email'=>'required|unique:users,email',
+            'username'=>'required|unique:users,username',
             'password'=>'required|min:8',
             'password_confirmation'=>'required|same:password',
-            'fecha_nacimiento'=>'required',
-            'telefono'=>'required',
+            
         ];
     }
 }

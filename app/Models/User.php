@@ -20,11 +20,10 @@ class User extends Authenticatable
 
      /* Metodo que proporciona laravel para en el que indicamos que campos va a rellenar cuando ingresemos un usario */
     protected $fillable = [
+        'name',
         'email',
-        'nombre_usuario',
+        'username',
         'password',
-        'fecha_nacimiento',
-        'telefono',
     ];
 
     /**

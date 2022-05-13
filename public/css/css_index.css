@@ -44,3 +44,16 @@ body {
     text-transform: uppercase;
     font-weight: bold;
 }
+
+i {
+    color: white !important;
+  }
+  
+i:hover {
+    transition: 1s;
+    color: red !important;
+    border-radius: 50px;
+  
+  }
+
+  

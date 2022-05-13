@@ -41,7 +41,6 @@
             <div class="container">
 
                 <!--Div que va a contener el logo y el formulario-->
-
                 <div>
                     <!--Logo-->
                     <div class="div_logo1 mt-5">
@@ -52,12 +51,12 @@
                     <!----------------------------------------------------------------------->
                     <form action="/registro" method="POST">
                         @csrf <!-- Agrega nuetro campo oculto para poder utilizar nuestro token y evitar problemas de seguridad-->
-
+                        @include('Mensajes.mensajes')
                         <!--Nombre / email-->
                         <div class="form-row font-weight-bold mb-2">
                             <div class="form-group col-md-6 text-left">
                                 <label>Name</label>
-                                <input type="text" class="form-control text-white" name="nombre_usuario" id="inputEmail4"
+                                <input type="text" class="form-control text-white" name="username" id="inputEmail4"
                                     placeholder="Nick name">
                             </div>
                             <div class="form-group col-md-6 text-left">

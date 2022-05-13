@@ -12,6 +12,8 @@
     <link rel="stylesheet" type="text/css" href="{!! asset('css/css_index.css') !!}">
     <link rel="stylesheet" type="text/css" href="{!! asset('css/css_plantilla.css') !!}">
 
+    
+
     <!--CSS animado-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
@@ -113,8 +115,83 @@
                 </li>
             </ul>
             <div class="text-center">
-                <a href="login" class="text-white mr-2"><i class="fa-solid fa-user-tie mr-2 "></i>Sign in</a>
-                <a href="registro" class="text-white"><i class="fa-solid fa-address-card mr-2"></i>Sing up</a>
+        {{-----------------------------------------}}
+        {{-- Si estas logeado visitando la pagina--}}
+        {{-----------------------------------------}}
+                @auth
+           
+                    <ul class="navbar-nav mr-auto ml-auto">
+                    {{-- Primer elemento --}}
+                        <li class="nav-item mr-2">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-expanded="false">
+                                    {{ auth()->user()->username }}
+                            </a>
+                           
+                        </li>
+
+                           <li class="nav-item mr-2">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-expanded="false">
+                                   <i class="fa-solid fa-user-tie"></i>
+                            </a>
+                           
+                        </li>
+                    {{-- Segundo elemento --}}
+                    
+                         <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-expanded="false">
+                                
+                                    <i class="fas fa-bars" style="color:#fff; font-size:28px; heigth"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right slideIn text-center" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Orders</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/logout">Logout</a>
+                            </div>    
+                        </li>
+
+                    </ul>
+                     
+                @endauth
+
+            {{------------------------------------------------}}
+            {{-- Si estas como invitado visitando la pagina --}}
+            {{------------------------------------------------}}
+                @guest
+
+                 <ul class="navbar-nav mr-auto ml-auto">
+
+                        <li class="nav-item mr-2">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-expanded="false">
+                                   Login
+                            </a>
+                           
+                        </li>
+
+
+
+
+                   <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-expanded="false">
+                                
+                                    <i class="fas fa-bars" style="color:#fff; font-size:28px; heigth"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right slideIn text-center" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/login"></i>Sign in</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/registro">Sign up</a>
+                            </div>    
+                        </li>
+                 </ul>
+
+{{-- 
+                  <a href="login" class="text-white mr-2"><i class="fa-solid fa-user-tie mr-2 "></i>Sign in</a>
+                    <a href="registro" class="text-white"><i class="fa-solid fa-address-card mr-2"></i>Sing up</a> --}}
+                @endguest
             </div>
         </div>
 
@@ -189,20 +266,21 @@
     </div>
 
 
-     <!--CARTAS DE PRODUCTOS-->
+    <!--CARTAS DE LAS ULTIMAS NOVEDADES-->
     <div class="container">
         <div class="row">
-            @foreach ($novedades as $novedad) 
-                    <div class="col-md-6 col-lg-4  col-sm-6 mb-4">
-                        <div class="card p-3 text-right bg-transparent" style="border: none; background-image:url(..{{$novedad->imagen}});">
-                        </div>
-                         <blockquote class="blockquote mt-1">
-                                <div class="d-flex justify-content-between">
-                                    <p>{{ $novedad->nombre_articulo }}</p>
-                                    <p class="font-weight-bold">{{ $novedad->precio }} €</p>
-                                </div>
-                            </blockquote>
+            @foreach ($novedades as $novedad)
+                <div class="col-md-6 col-lg-4  col-sm-6 mb-4">
+                    <div class="card p-3 text-right bg-transparent"
+                        style="border: none; background-image:url(..{{ $novedad->imagen }});">
                     </div>
+                    <blockquote class="blockquote mt-1">
+                        <div class="d-flex justify-content-between">
+                            <p>{{ $novedad->nombre_articulo }}</p>
+                            <p class="font-weight-bold">{{ $novedad->precio }} €</p>
+                        </div>
+                    </blockquote>
+                </div>
             @endforeach
         </div>
     </div>
@@ -216,20 +294,21 @@
         </div>
     </div>
 
-      <!--CARTAS DE PRODUCTOS-->
+    <!--CARTAS DE PRODUCTOS MAS VENDIDOS-->
     <div class="container">
         <div class="row mb-2">
-            @foreach ($masvendidos as $vendido) 
-                    <div class="col-md-6 col-lg-4  col-sm-6 mb-4">
-                        <div class="card p-3 text-right bg-transparent" style="border: none; background-image:url(..{{$vendido->imagen}});">
-                        </div>
-                         <blockquote class="blockquote mt-1">
-                                <div class="d-flex justify-content-between">
-                                    <p>{{ $vendido->nombre_articulo }}</p>
-                                    <p class="font-weight-bold">{{ $vendido->precio }} €</p>
-                                </div>
-                            </blockquote>
+            @foreach ($masvendidos as $vendido)
+                <div class="col-md-6 col-lg-4  col-sm-6 mb-4">
+                    <div class="card p-3 text-right bg-transparent"
+                        style="border: none; background-image:url(..{{ $vendido->imagen }});">
                     </div>
+                    <blockquote class="blockquote mt-1">
+                        <div class="d-flex justify-content-between">
+                            <p>{{ $vendido->nombre_articulo }}</p>
+                            <p class="font-weight-bold">{{ $vendido->precio }} €</p>
+                        </div>
+                    </blockquote>
+                </div>
             @endforeach
         </div>
     </div>

@@ -112,8 +112,71 @@
                 </li>
             </ul>
             <div class="text-center">
-                <a href="login" class="text-white mr-2"><i class="fa-solid fa-user-tie mr-2 "></i>Sign in</a>
-                <a href="registro" class="text-white"><i class="fa-solid fa-address-card mr-2"></i>Sing up</a>
+                {{-- ------------------------------------- --}}
+                {{-- Si estas logeado visitando la pagina --}}
+                {{-- ------------------------------------- --}}
+                @auth
+
+                    <ul class="navbar-nav mr-auto ml-auto">
+                        {{-- Primer elemento --}}
+                        <li class="nav-item mr-2">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-expanded="false">
+                                {{ auth()->user()->username }}
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item mr-2 mt-1">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="fa-solid fa-user-tie"></i>
+                            </a>
+
+                        </li>
+                        {{-- Segundo elemento --}}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-expanded="false">
+
+                                <i class="fas fa-bars" style="color:#fff; font-size:28px; heigth"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right slideIn text-center"
+                                aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Orders</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/logout">Logout</a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                @endauth
+
+                {{-- -------------------------------------------- --}}
+                {{-- Si estas como invitado visitando la pagina --}}
+                {{-- -------------------------------------------- --}}
+                @guest
+
+                    <ul class="navbar-nav mr-auto ml-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-expanded="false">
+
+                                <i class="fas fa-bars" style="color:#fff; font-size:28px; heigth"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right slideIn text-center"
+                                aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/login"></i>Sign in</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/registro">Sign up</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                    {{-- <a href="login" class="text-white mr-2"><i class="fa-solid fa-user-tie mr-2 "></i>Sign in</a>
+                    <a href="registro" class="text-white"><i class="fa-solid fa-address-card mr-2"></i>Sing up</a> --}}
+                @endguest
             </div>
         </div>
 

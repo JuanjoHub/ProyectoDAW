@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Contracts\Validation\Factory as ValidationFactory;
 
 class LoginRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class LoginRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +25,33 @@ class LoginRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+
+            'username' => 'required',
+            'password'=> 'required'
         ];
     }
+
+    public function getCredentials(){
+
+        $username = $this->get('username');
+
+        if ($this->isEmail($username)){
+            return [
+                'email' => $username,
+                'password' => $this->get('password')
+            ];
+        }
+
+        return $this->only('username','password');
+    }
+
+    public function isEmail($value){
+
+        $factory = $this->container->make(ValidationFactory::class);
+        //Usamos la clase factory que hemos importado arriba que ya contiene expresiones regulares
+        return !$factory->make(['username' => $value],['username' => 'email'])->fails();
+        //retornamos un boolean para verificar si es correcto o no, y se lo pasamos al metodo de arriba
+    }
+
+
 }
