@@ -12,6 +12,8 @@ use App\Http\Controllers\PeliculasController;
 use App\Http\Controllers\SeriesController;
 use App\Http\Controllers\VideojuegosController;
 
+use App\Http\Controllers\PedidosController;
+
 use App\Models\User;
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +51,8 @@ Route::get('Series/{saga_serie}', [SeriesController::class,'selectSeries']);
 
 Route::get('Videojuegos/{saga_juego}', [VideojuegosController::class,'selectJuegos']);
 
+/*Pedidos*/
+Route::get('/pedidos', [PedidosController::class,'show']);
 
 
 

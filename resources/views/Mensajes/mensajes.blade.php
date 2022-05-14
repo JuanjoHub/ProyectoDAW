@@ -13,10 +13,10 @@
 @endif
 
 
-@if (Session::get('success', false))
-    <?php $data = Session::get('success'); ?>
+{{-- @if (Session::get('success', false))
+    <?php //$data = Session::get('success'); ?>
     @if (is_array($data))
-        @foreach ($data as $msg)
+        @foreach ($data as $message)
             <div class="alert alert-success text-left">
                 <i class="fa fa-check"></i>
                 {{ $message }}
@@ -28,4 +28,4 @@
             {{ $message }}
         </div>
     @endif
-@endif
+@endif --}}
