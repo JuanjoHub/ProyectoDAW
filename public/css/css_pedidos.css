@@ -1,19 +1,195 @@
+/*Import de los fuentes*/
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bebas+Neue&family=Berkshire+Swash&family=Orelega+One&family=Paytone+One&display=swap');
 
-.titulos_pedidos{
-    
-    background: rgba(0, 0, 0, 0.5) !important;
+body {
 
+    background-color: rgb(40, 40, 40) !important;
 }
 
-
-.cells_pedidos{
-    
-    background-color: #616161 ;
-
+p,
+tr,
+td,
+h6,
+th {
+    color: white;
 }
+/* 
+.titulos_pedidos {
+   background: rgba(0, 0, 0, 0.5) !important;
+}
+.cells_pedidos {
 
-/*Hover de la tabla de pedidos*/
-.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: #616161;
+}
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
     transition: 0.5s;
     background-color: #424242;
-  }
+} */
+
+
+/*Hover de la tabla de pedidos*/
+.mydivpedidos{
+    background-color:#424242;
+}
+
+.mydivpedidos:hover{
+    transition: 0.75s;
+    background-color: rgb(40, 40, 40);
+}
+
+.jumbotron h1 {
+    font-family: 'Bebas Neue', cursive;
+}
+
+/*********************NAVBAR***********************/
+
+a.navbar-brand {
+    font-size: 25px;
+    font-weight: bold !important;
+}
+
+.mynav a {
+
+    color: white !important;
+    /*Important para hacer override a bootstrap*/
+    font-weight: bold;
+    /*
+    border-bottom: 2px solid transparent;
+    transition-duration: 0.6s;
+    */
+}
+
+@media only screen and (max-width: 0px) {
+    .navbar-inverse .navbar-brand {
+        font-size: 30px;
+        padding: 20x 15px;
+    }
+
+    .navbar-collapse {
+        background: rgba(0, 0, 0, 0.5) !important;
+    }
+}
+
+/*El div que separa el brand del menu en el segundo navbar*/
+#navbarSupportedContent {
+    /* margin-left: 0px;*/
+    font-weight: bold;
+}
+
+/*********************DROPDOWNS NAVBAR***********************/
+.navbar-drop .navbar-nav>li>.dropdown-menu {
+    background: rgba(0, 0, 0, 0.5) !important;
+    margin-top: 16px;
+
+}
+
+/*******************************************************/
+/********************ENLACES***************************/
+/*****************************************************/
+
+
+/*Estilos de los enlaces*/
+a:link,
+a:visited,
+a:active {
+    text-decoration: none !important;
+}
+
+a {
+    color: white !important;
+}
+
+a:hover {
+    transition: 1s;
+    color: red !important;
+    border-radius: 50px;
+
+}
+
+
+
+/**************ANIMACION DE LOS DROPDOWNS*******************/
+
+@keyframes slideIn {
+
+    from {
+        transform: translateY(-40%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+.slideIn {
+    animation-duration: 0.5s;
+    animation-name: slideIn;
+}
+
+
+
+
+
+/*****************************FOOTER******************************/
+
+/*Color del 1 footer*/
+.my1footer {
+    background-color: #616161 !important;
+}
+
+/*Color del 2 footer*/
+.my2footer {
+    background-color: #424242;
+}
+
+/*Color del 3 footer*/
+.my3footer {
+
+    background-color: #212121;
+}
+
+/*Color de los hr del footer*/
+.myhrfooter {
+    background-color: red;
+}
+
+/*Color de los iconos */
+.icon-red {
+    color: white;
+}
+
+
+.icon-red:hover {
+    transition: 1s;
+    color: red;
+    transform: scale(1.15);
+}
+
+/*********************PAGINATION***********************/
+
+a.page-link {
+    background-color: #424242;
+    color: white !important;
+    border: none;
+    border-radius: 40px;
+
+}
+
+.current_page {
+    background-color: red !important;
+    color: white !important;
+}
+
+.current_page:hover {
+    background-color: white !important;
+    color: red !important;
+}
+
+a.page-link:hover {
+    background-color: red !important;
+    color: white !important;
+
+}

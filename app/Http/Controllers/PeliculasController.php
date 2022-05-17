@@ -23,7 +23,7 @@ class PeliculasController extends Controller
                 return view($url . $saga_peliculas, ['nombre' => $saga_peliculas],['articulo_peliculas' => $articulo]);
                 break;
         default:
-                return view('home');
+                return view('/home');
                 break;
         }
     }

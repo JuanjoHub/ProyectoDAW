@@ -22,7 +22,7 @@
         <div class="row mb-2">
             @foreach ($articulo_peliculas as $articulo)
                 @if ($articulo->cod_categoria == 1)
-                    <div class="col-md-6 col-lg-4  col-sm-6 mb-2">
+                    <div class="col-md-6 col-lg-4 col-sm-6 mb-2">
                         <div class="card p-3 text-right bg-transparent" style="border: none; background-image:url(..{{$articulo->imagen}});">
                         </div>
                          <blockquote class="blockquote mt-1">

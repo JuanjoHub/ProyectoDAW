@@ -12,8 +12,6 @@
     <link rel="stylesheet" type="text/css" href="{!! asset('css/css_index.css') !!}">
     <link rel="stylesheet" type="text/css" href="{!! asset('css/css_plantilla.css') !!}">
 
-    
-
     <!--CSS animado-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
@@ -107,10 +105,6 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="pedidos">Orders</a>
-                </li>
-
-                <li class="nav-item">
                     <a class="nav-link" href="contacto">Contact</a>
                 </li>
             </ul>
@@ -146,7 +140,7 @@
                                     <i class="fas fa-bars" style="color:#fff; font-size:28px; heigth"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right slideIn text-center" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Orders</a>
+                                <a class="dropdown-item" href="/pedidos">Orders</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/logout">Logout</a>
                             </div>    

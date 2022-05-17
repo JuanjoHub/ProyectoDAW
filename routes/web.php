@@ -52,7 +52,7 @@ Route::get('Series/{saga_serie}', [SeriesController::class,'selectSeries']);
 Route::get('Videojuegos/{saga_juego}', [VideojuegosController::class,'selectJuegos']);
 
 /*Pedidos*/
-Route::get('/pedidos', [PedidosController::class,'show']);
+Route::get('/pedidos', [PedidosController::class,'show','datos']);
 
 
 
