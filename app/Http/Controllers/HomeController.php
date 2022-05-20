@@ -16,8 +16,6 @@ class HomeController extends Controller
          //Query para seleccionar los ultimos 6 articulos
         $novedades = DB::select('select * from articulos order by fecha_insercion desc LIMIT 6 ');
 
-     
-     
         return view('index',['masvendidos' => $artMV], ['novedades' => $novedades]);
     }
 }

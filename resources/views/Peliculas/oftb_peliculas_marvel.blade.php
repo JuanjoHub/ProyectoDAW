@@ -20,15 +20,39 @@
         <div class="row mb-2">
             @foreach ($articulo_peliculas as $articulo)
                 @if ($articulo->cod_categoria == 2)
-                    <div class="col-md-6 col-lg-4  col-sm-6 mb-4">
-                        <div class="card p-3 text-right bg-transparent" style="border: none; background-image:url(..{{$articulo->imagen}});">
+                    <div class="col-md-6 col-lg-4 col-sm-6 mb-2">
+
+                        <div class="card p-3 bg-transparent d-flex align-items-end"
+                            style="border: none; background-image:url(..{{ $articulo->imagen }});">
+                            <form action="/oftb_prev_prod" method="POST">
+                                @csrf
+                                <input type="hidden" name="cod_articulo" value="{{ $articulo->cod_articulo }}">
+                                <button type="submit" class="boton_detalles rounded-left rounded-right rounded-top">
+                                    View Details
+                                </button>
+                            </form>
                         </div>
-                         <blockquote class="blockquote mt-1">
-                                <div class="d-flex justify-content-between">
-                                    <p>{{ $articulo->nombre_articulo }}</p>
-                                    <p class="font-weight-bold">{{ $articulo->precio }} €</p>
-                                </div>
-                            </blockquote>
+
+                        <blockquote class="blockquote mt-1">
+                            <div class="d-flex justify-content-between">
+                                <p>{{ $articulo->nombre_articulo }}</p>
+                                <p class="font-weight-bold">{{ $articulo->precio }} €</p>
+                            </div>
+                        </blockquote>
+                        <div>
+
+                            {{-- <form action="{{ 'cart.store' }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="product_id" value="{{ $articulo->cod_articulo}}">
+                                    <input wire:model="quantity.{{ $articulo->cod_articulo}}" type="number"
+                                        class="text-sm sm:text-base px-2 pr-2 rounded-lg border border-gray-400 py-1 focus:outline-none focus:border-blue-400"
+                                        style="width: 50px" />
+                                    <button type="submit" class="bg-dark">
+                                        Add to Cart
+                                    </button>
+                                </form> --}}
+
+                        </div>
                     </div>
                 @endif
             @endforeach
@@ -40,23 +64,10 @@
     <!--------------------------PAGINATION------------------------------->
     <!------------------------------------------------------------------->
    
-    <div class="container text-center mb-5">
-        <nav>
-            <ul class="pagination pagination-lg justify-content-center ">
-                <!--PREVIO-->
-                <li class="page-item mr-2">
-                    <a class="page-link" href="#"><i class="fa-solid fa-angle-left"></i></a>
-                </li>
-                <!--PAGINAS-->
-                <li class="page-item mr-1"><a class="page-link" href="#">1</a></li>
-                <li class="page-item "><a class="page-link current_page" href="#">2</a></li>
-                <li class="page-item ml-1"><a class="page-link" href="#">3</a></li>
-                 <!--NEXT-->
-                <li class="page-item ml-2">
-                    <a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i></a>
-                </li>
-            </ul>
-        </nav>
+      <div class="container">
+        <div class="d-flex justify-content-center">
+            {{$articulo_peliculas->links()}}
+        </div>
     </div>
 
 

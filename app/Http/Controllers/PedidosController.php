@@ -32,8 +32,8 @@ class PedidosController extends Controller
         ->join('historial', 'facturas.cod_pedido', '=', 'historial.cod_pedido')
         ->join('articulos', 'facturas.cod_articulo', '=', 'articulos.cod_articulo')
         ->select('articulos.nombre_articulo', 'facturas.cantidad', 'articulos.precio')
-        ->where('historial.cod_pedido',$idUsuario)
-        ->where('historial.cod_pedido','facturas.cod_pedido')
+        ->where('historial.id',$idUsuario)
+        // ->where('historial.cod_pedido','=','facturas.cod_pedido')
         
         // ->where('facturas.cod_pedido','historial.cod_pedido')
         ->get();

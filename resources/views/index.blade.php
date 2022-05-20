@@ -265,8 +265,15 @@
         <div class="row">
             @foreach ($novedades as $novedad)
                 <div class="col-md-6 col-lg-4  col-sm-6 mb-4">
-                    <div class="card p-3 text-right bg-transparent"
+                    <div class="card p-3 text-right bg-transparent d-flex align-items-end"
                         style="border: none; background-image:url(..{{ $novedad->imagen }});">
+                         <form action="/oftb_prev_prod" method="POST">
+                                @csrf
+                                <input type="hidden" name="cod_articulo" value="{{ $novedad->cod_articulo }}">
+                                <button type="submit" class="boton_detalles rounded-left rounded-right rounded-top">
+                                    View Details
+                                </button>
+                            </form>
                     </div>
                     <blockquote class="blockquote mt-1">
                         <div class="d-flex justify-content-between">
@@ -293,8 +300,15 @@
         <div class="row mb-2">
             @foreach ($masvendidos as $vendido)
                 <div class="col-md-6 col-lg-4  col-sm-6 mb-4">
-                    <div class="card p-3 text-right bg-transparent"
+                    <div class="card p-3 text-right bg-transparent d-flex align-items-end"
                         style="border: none; background-image:url(..{{ $vendido->imagen }});">
+                        <form action="/oftb_prev_prod" method="POST">
+                                @csrf
+                                <input type="hidden" name="cod_articulo" value="{{ $vendido->cod_articulo }}">
+                                <button type="submit" class="boton_detalles rounded-left rounded-right rounded-top">
+                                    View Details
+                                </button>
+                            </form>
                     </div>
                     <blockquote class="blockquote mt-1">
                         <div class="d-flex justify-content-between">

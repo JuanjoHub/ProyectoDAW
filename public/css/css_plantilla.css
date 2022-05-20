@@ -80,31 +80,42 @@ a {
   color: white !important;
 }
 
-a:hover {
+.navbar a:hover {
   transition: 1s;
   color: red !important;
-  border-radius: 50px;
-
+  /* animation: pulse; 
+  animation-duration: 1s;  */
 }
 
 
 
-/* .navbar-drop .navbar-nav>li>.dropdown-menu>li>a {
-  color: red;
-  
+/*Boton de VIEW DETAILS*/
+.boton_detalles{
+  background-color:rgba(0, 0, 0, 0.5) !important; 
+  border:none; color:white !important; 
+  margin-top:180px !important;
+  cursor: pointer;
+ 
 }
 
-.navbar-drop .navbar-nav>li>.dropdown-menu>li>a:hover,
-.navbar-drop .navbar-nav>li>.dropdown-menu>li>a:focus {
-  color: white !important;
-  background: rgba(0, 0, 0, 0.5) !important;
-  
+.boton_detalles:hover{
+  transition: 0.75s;
+  background-color: red !important;
+
 }
 
-.navbar-drop .navbar-nav>li>.dropdown-menu>li>.divider {
-  background: rgba(0, 0, 0, 0.5) !important;
-} */
+/*/**************Estilos de los dropdowns/***************/
 
+.navbar .dropdown-menu a {
+  font-weight: bold;
+  /* background-color: red !important; */
+}
+.navbar .dropdown-menu a:hover {
+  transition: 1s;
+  color: red !important;
+  background-color: transparent !important ;
+  /* background-color: red !important; */
+}
 /**************ANIMACION DE LOS DROPDOWNS*******************/
 
 @keyframes slideIn {
@@ -215,11 +226,36 @@ a:hover {
   transition: 1s;
   color: red;
   transform: scale(1.15);
+  
 }
 
 /*********************PAGINATION***********************/
 
-a.page-link {
+
+ul.pagination{
+  
+  color: #212121;
+  border: none !important;
+}
+
+ul.pagination li a{
+  background-color: #212121 !important;
+  color: white !important;
+  margin-left: 2px;
+  border: none;
+}
+
+ul.pagination li a:hover{
+ background-color: red !important;
+}
+
+ul.pagination li span{
+  background-color: 616161 !important;
+  border-color: #212121 !important;
+  color: white;
+}
+
+/* a.page-link {
   background-color: #424242;
   color: white !important;
   border: none;
@@ -241,12 +277,12 @@ a.page-link:hover {
   background-color: red !important;
   color: white !important;
 
-}
+}  */
 
 
 
 /*********************POSIBLE BOTON DEL SEARCH***********************/
-.searchbar {
+/* .searchbar {
   margin-bottom: auto;
   margin-top: auto;
   height: 60px;
@@ -288,4 +324,4 @@ a.page-link:hover {
   border-radius: 50%;
   color: white;
   text-decoration: none;
-}
+} */

@@ -10,13 +10,21 @@
 /*********************CARTAS***********************/
 .card_imagen {
 
-    background-image: url(../Imagenes_OFTB/Imagen_cards/peacemakerhelmet3.jpg);
-    background-size: 100%;
+    /* background-image: url(../Imagenes_OFTB/Imagen_cards/peacemakerhelmet3.jpg); */
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     height: 322px;
     cursor: pointer;
   }
   
+  /*Iconos de check y de la cruz*/
+  .icon-green {
+    color: green;
+  }
+
+  .icon_stock{
+    color: red;
+  }
   
 
   /*********************CARTAS***********************/
