@@ -103,7 +103,6 @@ a {
 a:hover {
     transition: 1s;
     color: red !important;
-    border-radius: 50px;
 
 }
 
@@ -170,26 +169,26 @@ a:hover {
 
 /*********************PAGINATION***********************/
 
-a.page-link {
-    background-color: #424242;
+
+ul.pagination{
+  
+    color: #212121;
+    border: none !important;
+  }
+  
+  ul.pagination li a{
+    background-color: #212121 !important;
     color: white !important;
+    margin-left: 2px;
     border: none;
-    border-radius: 40px;
-
-}
-
-.current_page {
-    background-color: red !important;
-    color: white !important;
-}
-
-.current_page:hover {
-    background-color: white !important;
-    color: red !important;
-}
-
-a.page-link:hover {
-    background-color: red !important;
-    color: white !important;
-
-}
+  }
+  
+  ul.pagination li a:hover{
+   background-color: red !important;
+  }
+  
+  ul.pagination li span{
+    background-color: 616161 !important;
+    border-color: #212121 !important;
+    color: white;
+  }

@@ -48,18 +48,29 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto ml-auto">
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-expanded="false">
+               <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/home" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-search"></i>
                     </a>
-
-                    <div class="dropdown-menu slideIn" aria-labelledby="navbarDropdown">
-                        <form class="form mr-2 ml-2 form-inline my-2 my-lg-0">
-                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    {{-- ---- Barra de busqueda ---- --}}
+                   <div class="dropdown-menu slideIn" aria-labelledby="navbarDropdown">
+                        <form action="/home2" method='post' class="form mr-2 ml-2 form-group my-2 my-lg-0">
+                            @csrf
+                            <div class="d-flex">
+                                <div>
+                                    <input class="form-control " type="text" placeholder="Search" name="texto"
+                                        value="{{ $texto="" }}">  <!-- Inicializamos la variable aqui para que no pete-->
+                                </div>
+                                <div>
+                                    <input class="btn btn-danger ml-2" type="submit" value="Search">
+                                </div>
+                            </div>
                         </form>
-                    </div>
+                    </div> 
+                    {{-- ------------------------- --}}
                 </li>
+
 
                 <li class="nav-item active">
                     <a class="nav-link" href="home">Home </a>
@@ -109,81 +120,80 @@
                 </li>
             </ul>
             <div class="text-center">
-        {{-----------------------------------------}}
-        {{-- Si estas logeado visitando la pagina--}}
-        {{-----------------------------------------}}
+                {{-- ------------------------------------- --}}
+                {{-- Si estas logeado visitando la pagina --}}
+                {{-- ------------------------------------- --}}
                 @auth
-           
+
                     <ul class="navbar-nav mr-auto ml-auto">
-                    {{-- Primer elemento --}}
+                        {{-- Primer elemento --}}
                         <li class="nav-item mr-2">
-                            <a class="nav-link" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-expanded="false">
-                                    {{ auth()->user()->username }}
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-expanded="false">
+                                {{ auth()->user()->username }}
                             </a>
-                           
+
                         </li>
 
-                           <li class="nav-item mr-2">
-                            <a class="nav-link" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-expanded="false">
-                                   <i class="fa-solid fa-user-tie"></i>
+                        <li class="nav-item mr-2">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="fa-solid fa-user-tie"></i>
                             </a>
-                           
+
                         </li>
-                    {{-- Segundo elemento --}}
-                    
-                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-expanded="false">
-                                
-                                    <i class="fas fa-bars" style="color:#fff; font-size:28px; heigth"></i>
+                        {{-- Segundo elemento --}}
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-expanded="false">
+
+                                <i class="fas fa-bars" style="color:#fff; font-size:28px; heigth"></i>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right slideIn text-center" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu dropdown-menu-right slideIn text-center"
+                                aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="/pedidos">Orders</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/logout">Logout</a>
-                            </div>    
+                            </div>
                         </li>
 
                     </ul>
-                     
+
                 @endauth
 
-            {{------------------------------------------------}}
-            {{-- Si estas como invitado visitando la pagina --}}
-            {{------------------------------------------------}}
+                {{-- -------------------------------------------- --}}
+                {{-- Si estas como invitado visitando la pagina --}}
+                {{-- -------------------------------------------- --}}
                 @guest
 
-                 <ul class="navbar-nav mr-auto ml-auto">
+                    <ul class="navbar-nav mr-auto ml-auto">
 
                         <li class="nav-item mr-2">
-                            <a class="nav-link" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-expanded="false">
-                                   Login
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-expanded="false">
+                                Login
                             </a>
-                           
+                            
+
                         </li>
 
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-expanded="false">
 
-
-
-                   <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-expanded="false">
-                                
-                                    <i class="fas fa-bars" style="color:#fff; font-size:28px; heigth"></i>
+                                <i class="fas fa-bars" style="color:#fff; font-size:28px; heigth"></i>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right slideIn text-center" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu dropdown-menu-right slideIn text-center"
+                                aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="/login"></i>Sign in</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/registro">Sign up</a>
-                            </div>    
+                            </div>
                         </li>
-                 </ul>
+                    </ul>
 
-{{-- 
-                  <a href="login" class="text-white mr-2"><i class="fa-solid fa-user-tie mr-2 "></i>Sign in</a>
+                    {{-- <a href="login" class="text-white mr-2"><i class="fa-solid fa-user-tie mr-2 "></i>Sign in</a>
                     <a href="registro" class="text-white"><i class="fa-solid fa-address-card mr-2"></i>Sing up</a> --}}
                 @endguest
             </div>
@@ -249,31 +259,31 @@
         </div>
     </div>
 
-
     <!------------------------------------------------------------------->
     <!------------------------JUMBOTRON 1-------------------------------->
     <!------------------------------------------------------------------->
     <div class="jumbotron jumbotron-fluid bg-transparent mb-0">
         <div class="container">
-            <h1 class="display-4 text-white animate__animated animate__bounce">Últimas novedades</h1>
+            <h1 class="display-4 text-white animate__animated animate__bounce">New releases</h1>
         </div>
     </div>
 
+ 
 
     <!--CARTAS DE LAS ULTIMAS NOVEDADES-->
     <div class="container">
         <div class="row">
-            @foreach ($novedades as $novedad)
+            @foreach ($articulos_a as $novedad)
                 <div class="col-md-6 col-lg-4  col-sm-6 mb-4">
                     <div class="card p-3 text-right bg-transparent d-flex align-items-end"
                         style="border: none; background-image:url(..{{ $novedad->imagen }});">
-                         <form action="/oftb_prev_prod" method="POST">
-                                @csrf
-                                <input type="hidden" name="cod_articulo" value="{{ $novedad->cod_articulo }}">
-                                <button type="submit" class="boton_detalles rounded-left rounded-right rounded-top">
-                                    View Details
-                                </button>
-                            </form>
+                        <form action="/oftb_prev_prod" method="POST">
+                            @csrf
+                            <input type="hidden" name="cod_articulo" value="{{ $novedad->cod_articulo }}">
+                            <button type="submit" class="boton_detalles rounded-left rounded-right rounded-top">
+                                View Details
+                            </button>
+                        </form>
                     </div>
                     <blockquote class="blockquote mt-1">
                         <div class="d-flex justify-content-between">
@@ -291,24 +301,24 @@
 
     <div class="jumbotron jumbotron-fluid bg-transparent mb-0">
         <div class="container">
-            <h1 class="display-4 text-white">Lo más vendido</h1>
+            <h1 class="display-4 text-white">Bestselling</h1>
         </div>
     </div>
-
+    
     <!--CARTAS DE PRODUCTOS MAS VENDIDOS-->
     <div class="container">
         <div class="row mb-2">
-            @foreach ($masvendidos as $vendido)
+            @foreach ($articulos_b as $vendido)
                 <div class="col-md-6 col-lg-4  col-sm-6 mb-4">
                     <div class="card p-3 text-right bg-transparent d-flex align-items-end"
                         style="border: none; background-image:url(..{{ $vendido->imagen }});">
                         <form action="/oftb_prev_prod" method="POST">
-                                @csrf
-                                <input type="hidden" name="cod_articulo" value="{{ $vendido->cod_articulo }}">
-                                <button type="submit" class="boton_detalles rounded-left rounded-right rounded-top">
-                                    View Details
-                                </button>
-                            </form>
+                            @csrf
+                            <input type="hidden" name="cod_articulo" value="{{ $vendido->cod_articulo }}">
+                            <button type="submit" class="boton_detalles rounded-left rounded-right rounded-top">
+                                View Details
+                            </button>
+                        </form>
                     </div>
                     <blockquote class="blockquote mt-1">
                         <div class="d-flex justify-content-between">
@@ -320,6 +330,7 @@
             @endforeach
         </div>
     </div>
+
 
     <!------------------------------------------------------------------->
     <!--------------------------FOOTER----------------------------------->

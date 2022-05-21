@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 /*Index */
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Home2Controller;
 /*Login */
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
@@ -39,6 +40,8 @@ use App\Models\User;
 
 /*Index */
 Route::get('/home', [HomeController::class,'index']);
+Route::post('/home2', [Home2Controller::class,'show']);
+Route::get('/home2', [Home2Controller::class,'show']);
 
 /*Login */
 Route::get('/login', [LoginController::class,'show']);
@@ -49,25 +52,20 @@ Route::get('/logout', [LogoutController::class,'logout']);
 
 /* Ruta para las peliculas */
 Route::get('Peliculas/{saga_peliculas}', [PeliculasController::class,'selectfranquicia']);
+Route::post('Peliculas/{saga_peliculas}', [PeliculasController::class,'search']);
+/* Ruta para las series */
 Route::get('Series/{saga_serie}', [SeriesController::class,'selectSeries']);
+Route::post('Series/{saga_serie}', [SeriesController::class,'search']);
+/* Ruta para los videojuegos */
 Route::get('Videojuegos/{saga_juego}', [VideojuegosController::class,'selectJuegos']);
-
+Route::post('Videojuegos/{saga_juego}', [VideojuegosController::class,'search']);
 /*Pedidos*/
 Route::get('/pedidos', [PedidosController::class,'show','datos']);
 
-
 /*Cart routes */
-
 Route::post('/oftb_prev_prod', [PrevController::class,'prev_Articulo']);
 Route::get('/oftb_prev_prod', [PrevController::class,'prev_Articulo']);
 
-
-
-// Route::post('/prev_prod', [PrevControllerController::class,'prev_Articulo'])->name(name:'cart.store');
-
-// Route::get('/prev_prod', function () {
-//     return view('oftb_prev_prod');
-// });
 
 /*Contacto */
 

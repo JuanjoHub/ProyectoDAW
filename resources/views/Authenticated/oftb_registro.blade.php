@@ -81,7 +81,7 @@
                         <!--Fecha de nacimiento / telefono-->
                         <div class="form-row font-weight-bold text-left">
                             <div class="form-group col-md-6">
-                                <label>Fecha de nacimiento </label>
+                                <label>Birthdate </label>
                                 <input type="date" class="form-control text-white text-white" name ="fecha_nacimiento" id="inputEmail4">
                             </div>
                             <div class="form-group col-md-6 text-left">

@@ -11,11 +11,19 @@ class HomeController extends Controller
 {
     public function index(){
 
-        //Query para seleccionar los 6 articulos mas vendidos
-        $artMV = DB::select('select * from articulos order by ventas_totales desc LIMIT 6 ');
-         //Query para seleccionar los ultimos 6 articulos
-        $novedades = DB::select('select * from articulos order by fecha_insercion desc LIMIT 6 ');
+      
 
-        return view('index',['masvendidos' => $artMV], ['novedades' => $novedades]);
+       //Query para seleccionar los ultimos 6 articulos
+       $novedades = DB::select('select * from articulos order by fecha_insercion desc LIMIT 6 ');
+       //Query para seleccionar los 6 articulos mas vendidos
+       $artMV = DB::select('select * from articulos order by ventas_totales desc LIMIT 6 ');
+      
+      
+           return view('index',['articulos_a' => $novedades], ['articulos_b' => $artMV]);
+        
+       
+         
     }
+
+    
 }

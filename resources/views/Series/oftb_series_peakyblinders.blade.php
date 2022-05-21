@@ -1,9 +1,18 @@
-@extends('navbar_footer');
+@extends('Layout.head');
+@extends('Layout.navbar_series');
+@extends('Layout.footer');
+@extends('Layout.scripts');
 
+@section('head')
 <link rel="stylesheet" href="../css/css_categorias.css">
 <link rel="stylesheet" href="../css/css_plantilla.css">
- 
-@section('content')
+@endsection
+
+
+
+@section('navbar_peliculas')
+@endsection
+
     <!------------------------------------------------------------------->
     <!------------------------JUMBOTRON 1-------------------------------->
     <!------------------------------------------------------------------->
@@ -55,7 +64,8 @@
                 @endif
             @endforeach
         </div>
-    </div>---------------------------------------------------------->
+    </div>
+    <!------------------------------------------------------------------->
     <!--------------------------PAGINATION------------------------------->
     <!------------------------------------------------------------------->
    
@@ -65,7 +75,10 @@
         </div>
     </div>
 
-
+@section('footer')
+@endsection
+@section('scripts')
+@endsection
 
 
 

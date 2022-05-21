@@ -77,6 +77,14 @@
 /*********************************VIDEOJUEGOS*************************************/
 /*********************************************************************************/
 
+.jumbotron_dmc_index{
+  background-image: url(../Imagenes_OFTB/Images_jumbotron/Videojuegos/dante_index_jumbotron.png);
+  background-size: cover;
+  background-size: 100%;
+  height: 625px;
+}
+
+
 .jumbotron_mk {
   background-image: url(../Imagenes_OFTB/Images_jumbotron/Videojuegos/mk11_2_jumbotron.jpg);
   background-size: cover;

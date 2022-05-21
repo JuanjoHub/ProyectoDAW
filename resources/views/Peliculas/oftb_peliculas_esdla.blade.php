@@ -1,9 +1,17 @@
-@extends('navbar_footer');
+@extends('Layout.head');
+@extends('Layout.navbar_peliculas');
+@extends('Layout.footer');
+@extends('Layout.scripts');
 
+@section('head')
 <link rel="stylesheet" href="../css/css_categorias.css">
 <link rel="stylesheet" href="../css/css_plantilla.css">
- 
-@section('content')
+@endsection
+
+
+
+@section('navbar_peliculas')
+@endsection
 
 
 
@@ -72,6 +80,12 @@
     </div>
 
 
+@section('footer')
+@endsection
+
+
+@section('scripts')
+@endsection
 
 
 </body>

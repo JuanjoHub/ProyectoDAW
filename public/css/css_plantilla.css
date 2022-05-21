@@ -140,8 +140,9 @@ a {
 
 
 /*********************FORMS***********************/
+/*Barra de busqueda*/
 .form-control {
-  width: 560px !important;
+  width: 370px !important;
   margin: auto !important;
   background-color: #212121 !important;
   color: white !important;

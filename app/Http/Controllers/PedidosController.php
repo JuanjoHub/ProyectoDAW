@@ -20,7 +20,8 @@ class PedidosController extends Controller
         ->join('pedidos', 'historial.cod_pedido', '=', 'pedidos.cod_pedido')
         ->select('historial.fecha_pedido', 'historial.cod_pedido', 'pedidos.total','pedidos.estado')
         ->where('username',$usuario)
-        ->get();
+        ->paginate(10);
+        
 
         // dd($users);
 

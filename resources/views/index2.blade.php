@@ -8,9 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Out of the box</title>
 
-    <!--CSS animado-->
+    <!--Links de nuestros CSS-->
+    <link rel="stylesheet" type="text/css" href="{!! asset('css/css_index.css') !!}">
+    <link rel="stylesheet" type="text/css" href="{!! asset('css/css_plantilla.css') !!}">
+     <link rel="stylesheet" type="text/css" href="{!! asset('css/css_categorias.css') !!}">
 
-    <!--JQUERY-->
+    <!--CSS animado-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -21,9 +26,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
 </head>
 
-@yield('head')
-
-<body style="margin-top: -24px;">
+<body>
 
     <!------------------------------------------------------------------->
     <!--------------------------NAVBAR----------------------------------->
@@ -32,6 +35,7 @@
     <nav class="navbar navbar-expand-lg fixed-top navbar-drop" style="background: rgba(0, 0, 0, 0.5);">
 
         <a class="navbar-brand" href="/home">
+
             Out of the box
         </a>
 
@@ -45,34 +49,32 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto ml-auto">
 
-                <li class="nav-item dropdown">
+               <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="/home" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-search"></i>
                     </a>
-                    {{-- ---- Barra de busqueda peliculas ---- --}}
-
-                    <div class="dropdown-menu slideIn" aria-labelledby="navbarDropdown">
-                        <form action="/Peliculas/{{ $nombre }}" method='post'
-                            class="form mr-2 ml-2 form-group my-2 my-lg-0">
+                    {{-- ---- Barra de busqueda ---- --}}
+                   <div class="dropdown-menu slideIn" aria-labelledby="navbarDropdown">
+                        <form action="/home2" method='post' class="form mr-2 ml-2 form-group my-2 my-lg-0">
                             @csrf
                             <div class="d-flex">
                                 <div>
                                     <input class="form-control " type="text" placeholder="Search" name="texto"
-                                        value="{{ $texto = '' }}">
-                                    <!-- Inicializamos la variable aqui para que no pete-->
+                                        value="{{ $texto }}">  <!-- Inicializamos la variable aqui para que no pete-->
                                 </div>
                                 <div>
                                     <input class="btn btn-danger ml-2" type="submit" value="Search">
                                 </div>
                             </div>
                         </form>
-                    </div>
+                    </div> 
                     {{-- ------------------------- --}}
                 </li>
 
+
                 <li class="nav-item active">
-                    <a class="nav-link" href="/home">Home </a>
+                    <a class="nav-link" href="home">Home </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -80,11 +82,11 @@
                         Films
                     </a>
                     <div class="dropdown-menu slideIn" aria-labelledby="navbarDropdown">
-
-                        <a class="dropdown-item" href="/Peliculas/esdla">The Lords Of The Rings</a>
-                        <a class="dropdown-item" href="/Peliculas/starwars">Star Wars</a>
-                        <a class="dropdown-item" href="/Peliculas/dc">DC</a>
-                        <a class="dropdown-item" href="/Peliculas/marvel">Marvel</a>
+                        <a class="dropdown-item" href="Peliculas/esdla">The Lords Of The Rings</a>
+                        <a class="dropdown-item" href="Peliculas/starwars">Star Wars</a>
+                        <a class="dropdown-item" href="Peliculas/dc">DC</a>
+                        <!--<div class="dropdown-divider"></div>-->
+                        <a class="dropdown-item" href="Peliculas/marvel">Marvel</a>
                     </div>
                 </li>
 
@@ -93,14 +95,11 @@
                         data-toggle="dropdown" aria-expanded="false">
                         Series
                     </a>
-
                     <div class="dropdown-menu slideIn" aria-labelledby="navbarDropdown">
-
-                        <a class="dropdown-item" href="/Series/got">Game of thrones</a>
-                        <a class="dropdown-item" href="/Series/walkingdead">Walking Dead</a>
-                        <a class="dropdown-item" href="/Series/peakyblinders">Peaky Blinders</a>
-                        <a class="dropdown-item" href="/Series/theboys">The Boys</a>
-
+                        <a class="dropdown-item" href="Series/got">Game of thrones</a>
+                        <a class="dropdown-item" href="Series/walkingdead">Walking Dead</a>
+                        <a class="dropdown-item" href="Series/peakyblinders">Peaky Blinders</a>
+                        <a class="dropdown-item" href="Series/theboys">The Boys</a>
                     </div>
                 </li>
 
@@ -110,21 +109,15 @@
                         Videogames
                     </a>
                     <div class="dropdown-menu slideIn" aria-labelledby="navbarDropdown">
-
-                        <a class="dropdown-item" href="/Videojuegos/mk">Mortal Kombat</a>
-                        <a class="dropdown-item" href="/Videojuegos/dmc">Devil May Cry</a>
-                        <a class="dropdown-item" href="/Videojuegos/gow">God Of War</a>
-                        <a class="dropdown-item" href="/Videojuegos/re">Resident Evil</a>
+                        <a class="dropdown-item" href="Videojuegos/mk">Mortal Kombat</a>
+                        <a class="dropdown-item" href="Videojuegos/dmc">Devil May Cry</a>
+                        <a class="dropdown-item" href="Videojuegos/gow">God Of War</a>
+                        <a class="dropdown-item" href="Videojuegos/re">Resident Evil</a>
                     </div>
                 </li>
 
-                @auth
-                    <li class="nav-item">
-                        <a class="nav-link" href="/pedidos">Orders</a>
-                    </li>
-                @endauth
                 <li class="nav-item">
-                    <a class="nav-link" href="oftb_contacto">Contact</a>
+                    <a class="nav-link" href="contacto">Contact</a>
                 </li>
             </ul>
             <div class="text-center">
@@ -143,7 +136,7 @@
 
                         </li>
 
-                        <li class="nav-item mr-2 mt-1">
+                        <li class="nav-item mr-2">
                             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                                 aria-expanded="false">
                                 <i class="fa-solid fa-user-tie"></i>
@@ -151,6 +144,7 @@
 
                         </li>
                         {{-- Segundo elemento --}}
+
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                                 aria-expanded="false">
@@ -175,6 +169,19 @@
                 @guest
 
                     <ul class="navbar-nav mr-auto ml-auto">
+
+                        <li class="nav-item mr-2">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-expanded="false">
+                                Login
+                            </a>
+                            
+
+                        </li>
+
+
+
+
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                                 aria-expanded="false">
@@ -198,18 +205,70 @@
 
     </nav>
 
-    @yield('navbar_peliculas')
 
 
+<!------------------------------------------------------------------->
+<!---------------------JUMBOTRON RESULTADOS-------------------------->
+<!------------------------------------------------------------------->
+
+    <div class="jumbotron jumbotron-fluid bg-transparent mb-4 jumbotron_dmc_index">
+        <div class="container">
+            <h1 class="display-4 text-white animate__animated animate__fadeInDown">Search results</h1>
+        </div>
+    </div>
+
+ @if (count($articulos)<=0 || $texto==="")
+
+        <div class="container text-white text-center mb-4">
+            <h2> </h2>
+            <h2> No matches found</h2>
+        </div>
+        
+    
+    @else  
+      
+        <div class="container">
+            <div class="row">
+                @foreach ($articulos as $articulo)
+                    <div class="col-md-6 col-lg-4  col-sm-6 mb-4">
+                        <div class="card p-3 text-right bg-transparent d-flex align-items-end"
+                            style="border: none; background-image:url(..{{ $articulo->imagen }});">
+                            <form action="/oftb_prev_prod" method="POST">
+                                @csrf
+                                <input type="hidden" name="cod_articulo" value="{{ $articulo->cod_articulo }}">
+                                <button type="submit" class="boton_detalles rounded-left rounded-right rounded-top">
+                                    View Details
+                                </button>
+                            </form>
+                        </div>
+                        <blockquote class="blockquote mt-1">
+                            <div class="d-flex justify-content-between">
+                                <p>{{ $articulo->nombre_articulo }}</p>
+                                <p class="font-weight-bold">{{ $articulo->precio }} €</p>
+                            </div>
+                        </blockquote>
+                    </div>
+                @endforeach
+            </div>
+            {{-- <button type="button" class="btn btn-outline-primary"><a class="dropdown-item" href="/home">Back to Home</a></button> --}}
+        </div>
+
+    <!------------------------------------------------------------------->
+    <!--------------------------PAGINATION------------------------------->
+    <!------------------------------------------------------------------->
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            {{$articulos->links()}}
+        </div>
+    </div>
+        
+   @endif
 
 
-
-
-
+ 
     <!------------------------------------------------------------------->
     <!--------------------------FOOTER----------------------------------->
     <!------------------------------------------------------------------->
-
 
     <!--------------------------primera parte----------------------------------->
     <footer class="page-footer my2footer ">
@@ -287,17 +346,15 @@
 
     </footer>
 
-   @yield('footer')
     <!--
-         <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-danger" type="submit">Search</button>
-                        </form>
-    -->
+     <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-danger" type="submit">Search</button>
+                    </form>
+-->
 
 
     <!--Estos Scrips los necesitamos para poder usar las funcionalidades del bootstrap-->
-
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
@@ -311,5 +368,8 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
 
-   @yield('scripts')
- 
+
+
+</body>
+
+</html>

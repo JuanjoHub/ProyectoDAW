@@ -17,10 +17,7 @@ class PeliculasController extends Controller
          $esdla = Articulo::where('cod_categoria','=','3')->paginate(3);
          $starwars = Articulo::where('cod_categoria','=','4')->paginate(3);
 
-        // $articulo = DB::table('articulos')
-        // ->select('nombre_articulo','precio','imagen','cod_categoria','cod_articulo')
-        // ->paginate(15);
-        
+       
         
 
         switch ($saga_peliculas) {
@@ -38,6 +35,37 @@ class PeliculasController extends Controller
         }
     }
 
+    public function search($saga_peliculas,Request $request){
+
+        $url = "Peliculas.oftb_peliculas_";
+
+         $texto = trim($request->input(key:'texto'));
+
+         $articulos = Articulo::where('nombre_articulo','LIKE','%'.$texto.'%')
+        ->orderBy('ventas_totales')
+         ->paginate(6);
+
+        
+         
+            // return redirect()->to('/Peliculas/marvel');
+            switch ($saga_peliculas) {
+                case 'esdla':       return view($url . $saga_peliculas, ['nombre' => $saga_peliculas],['articulo_peliculas' => $articulos]);
+                case 'starwars':    return view($url . $saga_peliculas, ['nombre' => $saga_peliculas],['articulo_peliculas' => $articulos]);
+                case 'marvel':      return view($url . $saga_peliculas, ['nombre' => $saga_peliculas],['articulo_peliculas' => $articulos]);
+                case 'dc':          return view($url . $saga_peliculas, ['nombre' => $saga_peliculas],['articulo_peliculas' => $articulos]);
+                    /*Crear funcion que me devuelva las peliculas que vengan de la variable saga_peliculas,y pasarselo a la vista en la linea 20
+                    como un array */
+                    // return view($url . $saga_peliculas, ['nombre' => $saga_peliculas],['articulo_peliculas' => $marvel]);
+                    break;
+            default:
+                    return view('/home');
+                    break;
+            }
+
+        
+        // else
+        //  return view('Peliculas/dc',['articulo_peliculas' => $articulos]);
+    }
    
 }
 

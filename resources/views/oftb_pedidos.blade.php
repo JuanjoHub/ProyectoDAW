@@ -1,10 +1,17 @@
-@extends('navbar_footer');
+@extends('Layout.head');
+@extends('Layout.navbar_pedidos');
+@extends('Layout.footer');
+@extends('Layout.scripts');
 
+@section('head')
 <link rel="stylesheet" href="../css/css_pedidos.css">
-{{-- <link rel="stylesheet" href="../css/css_plantilla.css"> --}}
+@endsection
 
-@section('content')
-    {{ $i = 1 }}
+@section('navbar_pedidos')
+@endsection
+
+
+     {{ $i = 1 }} 
 
     <!------------------------------------------------------------------->
     <!------------------------JUMBOTRON 1-------------------------------->
@@ -159,27 +166,17 @@
     <!------------------------------------------------------------------->
     <!--------------------------PAGINATION------------------------------->
     <!------------------------------------------------------------------->
-
-    <div class="container text-center mb-5">
-        <nav>
-            <ul class="pagination pagination-lg justify-content-center ">
-                <!--PREVIO-->
-                <li class="page-item mr-2">
-                    <a class="page-link" href="#"><i class="fa-solid fa-angle-left"></i></a>
-                </li>
-                <!--PAGINAS-->
-                <li class="page-item mr-1"><a class="page-link" href="#">1</a></li>
-                <li class="page-item "><a class="page-link current_page" href="#">2</a></li>
-                <li class="page-item ml-1"><a class="page-link" href="#">3</a></li>
-                <!--NEXT-->
-                <li class="page-item ml-2">
-                    <a class="page-link" href="#"><i class="fa-solid fa-angle-right"></i></a>
-                </li>
-            </ul>
-        </nav>
+   
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            {{$mispedidos->links()}}
+        </div>
     </div>
 
-
+@section('footer')
+@endsection
+@section('scripts')
+@endsection
 
     </body>
 
