@@ -14,7 +14,7 @@ class Home2Controller extends Controller
         $texto = trim($request->input(key:'texto'));
         $articulos = Articulo::where('nombre_articulo','LIKE','%'.$texto.'%')
         ->orderBy('ventas_totales')
-        ->paginate(6);
+        ->paginate(200);
     
         return view('index2',['articulos' => $articulos] , ['texto' => $texto]);
         

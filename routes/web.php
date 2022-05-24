@@ -15,9 +15,15 @@ use App\Http\Controllers\VideojuegosController;
 
 /*Pedidos */
 use App\Http\Controllers\PedidosController;
+use App\Http\Controllers\DetallesController;
 
 /*Previsualizacion producto */
 use App\Http\Controllers\PrevController;
+
+/*Previsualizacion producto */
+use App\Http\Controllers\PagoController;
+use App\Http\Controllers\PagoReadyController;
+
 /*Carrito */
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
@@ -61,22 +67,22 @@ Route::get('Videojuegos/{saga_juego}', [VideojuegosController::class,'selectJueg
 Route::post('Videojuegos/{saga_juego}', [VideojuegosController::class,'search']);
 /*Pedidos*/
 Route::get('/pedidos', [PedidosController::class,'show','datos']);
+Route::post('/detalles', [DetallesController::class,'show']);
 
-/*Cart routes */
+/* Cart routes */
 Route::post('/oftb_prev_prod', [PrevController::class,'prev_Articulo']);
 Route::get('/oftb_prev_prod', [PrevController::class,'prev_Articulo']);
 
-
-/*Contacto */
-
-Route::get('/contacto', function () {
-    return view('oftb_contacto');
-});
-
-Route::get('/pago', function () {
-    return view('oftb_pago');
-});
+/* Pago */
+Route::post('/pago', [PagoController::class,'show']);
+Route::get('/pago', [PagoController::class,'show']);
+Route::POST('/pago_realizado',[PagoReadyController::class,'pago']);
+Route::get('/pago_realizado',[PagoReadyController::class,'pago']);
 
 Route::get('/test', function () {
     return view('test');
+});
+/*Contacto */
+Route::get('/contacto', function () {
+    return view('oftb_contacto');
 });

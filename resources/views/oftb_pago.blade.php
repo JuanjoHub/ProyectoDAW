@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="../css/css_registro.css">
     <link rel="stylesheet" href="../css/css_pago.css">
 
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Font Awesome -->
@@ -22,8 +21,6 @@
 </head>
 
 <body>
-
-
 
     <!----------------------------------------------------------------------->
     <!--DIV CONTENEDOR contiene los otros 2 divs que van formar esta pagina-->
@@ -41,7 +38,10 @@
             </div>
             <div class="container div_form">
                 <!--Formulario-->
-                <form>
+                <form action="/pago_realizado" method="POST">
+                    @csrf
+                    <input type="hidden" name="cod_pago" value="1">
+                    <!-- Pasamos el codigo en un tipo hidden al siguiente controlador-->
                     <!--Nombre / email-->
                     <div class="form-row font-weight-bold mb-2">
                         <div class="col-md-12 text-left mb-3">
@@ -49,17 +49,17 @@
                         </div>
                         <div class="form-group col-md-6 text-left">
                             <!--Nombre completo-->
-                            <input type="text" class="form-control text-white" id="inputEmail4"
+                            <input type="text" class="form-control text-white" id="inputEmail4" name="nombre"
                                 placeholder="Nombre destinatario">
                         </div>
                         <!--Dirección de facturación-->
                         <div class="form-group col-md-6 text-left">
-                            <input type="text" class="form-control text-white" id="inputPassword4"
+                            <input type="text" class="form-control text-white" id="inputPassword4" name="direccion"
                                 placeholder="Dirección de facturación">
                         </div>
                     </div>
 
-                    <select class="custom-select custom-select-lg mb-3">
+                    <select class="custom-select custom-select-lg mb-3" name="ccaa" required>
                         <option selected>Comunidad Autonoma</option>
                         <option value="1">Galicia</option>
                         <option value="2">Asturias</option>
@@ -78,59 +78,62 @@
                         <option value="16">Región de Murcia</option>
                     </select>
 
-
-
                     <!--Metodo de pago-->
-
 
                     <h2 class="text-left mb-4">Método de pago</h2>
 
-
+{{-- ----------------------------------------------------------------------------------------------- --}}
                     <div class="custom-control custom-radio mb-4 col-md-11">
-                        <input type="radio" id="customRadio1" name="customRadio1" class="custom-control-input">
+                        <input type="radio" id="customRadio1" name="metodo" class="custom-control-input" value="Visa">
                         <label class="custom-control-label d-flex justify-content-start ml-4" for="customRadio1">Tarjeta
                             crédito/débito </label>
                         <i class="fa-brands fa-cc-visa fa-lg fa-xl d-flex justify-content-end"></i>
                     </div>
 
                     <div class="custom-control custom-radio mb-4 col-md-11">
-                        <input type="radio" id="customRadio2" name="customRadio2" class="custom-control-input">
+                        <input type="radio" id="customRadio2" name="metodo" class="custom-control-input" value="Paypal">
                         <label class="custom-control-label d-flex justify-content-start ml-4"
-                            for="customRadio1">Paypal</label>
+                            for="customRadio2">Paypal</label>
                         <i class="fa-brands fa-cc-paypal fa-xl d-flex justify-content-end"></i>
-                        
+
                     </div>
 
                     <div class="custom-control custom-radio mb-4 col-md-11">
-                        <input type="radio" id="customRadio3" name="customRadio3" class="custom-control-input">
-                        <label class="custom-control-label d-flex justify-content-start ml-4" for="customRadio1">Apple
+                        <input type="radio" id="customRadio3" name="metodo" class="custom-control-input" value="Apple">
+                        <label class="custom-control-label d-flex justify-content-start ml-4" for="customRadio3">Apple
                             Pay</label>
                         <i class="fa-brands fa-cc-apple-pay fa-xl d-flex justify-content-end"></i>
                     </div>
 
+               
+
+
+
+
+
                     <div class="text-left font-weight-bold">
                         <!--Numero de la tarjeta-->
-                        <label for="inputEmail4">Número de tarjeta</label>
-                        <input type="text" class="form-control text-white mb-3" id="inputCard"
+                        <label>Número de tarjeta</label>
+                        <input type="text" class="form-control text-white mb-3" id="inputCard" name="tarjeta"
                             placeholder="**** **** **** ****">
                         <!--Titular de la tarjeta-->
-                        <label for="inputPassword4">Titular de la tarjeta</label>
-                        <input type="text" class="form-control text-white mb-3" id="inputPassword4"
+                        <label>Titular de la tarjeta</label>
+                        <input type="text" class="form-control text-white mb-3" name="titular"
                             placeholder="Andrea Vicente Hernandez">
                     </div>
 
+                    
 
-                    <!--Fecha de nacimiento / telefono-->
+                    <!--Fecha de caducidad / cvv-->
                     <div class="form-row font-weight-bold text-left">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4">Fecha de caducidad </label>
-                            <input type="text" class="form-control text-white text-white" id="inputEmail4"
-                                placeholder="MM/YY">
+                            <input type="text" class="form-control text-white text-white" id="inputEmail4" name="caducidad"
+                                placeholder="MM/YYYY">
                         </div>
                         <div class="form-group col-md-6 text-left">
                             <label for="inputPassword4">CVV</label>
-                            <input type="text" class="form-control text-white" id="inputPassword4"
-                                placeholder="CVC">
+                            <input type="text" class="form-control text-white" id="inputPassword4" placeholder="CVC">
                         </div>
                     </div>
 
@@ -140,15 +143,18 @@
                     </button>
 
                 </form>
-                    <!--Enlace para ir al login-->
-                    <div class="p-4"> <a href="oftb_prev_prod.html"><i class="fa-solid fa-angles-left mr-2 "></i>Back</a>
-                    </div>
+                <!--Enlace para ir al login-->
+                <div class="p-4"> <a href="oftb_prev_prod.html"><i
+                            class="fa-solid fa-angles-left mr-2 "></i>Back</a>
+                </div>
 
-            </div><!--Div que cierra el div container-->
+            </div>
+            <!--Div que cierra el div container-->
 
-           
-            
-        </div><!--Div que cierra el div izquierdo-->
+
+
+        </div>
+        <!--Div que cierra el div izquierdo-->
 
 
 
@@ -164,9 +170,10 @@
             </div>
 
             <div class="container">
-               
-                        <img src="../Imagenes_OFTB/Imagenes_compra/negan_pago_buena.jpg" alt="" class="mx-auto d-block img-fluid rounded d-md-none d-lg-block">
-              
+
+                <img src="../Imagenes_OFTB/Imagenes_compra/negan_pago_buena.jpg" alt=""
+                    class="mx-auto d-block img-fluid rounded d-md-none d-lg-block">
+
             </div>
 
         </div>
@@ -197,7 +204,6 @@
 
         ancho.addListener(doblediv_registro);
         alto.addListener(doblediv_registro);
-
     </script>
 
 
@@ -206,16 +212,16 @@
     <!--Estos Scrips los necesitamos para poder usar las funcionalidades del bootstrap-->
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
     <!-- POPPER -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
     <!-- BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

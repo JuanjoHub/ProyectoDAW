@@ -1,5 +1,4 @@
-<body style="margin-top: -24px;">
-
+    <body style="margin-top: -24px;">
     <!------------------------------------------------------------------->
     <!--------------------------NAVBAR----------------------------------->
     <!------------------------------------------------------------------->
@@ -7,6 +6,7 @@
     <nav class="navbar navbar-expand-lg fixed-top navbar-drop" style="background: rgba(0, 0, 0, 0.5);">
 
         <a class="navbar-brand" href="/home">
+
             Out of the box
         </a>
 
@@ -20,34 +20,32 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto ml-auto">
 
-                <li class="nav-item dropdown">
+               <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="/home" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-search"></i>
                     </a>
-                    {{-- ---- Barra de busqueda peliculas ---- --}}
-
-                    <div class="dropdown-menu slideIn" aria-labelledby="navbarDropdown">
-                        <form action="/Series/{{ $saga_serie }}" method='post'
-                            class="form mr-2 ml-2 form-group my-2 my-lg-0">
+                    {{-- ---- Barra de busqueda ---- --}}
+                   <div class="dropdown-menu slideIn" aria-labelledby="navbarDropdown">
+                        <form action="/home2" method='post' class="form mr-2 ml-2 form-group my-2 my-lg-0">
                             @csrf
                             <div class="d-flex">
                                 <div>
                                     <input class="form-control " type="text" placeholder="Search" name="texto"
-                                        value="{{ $texto = '' }}">
-                                    <!-- Inicializamos la variable aqui para que no pete-->
+                                        value="{{ $texto="" }}">  <!-- Inicializamos la variable aqui para que no pete-->
                                 </div>
                                 <div>
                                     <input class="btn btn-danger ml-2" type="submit" value="Search">
                                 </div>
                             </div>
                         </form>
-                    </div>
+                    </div> 
                     {{-- ------------------------- --}}
                 </li>
 
+
                 <li class="nav-item active">
-                    <a class="nav-link" href="/home">Home </a>
+                    <a class="nav-link" href="home">Home </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -55,11 +53,11 @@
                         Films
                     </a>
                     <div class="dropdown-menu slideIn" aria-labelledby="navbarDropdown">
-
-                        <a class="dropdown-item" href="/Peliculas/esdla">The Lords Of The Rings</a>
-                        <a class="dropdown-item" href="/Peliculas/starwars">Star Wars</a>
-                        <a class="dropdown-item" href="/Peliculas/dc">DC</a>
-                        <a class="dropdown-item" href="/Peliculas/marvel">Marvel</a>
+                        <a class="dropdown-item" href="Peliculas/esdla">The Lords Of The Rings</a>
+                        <a class="dropdown-item" href="Peliculas/starwars">Star Wars</a>
+                        <a class="dropdown-item" href="Peliculas/dc">DC</a>
+                        <!--<div class="dropdown-divider"></div>-->
+                        <a class="dropdown-item" href="Peliculas/marvel">Marvel</a>
                     </div>
                 </li>
 
@@ -68,14 +66,11 @@
                         data-toggle="dropdown" aria-expanded="false">
                         Series
                     </a>
-
                     <div class="dropdown-menu slideIn" aria-labelledby="navbarDropdown">
-
-                        <a class="dropdown-item" href="/Series/got">Game of thrones</a>
-                        <a class="dropdown-item" href="/Series/walkingdead">Walking Dead</a>
-                        <a class="dropdown-item" href="/Series/peakyblinders">Peaky Blinders</a>
-                        <a class="dropdown-item" href="/Series/theboys">The Boys</a>
-
+                        <a class="dropdown-item" href="Series/got">Game of thrones</a>
+                        <a class="dropdown-item" href="Series/walkingdead">Walking Dead</a>
+                        <a class="dropdown-item" href="Series/peakyblinders">Peaky Blinders</a>
+                        <a class="dropdown-item" href="Series/theboys">The Boys</a>
                     </div>
                 </li>
 
@@ -85,21 +80,15 @@
                         Videogames
                     </a>
                     <div class="dropdown-menu slideIn" aria-labelledby="navbarDropdown">
-
-                        <a class="dropdown-item" href="/Videojuegos/mk">Mortal Kombat</a>
-                        <a class="dropdown-item" href="/Videojuegos/dmc">Devil May Cry</a>
-                        <a class="dropdown-item" href="/Videojuegos/gow">God Of War</a>
-                        <a class="dropdown-item" href="/Videojuegos/re">Resident Evil</a>
+                        <a class="dropdown-item" href="Videojuegos/mk">Mortal Kombat</a>
+                        <a class="dropdown-item" href="Videojuegos/dmc">Devil May Cry</a>
+                        <a class="dropdown-item" href="Videojuegos/gow">God Of War</a>
+                        <a class="dropdown-item" href="Videojuegos/re">Resident Evil</a>
                     </div>
                 </li>
 
-                @auth
-                    <li class="nav-item">
-                        <a class="nav-link" href="/pedidos">Orders</a>
-                    </li>
-                @endauth
                 <li class="nav-item">
-                    <a class="nav-link" href="/contacto">Contact</a>
+                    <a class="nav-link" href="contacto">Contact</a>
                 </li>
             </ul>
             <div class="text-center">
@@ -118,14 +107,15 @@
 
                         </li>
 
-                        <li class="nav-item mr-2 mt-1 mr-1">
+                        <li class="nav-item mt-1 mr-1">
                             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                                 aria-expanded="false">
-                                 <i class="fa-solid fa-user-check"></i>
+                                <i class="fa-solid fa-user-check"></i>
                             </a>
 
                         </li>
                         {{-- Segundo elemento --}}
+
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                                 aria-expanded="false">
@@ -150,6 +140,16 @@
                 @guest
 
                     <ul class="navbar-nav mr-auto ml-auto">
+
+                        <li class="nav-item mr-2">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-expanded="false">
+                                Login
+                            </a>
+                            
+
+                        </li>
+
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                                 aria-expanded="false">
@@ -172,5 +172,4 @@
         </div>
 
     </nav>
-
-    @yield('navbar_series')
+@yield('standard_navbar')

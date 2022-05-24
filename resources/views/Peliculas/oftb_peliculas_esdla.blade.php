@@ -24,6 +24,13 @@
         </div>
     </div>
 
+ @if (count($articulo_peliculas) <= 0)
+
+        <div class="container text-white text-center mb-4">
+            <h2> </h2>
+            <h2> No matches found </h2>
+        </div>
+    @else
  <!--CARTAS DE PRODUCTOS-->
     <div class="container">
         <div class="row mb-2">
@@ -68,7 +75,7 @@
         </div>
     </div>
 
-
+@endif
      <!------------------------------------------------------------------->
     <!--------------------------PAGINATION------------------------------->
     <!------------------------------------------------------------------->

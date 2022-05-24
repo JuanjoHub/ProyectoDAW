@@ -1,96 +1,89 @@
-
 /*********************JUMBOTRON***********************/
 
 .jumbotron_prev {
-    background-image: url(../Imagenes_OFTB/Imagenes_prev_prod/joker3_jumbotron.jpg);
-    background-size: cover;
-    height: 350px;
+  background-image: url(../Imagenes_OFTB/Imagenes_prev_prod/joker3_jumbotron.jpg);
+  background-size: cover;
+  height: 350px;
 }
 
 /*********************CARTAS***********************/
 .card_imagen {
 
-    /* background-image: url(../Imagenes_OFTB/Imagen_cards/peacemakerhelmet3.jpg); */
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    height: 322px;
-    cursor: pointer;
-  }
-  
-  /*Iconos de check y de la cruz*/
-  .icon-green {
-    color: green;
-  }
+  /* background-image: url(../Imagenes_OFTB/Imagen_cards/peacemakerhelmet3.jpg); */
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 322px;
+  cursor: pointer;
+}
 
-  .icon_stock{
-    color: red;
-  }
-  
+/*Iconos de check y de la cruz para el STOCK*/
+.icon-green {
+  color: green;
+}
 
-  /*********************CARTAS***********************/
+.icon_stock {
+  color: red;
+}
+
+
+/*Carta de descripcion del producto*/
 .card_descripcion {
 
   background-color: #212121;
-   height: 325px !important; 
-   
-  }
+  height: 325px !important;
 
-  /*Select */
+}
+
+/*Select */
 .card_descripcion .custom-select {
-  
+
   width: 350px !important;
 }
 
-  .precio{
-    font-size: 20px !important;
-  }
-
- .div_cns {
-     border-radius: 30px;
-     background: #424242;
-     height: 55px;
-     width: 350px;
-     margin-left: auto;
-     margin-right: auto;
- }  
-/*Hover boton del boton de compra*/
-
-.btn {
-   color: white;
-    cursor: pointer;
-    background: #424242;
-    width: 350px !important;
-    margin-left: auto;
-    margin-right: auto;
-    
-  
-  }
-  
-  /*Efecto del boton del regisdtro*/
-  .btn:hover {
-    transition: 1s;
-    background: red;
-
-  }
-
-
-
-
-  /*Efecto del link del boton de compra */
-  
-a:link,
-a:visited,
-a:active {
-  text-decoration: none !important;
+.precio {
+  font-size: 20px !important;
 }
 
-.div_compra a {
-  color: white !important;
+.div_cns {
+  border-radius: 30px;
+  background: #424242;
+  height: 55px;
+  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.div_compra a:hover {
+/*Estilos del boton de COMPRA*/
+
+.btn_compra {
+  color: white;
+  cursor: pointer;
+  width: 350px !important;
+  height: 50px !important;
+  background-color: red!important;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+  font-size: 20px;
+
+}
+
+.btn_compra:hover {
   transition: 1s;
-  color: white !important;
+  background: #424242 !important;
+  
 
 }
+
+.btn_sold{
+  color: white;
+  width: 350px !important;
+  height: 50px !important;
+  background-color: red!important;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+  font-size: 20px;
+}
+
 

@@ -4,8 +4,8 @@
 @extends('Layout.scripts');
 
 @section('head')
-<link rel="stylesheet" href="../css/css_categorias.css">
-<link rel="stylesheet" href="../css/css_plantilla.css">
+    <link rel="stylesheet" href="../css/css_categorias.css">
+    <link rel="stylesheet" href="../css/css_plantilla.css">
 @endsection
 
 @section('navbar_peliculas')
@@ -14,16 +14,23 @@
 
 
 
-    <!------------------------------------------------------------------->
-    <!------------------------JUMBOTRON 1-------------------------------->
-    <!------------------------------------------------------------------->
-    <div class="jumbotron jumbotron-fluid jumbotron_mk">
-        <div class="container">
-            <h1 class="display-4 text-white animate__animated animate__fadeInDown">Mortal Kombat</h1>
-        </div>
+<!------------------------------------------------------------------->
+<!------------------------JUMBOTRON 1-------------------------------->
+<!------------------------------------------------------------------->
+<div class="jumbotron jumbotron-fluid jumbotron_mk">
+    <div class="container">
+        <h1 class="display-4 text-white animate__animated animate__fadeInDown">Mortal Kombat</h1>
     </div>
+</div>
 
-<!--CARTAS DE PRODUCTOS-->
+@if (count($articulo_juegos) <= 0)
+
+    <div class="container text-white text-center mb-4">
+        <h2> </h2>
+        <h2> No matches found </h2>
+    </div>
+@else
+    <!--CARTAS DE PRODUCTOS-->
     <div class="container">
         <div class="row mb-2">
             @foreach ($articulo_juegos as $articulo)
@@ -66,18 +73,18 @@
             @endforeach
         </div>
     </div>
- 
+@endif
 
 
-   <!------------------------------------------------------------------->
-    <!--------------------------PAGINATION------------------------------->
-    <!------------------------------------------------------------------->
-   
-   <div class="container">
-        <div class="d-flex justify-content-center">
-            {{$articulo_juegos->links()}}
-        </div>
+<!------------------------------------------------------------------->
+<!--------------------------PAGINATION------------------------------->
+<!------------------------------------------------------------------->
+
+<div class="container">
+    <div class="d-flex justify-content-center">
+        {{ $articulo_juegos->links() }}
     </div>
+</div>
 
 
 @section('footer')

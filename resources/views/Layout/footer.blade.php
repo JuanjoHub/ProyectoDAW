@@ -11,10 +11,10 @@
             <div class="container">
                 <div class="row py-4 d-flex align-items-center">
                     <div class="col-md-12 text-center">
-                        <a href="#"><i class="fa-brands fa-facebook fa-3x mr-4 icon-red"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram fa-3x mr-4 icon-red"></i></a>
-                        <a href="#"><i class="fa-brands fa-github fa-3x mr-4 icon-red"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin fa-3x mr-4 icon-red"></i></a>
+                        <a href="https://www.facebook.com/juanjose.cogollo.5"><i class="fa-brands fa-facebook fa-3x mr-4 icon-red"></i></a>
+                        <a href="https://www.instagram.com/jj.cogollo/"><i class="fa-brands fa-instagram fa-3x mr-4 icon-red"></i></a>
+                        <a href="https://github.com/JuanjoHub?tab=repositories"><i class="fa-brands fa-github fa-3x mr-4 icon-red"></i></a>
+                        <a href="https://www.linkedin.com/in/juan-jos%C3%A9-cogollo-caviedes-b68714181/"><i class="fa-brands fa-linkedin fa-3x mr-4 icon-red"></i></a>
                     </div>
                 </div>
             </div>

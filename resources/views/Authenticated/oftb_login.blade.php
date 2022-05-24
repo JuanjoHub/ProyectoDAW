@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Login</title>
     <link rel="stylesheet" href="../css/css_login.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- Font Awesome -->
+    {{-- Bootstrap 5 --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
@@ -36,6 +37,7 @@
             </div>
 
             <div class="container mt-5">
+
                 <div class="div_logo1">
                     <img src="../Imagenes_OFTB/Logos/Logo_OFTB_gris2.PNG" alt="Logo">
                 </div>
@@ -47,26 +49,28 @@
 
                     @include('Mensajes.mensajes')
 
-                    <div class="form-group text-left font-weight-bold">
-                        <label>Username / Email</label>
-                        <input type="text" class="form-control text-white" name="username" id="exampleFormControlInput1"
-                            placeholder="peakeblinder@example.com">
+                    {{-- Username / Email --}}
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control text-white" id="floatingInput" placeholder="name@example.com" name="username">
+                        <label for="floatingInput">Username/Email</label>
                     </div>
-                    <div class="form-group text-left mb-5 font-weight-bold">
-                        <label>Password</label>
-                        <input type="password" class="form-control text-white" name="password"
-                            id="exampleInputPassword1">
+                    {{-- Password --}}
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control text-white" id="floatingPassword" placeholder="Password" name="password">
+                        <label for="floatingPassword">Password</label>
                     </div>
-                    <button type="submit" class="btn btn-lg btn-block text-white font-weight-bold" value="Login">
-                        SIGN IN
-                    </button>
+                    
+                    <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-outline-danger text-white font-weight-bold" style="font-weight: bold;" value="Login">SIGN IN</button>
 
+                    </div>
+                       
                 </form>
             </div>
 
             <!--Enlace para ir al registro-->
-            <div class="p-4"> <a href="/registro" class="text-white"><i
-                        class="fa-solid fa-user-tie fa-lg mr-3 icon_color"></i>Create account</a>
+            <div class="p-4"> 
+            <a href="/registro" class="text-white" style="font-weight: bold;">Create account</a>
             </div>
 
         </div>
@@ -106,20 +110,18 @@
     </script>
 
 
+    {{-- Bootstrap 5 --}}
 
-    <!--Estos Scrips los necesitamos para poder usar las funcionalidades del bootstrap-->
-    <!-- JQUERY -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
-    <!-- POPPER -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    {{-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
     </script>
-    <!-- BOOTSTRAP -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+    </script> --}}
+
 </body>
 
 </html>

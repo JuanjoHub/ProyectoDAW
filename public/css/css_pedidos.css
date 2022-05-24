@@ -13,19 +13,10 @@ h6,
 th {
     color: white;
 }
-/* 
-.titulos_pedidos {
-   background: rgba(0, 0, 0, 0.5) !important;
-}
-.cells_pedidos {
 
-    background-color: #616161;
+table tr th {
+    background-color: black;
 }
-.table-hover tbody tr:hover td,
-.table-hover tbody tr:hover th {
-    transition: 0.5s;
-    background-color: #424242;
-} */
 
 
 /*Hover de la tabla de pedidos*/
@@ -40,6 +31,10 @@ th {
 
 .jumbotron h1 {
     font-family: 'Bebas Neue', cursive;
+}
+
+h2{
+    font-family: 'Bebas Neue', cursive; 
 }
 
 /*********************NAVBAR***********************/
@@ -106,7 +101,18 @@ a:hover {
 
 }
 
+/*/**************Estilos de los dropdowns/***************/
 
+.navbar .dropdown-menu a {
+    font-weight: bold;
+    /* background-color: red !important; */
+  }
+  .navbar .dropdown-menu a:hover {
+    transition: 1s;
+    color: red !important;
+    background-color: transparent !important ;
+    /* background-color: red !important; */
+  }
 
 /**************ANIMACION DE LOS DROPDOWNS*******************/
 

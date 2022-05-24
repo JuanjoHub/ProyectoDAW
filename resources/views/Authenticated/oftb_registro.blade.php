@@ -91,7 +91,7 @@
                             </div>
                         </div>
 
-                        <button type="submit" value="Registrarse" class="btn btn-lg btn-block text-white font-weight-bold">
+                        <button type="submit" value="Registrarse" class="btn btn-outline-danger btn-lg btn-block text-white font-weight-bold">
                             SIGN UP
                         </button>
                     </form>

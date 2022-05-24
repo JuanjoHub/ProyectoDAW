@@ -1,16 +1,22 @@
-@extends('navbar_footer');
+@extends('Layout.head');
+@extends('Layout.navbar');
+@extends('Layout.footer');
+@extends('Layout.scripts');
 
-<link rel="stylesheet" href="../css/css_contacto.css">
+@section('head')
 <link rel="stylesheet" href="../css/css_plantilla.css">
- 
-@section('content')
+<link rel="stylesheet" href="../css/css_contacto.css">
+@endsection
+
+@section('navbar')
+@endsection
 
     <!------------------------------------------------------------------->
     <!------------------------JUMBOTRON 1-------------------------------->
     <!------------------------------------------------------------------->
-    <div class="jumbotron jumbotron-fluid animate__animated animate__bounceInLeft div_jumbotron">
+    <div class="jumbotron jumbotron-fluid animate__animated animate__bounceInLeft bg-transparent">
         <div class="container mt-5">
-            <h1 class="display-3 text-white animate__animated animate__bounceInLeft">Contacta con nosotros</h1>
+            <h1 class="display-3 text-white animate__animated animate__bounceInLeft">Contact us</h1>
             <hr class="animate__animated animate__bounceInRight" style="background-color: red; height: 2px;"> 
         </div>
     </div>
@@ -23,7 +29,7 @@
             </div>
             <!--Contacto-->
             <div class="col-lg-3 col-md-6 col-sm-6 text-white p-4">
-                <h6 class="text uppercase font-weight-bold">Contacto</h6>
+                <h6 class="text uppercase font-weight-bold">Contact</h6>
                 <hr class="myhrfooter_contacto mb-4 mt-0 d-inline-block mx-auto">
                 <ul class="list-unstyled">
                     <li class="my-2"><i class="fas fa-home mr-2"></i>C/Demostenes,32 Las Rozas</li>
@@ -35,7 +41,7 @@
 
             <!--About-->
             <div class="col-lg-3 col-md-6 col-sm-6 text-white p-4">
-                <h6 class="text uppercase font-weight-bold">Sobre nosotros</h6>
+                <h6 class="text uppercase font-weight-bold">About us</h6>
                 <hr class="myhrfooter_aboutus mb-4 mt-0 d-inline-block mx-auto">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Rem dignissimos sed at id ipsam nesciunt beatae laborum praesentium asperiores in suscipit alias,
@@ -52,9 +58,9 @@
     <!------------------------------------------------------------------->
 
 
-    <div class="jumbotron jumbotron-fluid animate__animated animate__bounceInRight div_jumbotron">
+    <div class="jumbotron jumbotron-fluid animate__animated animate__bounceInRight bg-transparent">
         <div class="container">
-            <h1 class="display-3 text-white text-right animate__animated animate__bounceInRight">Donde encontrarnos</h1>
+            <h1 class="display-3 text-white text-right animate__animated animate__bounceInRight">Where find us</h1>
             <hr class="animate__animated animate__bounceInLeft" style="background-color: red; height: 2px;"> 
         </div>
     </div>
@@ -81,6 +87,11 @@
     </div>
 
 
+@section('scripts')
+@endsection
+
+@section('footer')
+@endsection
 
 
     

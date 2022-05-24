@@ -1,10 +1,17 @@
-@extends('navbar_footer');
+@extends('Layout.head');
+@extends('Layout.navbar');
+@extends('Layout.footer');
+@extends('Layout.scripts');
 
+@section('head')
 <link rel="stylesheet" href="../css/css_plantilla.css">
 <link rel="stylesheet" href="../css/css_prev_prod.css">
-<link rel="stylesheet" href="../css/css_pago.css">
-<!--Acerca del producto-->
-@section('content')
+{{-- <link rel="stylesheet" href="../css/css_pago.css"> --}}
+@endsection
+
+@section('standard_navbar')
+@endsection
+
 
     <!------------------------------------------------------------------->
     <!------------------------JUMBOTRON 1-------------------------------->
@@ -25,9 +32,11 @@
                 <div class="col-lg-6 card_imagen rounded-left rounded-right rounded-top rounded-bottom mb-4"
                     style="background-image: url(..{{ $prod->imagen }});">
                 </div>
+
                 <!--div separador-->
                 <div class="col-lg-1">
                 </div>
+
                 <!--Descripcion-->
                 <div class="col-lg-5 card_descripcion rounded-left rounded-right rounded-top rounded-bottom text-center">
                     <h2 style="color: #fff;" class="mt-4"> {{ $prod->nombre_articulo }}</h2>
@@ -38,14 +47,23 @@
                                 Categoria | Nombre |{{ ' Stock' }}<i
                                     class="fa-solid fa-check icon-green fa-lg text-center ml-2 mt-auto mb-auto"></i>
                             @else
-                                Categoria |{{ ' Fuera de stock' }}<i
+                                {{ ' Fuera de stock' }}<i
                                     class="fa-solid fa-xmark icon_stock fa-lg text-center ml-2 mt-auto mb-auto "></i>
                             @endif
                         </p>
                     </div>
-                    <p class="text-center precio mt-4 mb-4">Precio final: {{ $prod->precio }}€</p>
+                     <p class="text-center precio mt-4 mb-4">Total price: {{ $prod->precio }}€</p>
+                        @if ($prod->stock > 0)
+                            <form action="/pago" method="POST">
+                            @csrf
+                                <input type="hidden" name="cod_pago" value="{{ $prod->cod_articulo }}">
+                                <button type="submit" class="btn btn_compra mt-3">Purchase</button>
+                            </form>
+                        @else
+                             <button  class="btn btn_sold mt-3">Sold out</button>
 
-                    <button type="submit" class="btn btn-lg btn-block div_compra mt-3">Comprar</button>
+                        @endif
+                   
 
                 </div>
             </div>

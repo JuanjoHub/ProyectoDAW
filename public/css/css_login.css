@@ -18,12 +18,14 @@
 }
 
 
-
+/* Estilos del div izquierdo */
 .left {
   background-color: rgb(40, 40, 40) !important;
-
+  align-items: center;
+  justify-content: center;
 }
 
+/* Estilos del div derecho */
 .right {
   background-image: url(../Imagenes_OFTB/Imagenes/pkb2.jpg);
   background-repeat: no-repeat;
@@ -41,14 +43,15 @@
 
 .btn {
   height: 50px;
+  font-weight: bold;
   cursor: pointer;
   background: red;
-
+  
 }
 
 .btn:hover {
   transition: 1.5s;
-  background: green;
+  background: red;
   
 }
 
@@ -73,6 +76,9 @@ a:hover {
 form {
   width: 455px !important;
   margin: auto !important;
+}
+.form-container{
+  
 }
 
 /*Color del fondode los imputs*/

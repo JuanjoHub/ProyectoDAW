@@ -14,7 +14,7 @@ class PrevController extends Controller
         // dd($producto);
 
         $preview = DB::table('articulos')
-        ->select('nombre_articulo','descripcion','precio','imagen','stock')
+        ->select('nombre_articulo','descripcion','precio','imagen','stock','cod_articulo')
         ->where('cod_articulo',$producto)
         ->get();
  

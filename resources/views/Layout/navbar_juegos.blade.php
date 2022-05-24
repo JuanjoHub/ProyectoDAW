@@ -99,7 +99,7 @@
                     </li>
                 @endauth
                 <li class="nav-item">
-                    <a class="nav-link" href="oftb_contacto">Contact</a>
+                    <a class="nav-link" href="/contacto">Contact</a>
                 </li>
             </ul>
             <div class="text-center">
@@ -121,7 +121,7 @@
                         <li class="nav-item mr-2 mt-1">
                             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                                 aria-expanded="false">
-                                <i class="fa-solid fa-user-tie"></i>
+                                 <i class="fa-solid fa-user-check"></i>
                             </a>
 
                         </li>
