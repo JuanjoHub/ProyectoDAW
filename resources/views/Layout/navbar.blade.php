@@ -98,7 +98,17 @@
                 @auth
 
                     <ul class="navbar-nav mr-auto ml-auto">
-                        {{-- Primer elemento --}}
+
+                        {{-- Carrito --}}
+                        <li class="nav-item mr-2">
+                            <a class="nav-link" href="/showcart">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                [{{$quantityCard}}]
+                            </a>
+
+                        </li>
+
+                        {{-- Usuario --}}
                         <li class="nav-item mr-2">
                             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                                 aria-expanded="false">
@@ -106,7 +116,7 @@
                             </a>
 
                         </li>
-
+                        {{-- Icono de logeado corecctamente --}}    
                         <li class="nav-item mt-1 mr-1">
                             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                                 aria-expanded="false">
@@ -114,8 +124,8 @@
                             </a>
 
                         </li>
-                        {{-- Segundo elemento --}}
 
+                        {{-- Dropdowns del toggle --}}
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                                 aria-expanded="false">

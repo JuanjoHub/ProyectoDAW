@@ -18,8 +18,8 @@ class PedidosController extends Controller
 
         $users = DB::table('historial')
             ->join('users', 'historial.id', '=', 'users.id')
-            ->join('pedidos', 'historial.cod_pedido', '=', 'pedidos.cod_pedido')
-            ->select('historial.fecha_pedido', 'historial.cod_pedido', 'pedidos.estado')
+            ->join('pedidos', 'historial.pedido_id', '=', 'pedidos.pedido_id')
+            ->select('historial.fecha_pedido', 'historial.pedido_id', 'pedidos.estado')
             ->where('username', $usuario)
             ->paginate(10);
 

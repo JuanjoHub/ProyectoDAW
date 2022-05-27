@@ -38,9 +38,9 @@
                 <form action="/detalles" method="POST">
                     @csrf
                     <tr class="cells_pedidos">
-                        <input type="hidden" name="cod_pedido" value="{{ $pedido->cod_pedido }}">
+                        <input type="hidden" name="pedido_id" value="{{ $pedido->pedido_id }}">
                             <td>{{ $pedido->fecha_pedido }}</td>
-                            <td>{{ $pedido->cod_pedido }}</td>
+                            <td>{{ $pedido->pedido_id }}</td>
                             <td>{{ $pedido->estado }}</td>
                             <td>
                                 <button type="submit" class="boton_detalles rounded-left rounded-right rounded-top">

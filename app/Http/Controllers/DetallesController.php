@@ -11,22 +11,22 @@ class DetallesController extends Controller
     public function show(Request $request)
     {
 
-        $pedido = $request->input(key: 'cod_pedido');
+        $pedido = $request->input(key: 'pedido_id');
         $idUsuario = Auth::user()->id;
 
         $detalles = DB::table('facturas')
-            ->join('historial', 'facturas.cod_pedido', '=', 'historial.cod_pedido')
+            ->join('historial', 'facturas.pedido_id', '=', 'historial.pedido_id')
             ->join('articulos', 'facturas.cod_articulo', '=', 'articulos.cod_articulo')
-            ->select('articulos.nombre_articulo', 'facturas.cantidad', 'articulos.precio', 'facturas.cod_pedido')
+            ->select('articulos.nombre_articulo', 'facturas.cantidad', 'articulos.precio', 'facturas.pedido_id')
             ->where([
                 ['historial.id', '=', $idUsuario],
-                ['historial.cod_pedido', '=', $pedido],
+                ['historial.pedido_id', '=', $pedido],
             ])->get();
 
 
         $detalles_pedido = DB::table('pedidos')
-            ->join('historial', 'pedidos.cod_pedido', '=', 'historial.cod_pedido')
-            ->select('pedidos.cod_pedido', 
+            ->join('historial', 'pedidos.pedido_id', '=', 'historial.pedido_id')
+            ->select('pedidos.pedido_id', 
                      'pedidos.nombre_destinatario', 
                      'pedidos.metodo_pago', 
                      'pedidos.numero_tarjeta', 
@@ -37,7 +37,7 @@ class DetallesController extends Controller
                      'historial.fecha_prev_envio')
             ->where([
                 ['historial.id', '=', $idUsuario],
-                ['historial.cod_pedido', '=', $pedido],
+                ['historial.pedido_id', '=', $pedido],
             ])->get();
 
         return view('Orders.detalle_pedido', ['detalles' => $detalles], ['dameDatos' => $detalles_pedido]);

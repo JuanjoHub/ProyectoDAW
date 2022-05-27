@@ -33,7 +33,7 @@
         <table class="table table-bordered table-dark">
             <tr>
                 <td class="col-8">Order number</td>
-                <td> {{ $dato->cod_pedido }}</td>
+                <td> {{ $dato->pedido_id }}</td>
             </tr>
             <tr>
                 <td>Order date</td>

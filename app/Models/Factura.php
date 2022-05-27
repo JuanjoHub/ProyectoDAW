@@ -5,20 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Articulo extends Model
-{
+class Factura extends Model {
     use HasFactory;
 
 
     protected $fillable = [
+        'pedido_id',
         'cod_articulo',
-        'cod_categoria',
-        'tipo',
-        'nombre_articulo',
-        'descripcion',
-        'stock',
-        'precio',
-        'ventas_totales',
-        'ventas_totales',
+        'cantidad',
+
     ];
+
+
+    
 }
+

@@ -34,13 +34,14 @@
 
         <div class="left text-white text-center">
             <!--Div para fijar la altura del formulario-->
-            <div style="height: 100px;">
+            <div style="height: 60px;">
             </div>
             <div class="container div_form">
                 <!--Formulario-->
                 <form action="/pago_realizado" method="POST">
                     @csrf
-                    <input type="hidden" name="cod_pago" value="1">
+                     @include('Mensajes.mensajes')
+                    <input type="hidden" name="cod_pago" value="{{ $cod_pago }}">
                     <!-- Pasamos el codigo en un tipo hidden al siguiente controlador-->
                     <!--Nombre / email-->
                     <div class="form-row font-weight-bold mb-2">
@@ -82,7 +83,7 @@
 
                     <h2 class="text-left mb-4">Método de pago</h2>
 
-{{-- ----------------------------------------------------------------------------------------------- --}}
+                    {{-- ----------------------------------------------------------------------------------------------- --}}
                     <div class="custom-control custom-radio mb-4 col-md-11">
                         <input type="radio" id="customRadio1" name="metodo" class="custom-control-input" value="Visa">
                         <label class="custom-control-label d-flex justify-content-start ml-4" for="customRadio1">Tarjeta
@@ -105,7 +106,7 @@
                         <i class="fa-brands fa-cc-apple-pay fa-xl d-flex justify-content-end"></i>
                     </div>
 
-               
+
 
 
 
@@ -122,20 +123,41 @@
                             placeholder="Andrea Vicente Hernandez">
                     </div>
 
-                    
-
+                    <h2 class="text-left mb-3">Expiration date</h2>
                     <!--Fecha de caducidad / cvv-->
                     <div class="form-row font-weight-bold text-left">
-                        <div class="form-group col-md-6">
-                            <label for="inputEmail4">Fecha de caducidad </label>
-                            <input type="text" class="form-control text-white text-white" id="inputEmail4" name="caducidad"
-                                placeholder="MM/YYYY">
+                   
+                        <div class="form-group col-md-3">
+                            <label for="inputPassword4">Month</label>
+                            <select class="custom-select custom-select-md mb-3" name="month" required>
+                                @for ($i = 1; $i < 13; $i++)
+                                    <option value="{{ $i }}">{{ $i }}</option>
+                                @endfor
+                            </select>
                         </div>
+                        {{-- YEAR --}}
+                        <div class="form-group col-md-3 text-left">
+
+                        <label for="inputPassword4">Year</label>
+                            <?php $current_year = date('Y'); ?>
+                            <select class="custom-select custom-select-md mb-3" name="year" required>
+                                <option selected="1">{{ $current_year }}</option>
+                                @for ($i = 1; $i < 6; $i++)
+                                    <option value="{{ $i }}">{{ $current_year + $i }}</option>
+                                @endfor
+                            </select>
+                        </div>
+
+
+                        {{-- ----------------- CVC --------------------- --}}
                         <div class="form-group col-md-6 text-left">
-                            <label for="inputPassword4">CVV</label>
-                            <input type="text" class="form-control text-white" id="inputPassword4" placeholder="CVC">
+                            <label for="inputPassword4">CVC</label>
+                            <input type="text" class="form-control text-white" id="inputPassword4" placeholder="CVC"
+                                name="cvc" maxlength="3">
                         </div>
                     </div>
+
+
 
                     <!--Boton del submit-->
                     <button type="submit" class="btn btn-lg btn-block text-white font-weight-bold">
@@ -144,8 +166,7 @@
 
                 </form>
                 <!--Enlace para ir al login-->
-                <div class="p-4"> <a href="oftb_prev_prod.html"><i
-                            class="fa-solid fa-angles-left mr-2 "></i>Back</a>
+                <div class="p-4"> <a href="/home"><i class="fa-solid fa-angles-left mr-2 "></i>Back</a>
                 </div>
 
             </div>
@@ -165,7 +186,7 @@
         <div class="right_img">
 
             <div class="d-flex align-items-end flex-column " style="height: 150px;">
-                <div class="p-4"> <a href="index.html"><i class="fa-solid fa-xmark fa-3x"></i></a>
+                <div class="p-4"> <a href="/home"><i class="fa-solid fa-xmark fa-3x"></i></a>
                 </div>
             </div>
 

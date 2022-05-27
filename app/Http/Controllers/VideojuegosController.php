@@ -43,10 +43,10 @@ class VideojuegosController extends Controller
          
             // return redirect()->to('/Peliculas/marvel');
             switch ($saga_juego) {
-                case 'dmc':       return view($url . $saga_juego, ['saga_juego' => $saga_juego],['articulo_juegos' => $articulos]);
-                case 'gow':    return view($url . $saga_juego, ['saga_juego' => $saga_juego],['articulo_juegos' => $articulos]);
-                case 'mk':      return view($url . $saga_juego, ['saga_juego' => $saga_juego],['articulo_juegos' => $articulos]);
-                case 're':          return view($url . $saga_juego, ['saga_juego' => $saga_juego],['articulo_juegos' => $articulos]);
+                case 'dmc':       return view($url . $saga_juego, ['saga_juego' => $saga_juego,'articulo_juegos' => $articulos]);
+                case 'gow':    return view($url . $saga_juego, ['saga_juego' => $saga_juego,'articulo_juegos' => $articulos]);
+                case 'mk':      return view($url . $saga_juego, ['saga_juego' => $saga_juego,'articulo_juegos' => $articulos]);
+                case 're':          return view($url . $saga_juego, ['saga_juego' => $saga_juego,'articulo_juegos' => $articulos]);
                     /*Crear funcion que me devuelva las peliculas que vengan de la variable saga_juego,y pasarselo a la vista en la linea 20
                     como un array */
                     // return view($url . $saga_juego, ['nombre' => $saga_juego],['articulo_peliculas' => $marvel]);

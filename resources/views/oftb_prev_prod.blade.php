@@ -52,8 +52,23 @@
                             @endif
                         </p>
                     </div>
-                     <p class="text-center precio mt-4 mb-4">Total price: {{ $prod->precio }}€</p>
+                     <p class="text-center precio mt-4">Total price: {{ $prod->precio }}€</p>
                         @if ($prod->stock > 0)
+                        {{-- Add to cart --}}
+                            <form action="{{url('addcart',$prod->cod_articulo)}}" method="POST" class="text-center">
+                               @csrf
+                               
+                                <div  class="form-row font-weight-bold">
+                                    <div class="form-group col-md-6 text-center">
+                                        <input type="hidden" name="cod_articulo" value="{{$prod->cod_articulo }}">
+                                        <input type="number" value="1" min="1" name="quantity">
+                                    </div>
+                                    <div class="form-group col-md-6 text-left">
+                                        <button type="submit" class="btn">Add to cart</button>
+                                    </div>
+                                </div>
+                            </form>
+                        {{----------------}}
                             <form action="/pago" method="POST">
                             @csrf
                                 <input type="hidden" name="cod_pago" value="{{ $prod->cod_articulo }}">

@@ -69,7 +69,7 @@ Route::post('Videojuegos/{saga_juego}', [VideojuegosController::class,'search'])
 Route::get('/pedidos', [PedidosController::class,'show','datos']);
 Route::post('/detalles', [DetallesController::class,'show']);
 
-/* Cart routes */
+/* Vista previa productos routes */
 Route::post('/oftb_prev_prod', [PrevController::class,'prev_Articulo']);
 Route::get('/oftb_prev_prod', [PrevController::class,'prev_Articulo']);
 
@@ -77,7 +77,12 @@ Route::get('/oftb_prev_prod', [PrevController::class,'prev_Articulo']);
 Route::post('/pago', [PagoController::class,'show']);
 Route::get('/pago', [PagoController::class,'show']);
 Route::POST('/pago_realizado',[PagoReadyController::class,'pago']);
-Route::get('/pago_realizado',[PagoReadyController::class,'pago']);
+
+/* Carrito */
+Route::post('/addcart/{cod_articulo}',[CartController::class,'addcart']);
+Route::get('/showcart',[CartController::class,'show']);
+Route::get('/delete/{id}',[CartController::class,'deletecart']);
+
 
 Route::get('/test', function () {
     return view('test');

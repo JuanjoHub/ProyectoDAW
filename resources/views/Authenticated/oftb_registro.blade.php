@@ -53,43 +53,41 @@
                         @csrf <!-- Agrega nuetro campo oculto para poder utilizar nuestro token y evitar problemas de seguridad-->
                         @include('Mensajes.mensajes')
                         <!--Nombre / email-->
-                        <div class="form-row font-weight-bold mb-2">
+                        <div class="form-row font-weight-bold">
                             <div class="form-group col-md-6 text-left">
-                                <label>Name</label>
-                                <input type="text" class="form-control text-white" name="username" id="inputEmail4"
+                                <label>Username</label>
+                                <input type="text" class="form-control text-white" name="username" id="inputEmail4" maxlength="25"
                                     placeholder="Nick name">
                             </div>
                             <div class="form-group col-md-6 text-left">
+                                <label>Phone</label>
+                                <input type="text" class="form-control text-white" name ="phone" id="inputPassword4"
+                                    placeholder="+34630678930">
+                            </div>
+                        </div>
+
+                          <div class="text-left font-weight-bold mb-4">
                                 <label>Email</label>
                                 <input type="email" class="form-control text-white" name="email" id="inputPassword4"
                                     placeholder="peake_user@gmail.com">
                             </div>
-                        </div>
                         <!--Contraseña / confirmacion contraseña-->
-                        <div class="form-row font-weight-bold mb-2">
+                        <div class="form-row font-weight-bold">
                             <div class="form-group col-md-6 text-left">
                                 <label>Password</label>
                                 <input type="password" class="form-control text-white" name="password" id="inputEmail4"
-                                    placeholder="Password">
+                                    placeholder="********">
+                                   
                             </div>
                             <div class="form-group col-md-6 text-left mb-2">
                                 <label>Confirm Password</label>
                                 <input type="password" class="form-control text-white" name ="password_confirmation" id="inputPassword4"
-                                    placeholder="Password">
+                                    placeholder="********">
                             </div>
                         </div>
-                        <!--Fecha de nacimiento / telefono-->
-                        <div class="form-row font-weight-bold text-left">
-                            <div class="form-group col-md-6">
-                                <label>Birthdate </label>
-                                <input type="date" class="form-control text-white text-white" name ="fecha_nacimiento" id="inputEmail4">
-                            </div>
-                            <div class="form-group col-md-6 text-left">
-                                <label>Phone</label>
-                                <input type="text" class="form-control text-white" name ="telefono" id="inputPassword4"
-                                    placeholder="+34630678930">
-                            </div>
-                        </div>
+                         <small class="form-text text-muted mt-0 mb-4">The password must contain at least 8 characters, a capital letter and a number.</small>
+                       
+                        
 
                         <button type="submit" value="Registrarse" class="btn btn-outline-danger btn-lg btn-block text-white font-weight-bold">
                             SIGN UP
@@ -121,6 +119,7 @@
 
 
     <script>
+
         function doblediv_registro() {
 
             if (ancho.matches || alto.matches) {
@@ -140,6 +139,7 @@
 
         ancho.addListener(doblediv_registro);
         alto.addListener(doblediv_registro);
+
     </script>
 
 

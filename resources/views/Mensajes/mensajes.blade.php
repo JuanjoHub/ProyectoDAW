@@ -12,9 +12,18 @@
     </div>
 @endif
 
+{{-- @if ($errors->has('password'))
+    <li class="list-unstyled mb-0"> {{ $errorPass }} </li>
+@endif
+@if ($errors->has('email'))
+    <li class="list-unstyled mb-0"> {{ 'hola' }} </li>
+@endif --}}
+
+
 
 {{-- @if (Session::get('success', false))
-    <?php //$data = Session::get('success'); ?>
+    <?php //$data = Session::get('success');
+    ?>
     @if (is_array($data))
         @foreach ($data as $message)
             <div class="alert alert-success text-left">
