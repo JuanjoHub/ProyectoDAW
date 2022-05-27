@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Factura;
 use App\Models\Historial;
 use App\Models\Pedido;
@@ -27,7 +28,7 @@ class PagoReadyController extends Controller
         $month = $request->input(key: 'month');
         $cvc = $request->input(key: 'cvc');
         $idUsuario = Auth::user()->id;
-
+        $user = Auth::user()->username;
         /* Formateamos los datos que vamos a insertar en la BBDD */
         $bd_card = substr($tarjeta, 15, 19);
         $current_date = date("Y-m-d");
@@ -39,50 +40,84 @@ class PagoReadyController extends Controller
             ->select('nombre_articulo', 'precio', 'imagen')
             ->where('cod_articulo', $producto)
             ->get();
+        //Carrito
+        $cartDetails=DB::table('carts')
+        ->select('id','product_title','quantity','price','code')
+        ->where('username', $user)
+        ->get();
        
-       
 
-        if ( comprobarTarjeta($tarjeta) && comprobarTitular($titular, $nombre) && comprobarRadio($metodo)
-            && comprobarCaducidad($month) && comprobarCCAA($ccaa) && comprobarCVC($cvc)) {
+            if ( comprobarTarjeta($tarjeta) && comprobarTitular($titular, $nombre) && comprobarRadio($metodo)
+                && comprobarCaducidad($month) && comprobarCCAA($ccaa) && comprobarCVC($cvc)) {
 
-            $orderId = Pedido::insertGetId([
-                'nombre_destinatario' => $nombre,
-                'metodo_pago' => $metodo,
-                'numero_tarjeta' => $bd_card,
-                'CCAA' =>  $ccaa,
-                'direccion_envio' => $direccion,
-                'estado' => 'Send'
-
-            ]);
-
-            if ($orderId) {
-
-                Historial::insert([
-
-                    'id' => $idUsuario,
-                    'pedido_id' => $orderId,
-                    'fecha_pedido' => $current_date,
-                    'fecha_prev_envio' =>  $current_arrive
+                $orderId = Pedido::insertGetId([
+                    'nombre_destinatario' => $nombre,
+                    'metodo_pago' => $metodo,
+                    'numero_tarjeta' => $bd_card,
+                    'CCAA' =>  $ccaa,
+                    'direccion_envio' => $direccion,
+                    'estado' => 'Send'
 
                 ]);
+                //si el carrito esta vacio
 
-                Factura::insert([
+                if ($orderId && $cartDetails->isEmpty()) {
 
-                    'pedido_id' => (int)$orderId,
-                    'cod_articulo' => (int)$producto,
-                    'cantidad' => (int)'1',
+                    Historial::insert([
 
-                ]);
-            }
+                        'id' => $idUsuario,
+                        'pedido_id' => $orderId,
+                        'fecha_pedido' => $current_date,
+                        'fecha_prev_envio' =>  $current_arrive
+
+                    ]);
+
+                    Factura::insert([
+
+                        'pedido_id' => (int)$orderId,
+                        'cod_articulo' => (int)$producto,
+                        'cantidad' => (int)'1',
+
+                    ]);
+
+                    return view('test', ['resume' => $resume]);
+                //si no esta vacio
+                }elseif($orderId && $cartDetails->isNotEmpty()){
+
+                        Historial::insert([
+
+                            'id' => $idUsuario,
+                            'pedido_id' => $orderId,
+                            'fecha_pedido' => $current_date,
+                            'fecha_prev_envio' =>  $current_arrive
+
+                        ]);
+
+                    foreach ($cartDetails as $details) {
+                        # code...
+                    
+                        Factura::insert([
+
+                            'pedido_id' => (int)$orderId,
+                            'cod_articulo' => (int)$details->code,
+                            'cantidad' => (int)$details->quantity,
+                            
+                        ]);
+
+                    }
+                    //Borramos el carrito de la BBDD
+                    $deleted = DB::table('carts')->where('username', '=', $user)->delete();
+            
 
 
-            return view('test', ['resume' => $resume]);
-            // return redirect()->to('/test');
+                    return view('test', ['resume' => $resume]);
+                    // return redirect()->to('/test');
+                }
+
+            return redirect()->to('/pago');
+            // dd($caducidad);
+            // return comprobarCVC($cvc) ? redirect()->to('/test') : redirect()->to('/pago');
         }
-
-        return redirect()->to('/pago');
-        // dd($caducidad);
-        // return comprobarCVC($cvc) ? redirect()->to('/test') : redirect()->to('/pago');
     }
 }
 /* Codigo postal : ^d{5}(?:[-s]d{4})?$ */

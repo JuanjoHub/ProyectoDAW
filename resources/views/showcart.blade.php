@@ -8,13 +8,7 @@
 <link rel="stylesheet" href="../css/css_pedidos.css">
 @endsection
 
-@section('navbar')
-@if(session()->has('message'))
-    <div class="alert alert-success">
-    <button type="button" class="close" data-dismiss="alert">x</button>
-    {{session()->get('message')}}
-    </div>
-@endif   
+@section('navbar')  
 @endsection
 
  <!------------------------------------------------------------------->
@@ -58,7 +52,8 @@
              
                     <td colspan="2"></td>
                     <td>Subtotal</td>
-                     <td> {{ $totalPrice }}€</td>
+                    <td> {{ $totalPrice }}€</td>
+                     <td class="text-center"><a name="" class="btn btn-primary" href="/pago" role="button">Buy now</a></td>
                
             </tr>
         </tbody>

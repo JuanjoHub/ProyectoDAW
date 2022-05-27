@@ -122,24 +122,26 @@
         </thead>
         <tbody>
             <!--1 ROW-->
+             <?php $totalPrice = 0 ?>
             @foreach ($detalles as $detalle)
                 <tr>
 
                     <td>{{ $detalle->nombre_articulo }}</td>
                     <td>{{ $detalle->cantidad }}</td>
                     <td>{{ $detalle->precio }}€</td>
-                    <td>{{ $detalle->precio }}€</td>
-                    <?php $precio = $precio + $detalle->precio; ?>
+                     <?php $total = $detalle->cantidad * $detalle->precio; ?>
+                    <td>{{ $total }}€</td>
+                     <?php $totalPrice = $totalPrice + $total; ?>
                 </tr>
             @endforeach
             <tr style=" font-weight: bold;">
                 @if ($status == 'Returned')
                     <td colspan="3">amount to return</td>
-                    <td> {{ $precio }}€</td>
+                    <td> {{ $totalPrice }}€</td>
                 @else
                     <td colspan="2"></td>
                     <td>Subtotal</td>
-                    <td> {{ $precio }}€</td>
+                    <td> {{ $totalPrice }}€</td>
                 @endif    
             </tr>
         </tbody>

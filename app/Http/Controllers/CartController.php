@@ -35,6 +35,7 @@ class CartController extends Controller
              
                 $name = $p->nombre_articulo;
                 $precio = $p->precio;
+                
             }
           
             $cartDetails=DB::table('carts')
@@ -63,6 +64,7 @@ class CartController extends Controller
                 $cart->username = $usuario->username;
                 $cart->phone = $usuario->phone;
                 $cart->address = $usuario->email;
+                $cart->code = $producto;
                 $cart->product_title = $name;
                 $cart->price = $precio;
                 $cart->quantity = $request->quantity;
@@ -100,11 +102,12 @@ class CartController extends Controller
      public function deletecart($id){
 
         $data=Cart::find($id);
-
         $data->delete();
 
         return redirect()->back();
      }
+
+     
 
     
 }
