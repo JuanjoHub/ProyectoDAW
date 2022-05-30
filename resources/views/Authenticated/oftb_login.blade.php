@@ -80,7 +80,6 @@
         <!----------------------------------------------------------------------->
 
         <div class="right">
-
             <div class="d-flex align-items-end flex-column " style="height: 150px;">
                 <div class="p-4"> <a href="/home"><i class="fa-solid fa-xmark fa-3x icon_color"></i></a>
                 </div>

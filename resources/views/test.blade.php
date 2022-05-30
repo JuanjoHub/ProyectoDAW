@@ -1,17 +1,63 @@
-<!DOCTYPE html>
-<html>
-<head>
-<h1>¡ Pedido realizado con exito !</h1>
-<h2>Resumen del pedido: </h2>
+@extends('Layout.head');
+@extends('Layout.navbar');
+@extends('Layout.footer');
+@extends('Layout.scripts');
 
-@foreach ($resume as $re )
-    
-    <img src="..{{$re->imagen}}" alt="">
-    <p>Nombre del producto: {{$re->nombre_articulo}}</p>
-    <p>Precio:{{$re->precio}}</p>
+@section('head')
+    <link rel="stylesheet" href="../css/css_pedidos.css">
+@endsection
 
-@endforeach
+@section('navbar')
+@endsection
 
-</body>
-</html>
+<!------------------------------------------------------------------->
+<!------------------------JUMBOTRON 1-------------------------------->
+<!------------------------------------------------------------------->
+<div class="jumbotron jumbotron-fluid jumbotron_orderMake jumbotron_hasbeen">
+    <div class="container">
+        <h1 class="display-4 text-white animate__animated animate__fadeInDown"> Order made successfully</h1>
+    </div>
+</div>
 
+
+<!--Resumen de pedidos-->
+<div class="container mb-5 ">
+    <table class="table table-hover table-bordered bg-transparent ">
+        <thead class="titulos_pedidos">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Price</th>
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--1 ROW-->
+             <?php $totalPrice = 0 ?>
+            @foreach ($orderResume as $resume)
+                <tr>
+
+                    <td>{{ $resume->product_title }}</td>
+                    <td>{{ $resume->quantity }}</td>
+                    <td>{{ $resume->price }}€</td>
+                     <?php $totalAmount = $resume->quantity * $resume->price; ?>
+                    <td>{{ $totalAmount }}€</td>
+                     
+                </tr>
+            @endforeach
+            <tr style=" font-weight: bold;">
+                    <td colspan="2"></td>
+                    <td>Subtotal</td>
+                    <td> {{ $total }}€</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<a name="" id="" class="btn btn-primary" href="#" role="button">Back Home</a>
+
+@section('footer')
+@endsection
+@section('scripts')
+@endsection

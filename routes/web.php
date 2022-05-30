@@ -26,7 +26,9 @@ use App\Http\Controllers\PagoReadyController;
 
 /*Carrito */
 use App\Http\Controllers\CartController;
-use App\Http\Controllers\ProductController;
+
+
+use App\Http\Controllers\Controller;
 
 use App\Models\User;
 /*
@@ -46,6 +48,7 @@ use App\Models\User;
 
 /*Index */
 Route::get('/home', [HomeController::class,'index']);
+Route::post('/home', [HomeController::class,'index']);
 Route::post('/home2', [Home2Controller::class,'show']);
 Route::get('/home2', [Home2Controller::class,'show']);
 
@@ -76,18 +79,23 @@ Route::get('/oftb_prev_prod', [PrevController::class,'prev_Articulo']);
 /* Pago */
 Route::post('/pago', [PagoController::class,'show']);
 Route::get('/pago', [PagoController::class,'show']);
+
 Route::POST('/pago_realizado',[PagoReadyController::class,'pago']);
+// Route::POST('/pago_unico',[PagoReadyController::class,'pagoUnico']);
+
 
 /* Carrito */
 Route::post('/addcart/{cod_articulo}',[CartController::class,'addcart']);
 Route::get('/showcart',[CartController::class,'show']);
 Route::get('/delete/{id}',[CartController::class,'deletecart']);
 
+Route::get('/contact',[ContactController::class,'show']);
+
 
 Route::get('/test', function () {
     return view('test');
 });
 /*Contacto */
-Route::get('/contacto', function () {
-    return view('oftb_contacto');
-});
+// Route::get('/contacto', function () {
+//     return view('oftb_contacto');
+// });

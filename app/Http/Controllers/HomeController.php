@@ -22,6 +22,8 @@ class HomeController extends Controller
        $artMV = DB::select('select * from articulos order by ventas_totales desc LIMIT 6 ');
        //Query para saber el numero de productos que tiene en el carrito
   
+
+       
         
        if (Auth::check()) {
         $user = Auth::user();
@@ -33,7 +35,8 @@ class HomeController extends Controller
          
     }
 
-    
+    //Create an instance; passing `true` enables exceptions
+        
 
     
 }

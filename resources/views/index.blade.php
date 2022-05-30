@@ -8,15 +8,16 @@
 <link rel="stylesheet" href="../css/css_index.css">
 @endsection
 
-@section('navbar')
-@if(session()->has('message'))
-    <div class="alert alert-success">
-    <button type="button" class="close" data-dismiss="alert">x</button>
-    {{session()->get('message')}}
-    </div>
-@endif   
+@section('standard_navbar')
+  
 @endsection
 
+ @if(session()->has('message'))
+                    <div class="alert alert-success text-center animate__animated animate__fadeInDown" style="margin-top:70px;">
+                    <button type="button" class="close" data-dismiss="alert">x</button>
+                    {{session()->get('message')}}
+                    </div>
+ @endif    
  
     <!------------------------------------------------------------------->
     <!--------------------------CAROUSEL--------------------------------->
@@ -34,10 +35,11 @@
             <!--Primer slider-->
             <div class="carousel-item active"
                 style="background-image:url(../Imagenes_OFTB/Imagenes_carrusel/sauron_carousel.jpg)">
-                <div class="carousel-caption text-bottom animate__animated animate__fadeInDown">
+             
+                <div class="carousel-caption text-center animate__animated animate__fadeInDown">
                     <h1>Welcome to Out of the Box</h1>
                     <h2>Top quality items</h2>
-                    <a class="btn btn-outline-light btn-lg" href="oftb_peliculas_esdla.html">Check it</a>
+                    <a class="btn btn-outline-light btn-md" href="/Peliculas/esdla">Check it</a>
                 </div>
             </div>
 
@@ -47,7 +49,7 @@
                 <div class="carousel-caption text-center mb-5 animate__animated animate__fadeInDown">
                     <h1>Welcome to Out of the Box</h1>
                     <h2>Top quality items</h2>
-                    <a class="btn btn-outline-light btn-lg" href="oftb_series_theboys.html">Check it</a>
+                    <a class="btn btn-outline-light btn-lg" href="/Series/theboys">Check it</a>
                 </div>
             </div>
 
@@ -56,7 +58,7 @@
                 <div class="carousel-caption text-center mb-5 animate__animated animate__fadeInDown">
                     <h1>Welcome to Out of the Box</h1>
                     <h2>Top quality items</h2>
-                    <a class="btn btn-outline-light btn-lg" href="oftb_juegos_re.html">Check it</a>
+                    <a class="btn btn-outline-light btn-lg" href="/Videojuegos/re">Check it</a>
                 </div>
             </div>
             <!--Final del carousel inner-->

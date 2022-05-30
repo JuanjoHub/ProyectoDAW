@@ -21,13 +21,23 @@ class CartController extends Controller
             $usuario = Auth::user();
             $nombreUsuario = Auth::user()->username;
             $producto = $request->input(key: 'cod_articulo');
+           
             $cantidad = 0;
             $cartName ="";
+
+            /* Variable para el carrito */
+            $count = Cart::where('username',$usuario->username)->count();
+            /* Variable para el redirect de la vista de pord_prev */
+            $preview = DB::table('articulos')
+            ->select('nombre_articulo','descripcion','precio','imagen','stock','cod_articulo')
+            ->where('cod_articulo',$producto)
+            ->get();
+
             // $product = Articulo::where('cod_articulo','=', $producto);
             $productDetails=DB::table('articulos')
-            ->select('nombre_articulo', 'precio')
-            ->where('cod_articulo', $producto)
-            ->get();
+                ->select('nombre_articulo', 'precio')
+                ->where('cod_articulo', $producto)
+                ->get();
 
             $name = "";
             $precio = 0.00;
@@ -39,9 +49,9 @@ class CartController extends Controller
             }
           
             $cartDetails=DB::table('carts')
-            ->select('username','product_title','quantity')
-            ->where('username', $nombreUsuario)
-            ->get();
+                ->select('username','product_title','quantity')
+                ->where('username', $nombreUsuario)
+                ->get();
 
           
             foreach ($cartDetails as $c) {
@@ -52,31 +62,54 @@ class CartController extends Controller
                 }
             }
 
-
+            /* Actualizar la cantidad en la tabla carts */
             $updatePrice = DB::table('carts')
-              ->where('product_title', $cartName)
-              ->update(['quantity' => $cantidad]);
+                ->where('product_title', $cartName)
+                ->update(['quantity' => $cantidad]);
+
+            /* Actualizar el stock en la tabla articulos */
+            $productStock=DB::table('articulos')
+                ->select('stock')
+                ->where('cod_articulo', $producto)
+                ->get(); 
+
+              foreach ($productStock as $stock) {
+                  $aux = $stock->stock;
+              }
+
+            $stockTotal = $aux - (int)$request->quantity;
+            // dd($stockTotal);
+            //Si el stock es superior a 0 despues de hacer la operacion nos dejará realizarla, de lo contrario nos devolverá a la pagina anterior
+            if ($stockTotal >0) {
+                
+                //Si la consulta de update no se cumple,crea un carrito nuevo en la bbdd
+                if(!$updatePrice){
+                    //creamos el carrito
+                    $cart = new cart;
+                    // $cart->id = $idUsuario;
+                    $cart->username = $usuario->username;
+                    $cart->phone = $usuario->phone;
+                    $cart->address = $usuario->email;
+                    $cart->code = $producto;
+                    $cart->product_title = $name;
+                    $cart->price = $precio;
+                    $cart->quantity = $request->quantity;
+                    $cart->save();
+                //    dd($stockTotal);
+
+                $updateStock = DB::table('articulos')
+                ->where('cod_articulo', $producto)
+                ->update(['stock' => ($stockTotal)]);
+
+                } 
             
-            if(!$updatePrice){//Si la consulta de update no se cumple,crea un carrito nuevo en la bbdd
-                //creamos el carrito
-                $cart = new cart;
-                // $cart->id = $idUsuario;
-                $cart->username = $usuario->username;
-                $cart->phone = $usuario->phone;
-                $cart->address = $usuario->email;
-                $cart->code = $producto;
-                $cart->product_title = $name;
-                $cart->price = $precio;
-                $cart->quantity = $request->quantity;
-                $cart->save();
-            } 
-           
+                return redirect()->to("/home")->with('message','Product Added Successfully!');
+               
 
+            }else{
 
-            Log::info('Product Added Successfully');
-
-            return redirect("/login")->with('message','Product Added Successfully');
-           
+                return redirect()->to('/oftb_prev_prod')->withErrors('Not enough stock for this product');
+            }
 
         } else {
             return view('Authenticated.oftb_login');
@@ -102,9 +135,36 @@ class CartController extends Controller
      public function deletecart($id){
 
         $data=Cart::find($id);
-        $data->delete();
 
-        return redirect()->back();
+        $productStock=DB::table('carts')
+              ->select('quantity','code')
+              ->where('id', $id)
+              ->get(); 
+
+              foreach ($productStock as $stock) {
+                  $quantityaux = $stock->quantity;
+                  $codeaux = $stock->code;
+              }
+        $articuloStock=DB::table('articulos')
+              ->select('stock')
+              ->where('cod_articulo', $codeaux)
+              ->get(); 
+            
+
+              foreach ($articuloStock as $stock) {
+                  $stockaux = $stock->stock;
+                  
+              }      
+              $stockTotal = $stockaux + (int)$quantityaux;
+
+              $updateStock = DB::table('articulos')
+              ->where('cod_articulo', $codeaux)
+              ->update(['stock' => ($stockTotal)]);
+
+        
+        $data->delete();
+       
+        return redirect()->back()->with('message','Item Deleted Successfully!');
      }
 
      

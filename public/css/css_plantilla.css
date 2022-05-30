@@ -64,6 +64,29 @@ a.navbar-brand {
    
 }
 
+/*Estilo para el numero del carrito*/
+
+
+.divNumCarrito {
+
+  font-size: 12px;
+  margin-right: 10px;
+  text-align: center;
+  color: white;
+  
+  
+}
+.divNumero {
+  /* height: 10px; */
+  margin-left: -12px;
+  width: 18px;
+  border-radius: 10px;
+  background-color: red;
+  font-weight:bold !important;
+
+}
+
+
 /*******************************************************/
 /********************ENLACES***************************/
 /*****************************************************/
@@ -188,6 +211,20 @@ a {
   transform: scale(1.05);
   transition: 0.5s;
   box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+}
+
+
+
+/*Modal*/
+
+.modalBody {
+  background-color: #424242;
+  padding: 15px;
+  color: white;
+}
+
+.modal-footer {
+  border-top:0px !important;
 }
 
 

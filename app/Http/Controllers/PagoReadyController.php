@@ -33,6 +33,7 @@ class PagoReadyController extends Controller
         $bd_card = substr($tarjeta, 15, 19);
         $current_date = date("Y-m-d");
         $current_arrive = date("Y-m-d", strtotime($current_date . "+ 7 days"));
+        $count = Cart::where('username', $user)->count();
 
         // dd( $current_date,$current_arrive);
         /*Select para pasar los datos del producto a la pagina final */
@@ -41,78 +42,88 @@ class PagoReadyController extends Controller
             ->where('cod_articulo', $producto)
             ->get();
         //Carrito
-        $cartDetails=DB::table('carts')
-        ->select('id','product_title','quantity','price','code')
-        ->where('username', $user)
-        ->get();
-       
+        $cartDetails = DB::table('carts')
+            ->select('id', 'product_title', 'quantity', 'price', 'code')
+            ->where('username', $user)
+            ->get();
 
-            if ( comprobarTarjeta($tarjeta) && comprobarTitular($titular, $nombre) && comprobarRadio($metodo)
-                && comprobarCaducidad($month) && comprobarCCAA($ccaa) && comprobarCVC($cvc)) {
+        $lastPage = $cartDetails;
+        /* Precio total de los productos del carrito */
+        $orders = DB::table('carts')
+            ->select('price')
+            ->where('username', $user)
+            ->groupBy('price')
+            ->get();
+        $totalOrders = (float)$orders->sum('price');
+        // dd($totalOrders);        
 
-                $orderId = Pedido::insertGetId([
-                    'nombre_destinatario' => $nombre,
-                    'metodo_pago' => $metodo,
-                    'numero_tarjeta' => $bd_card,
-                    'CCAA' =>  $ccaa,
-                    'direccion_envio' => $direccion,
-                    'estado' => 'Send'
+        if (
+            comprobarTarjeta($tarjeta) && comprobarTitular($titular, $nombre) && comprobarRadio($metodo)
+            && comprobarCaducidad($month) && comprobarCCAA($ccaa) && comprobarCVC($cvc)
+        ) {
+
+            $orderId = Pedido::insertGetId([
+                'nombre_destinatario' => $nombre,
+                'metodo_pago' => $metodo,
+                'numero_tarjeta' => $bd_card,
+                'CCAA' =>  $ccaa,
+                'direccion_envio' => $direccion,
+                'estado' => 'Send'
+
+            ]);
+            //si el carrito esta vacio
+
+            if ($orderId && $cartDetails->isEmpty()) {
+
+                Historial::insert([
+
+                    'id' => $idUsuario,
+                    'pedido_id' => $orderId,
+                    'fecha_pedido' => $current_date,
+                    'fecha_prev_envio' =>  $current_arrive
 
                 ]);
-                //si el carrito esta vacio
 
-                if ($orderId && $cartDetails->isEmpty()) {
+                Factura::insert([
 
-                    Historial::insert([
+                    'pedido_id' => (int)$orderId,
+                    'cod_articulo' => (int)$producto,
+                    'cantidad' => (int)'1',
 
-                        'id' => $idUsuario,
-                        'pedido_id' => $orderId,
-                        'fecha_pedido' => $current_date,
-                        'fecha_prev_envio' =>  $current_arrive
+                ]);
 
-                    ]);
+                return view('test', ['resume' => $resume, 'quantityCard' => $count, 'orderResume' => $lastPage, 'total' => $totalOrders]);
+                //si no esta vacio
+            } elseif ($orderId && $cartDetails->isNotEmpty()) {
+
+                Historial::insert([
+
+                    'id' => $idUsuario,
+                    'pedido_id' => $orderId,
+                    'fecha_pedido' => $current_date,
+                    'fecha_prev_envio' =>  $current_arrive
+
+                ]);
+
+                foreach ($cartDetails as $details) {
+                    # code...
 
                     Factura::insert([
 
                         'pedido_id' => (int)$orderId,
-                        'cod_articulo' => (int)$producto,
-                        'cantidad' => (int)'1',
+                        'cod_articulo' => (int)$details->code,
+                        'cantidad' => (int)$details->quantity,
 
                     ]);
-
-                    return view('test', ['resume' => $resume]);
-                //si no esta vacio
-                }elseif($orderId && $cartDetails->isNotEmpty()){
-
-                        Historial::insert([
-
-                            'id' => $idUsuario,
-                            'pedido_id' => $orderId,
-                            'fecha_pedido' => $current_date,
-                            'fecha_prev_envio' =>  $current_arrive
-
-                        ]);
-
-                    foreach ($cartDetails as $details) {
-                        # code...
-                    
-                        Factura::insert([
-
-                            'pedido_id' => (int)$orderId,
-                            'cod_articulo' => (int)$details->code,
-                            'cantidad' => (int)$details->quantity,
-                            
-                        ]);
-
-                    }
-                    //Borramos el carrito de la BBDD
-                    $deleted = DB::table('carts')->where('username', '=', $user)->delete();
-            
-
-
-                    return view('test', ['resume' => $resume]);
-                    // return redirect()->to('/test');
                 }
+                //Borramos el carrito de la BBDD
+                $deleted = DB::table('carts')->where('username', '=', $user)->delete();
+
+
+
+                return view('test', ['resume' => $resume, 'quantityCard' => $count, 'orderResume' => $lastPage, 'total' => $totalOrders]);
+                // return redirect()->to('/test');
+            }
 
             return redirect()->to('/pago');
             // dd($caducidad);
@@ -182,7 +193,7 @@ function comprobarCCAA($ccaa)
 {
 
     $check = true;
-    if ($ccaa == "Comunidad Autonoma") {
+    if ($ccaa == "Region") {
         $check = false;
     }
     return $check;

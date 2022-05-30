@@ -15,11 +15,6 @@ body {
 }
 
 
-.carousel-caption {
-    padding-bottom: 250px;
-
-}
-
 .carousel-caption h1 {
     font-size: 70px;
     text-transform: uppercase;
@@ -35,7 +30,7 @@ body {
 
 
 .carousel-caption {
-    padding-bottom: 250px;
+    padding-bottom: 80px;
 
 }
 
@@ -45,15 +40,11 @@ body {
     font-weight: bold;
 }
 
-i {
-    color: white !important;
-  }
-  
-i:hover {
-    transition: 1s;
+.carousel-caption a:hover {
+    transition: 0.75s;
+    border-color: red !important;
     color: red !important;
-    border-radius: 50px;
-  
-  }
+    background-color: transparent;
+}
 
   

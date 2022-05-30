@@ -109,7 +109,27 @@
                 @auth
 
                     <ul class="navbar-nav mr-auto ml-auto">
-                        {{-- Primer elemento --}}
+
+
+                           {{-- Carrito --}}
+                            <li class="nav-item mt-1">
+                                <div class="d-flex bd-highlight">
+                                    <div class="flex-fill bd-highligh">
+                                        <a class="nav-link" href="/showcart" >
+                                            <i class="fa-solid fa-cart-shopping">
+                                            </i>
+                                        </a>
+                                    </div>
+                                     <div class="divNumCarrito">
+                                        <div class="divNumero">
+                                            <p>{{ $quantityCard }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                        {{-- Usuario --}}
                         <li class="nav-item mr-2">
                             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                                 aria-expanded="false">
@@ -117,11 +137,11 @@
                             </a>
 
                         </li>
-
+                       
                         <li class="nav-item mr-2 mt-1 mr-1">
                             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                                 aria-expanded="false">
-                                 <i class="fa-solid fa-user-check"></i>
+                                <i class="fa-solid fa-user-check"></i>
                             </a>
 
                         </li>

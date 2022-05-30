@@ -13,7 +13,7 @@
 .efecto {
 
     display: grid;
-    grid-template-columns: 1fr 0%;
+    grid-template-columns: 1fr;
     height: 100vh;
 }
 
@@ -30,8 +30,13 @@
     background-repeat: no-repeat;
     background-size: 100%;
   
- 
+}
 
+.right_payment {
+  
+  background-image: url(../Imagenes_OFTB/Imagenes_compra/negan.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .email_color {

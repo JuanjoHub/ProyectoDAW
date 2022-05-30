@@ -75,6 +75,31 @@
 
 }
 
+input{
+  background-color: #212121;
+  border-color: white;
+  color: white;
+}
+input:hover{
+  transition: 0.75s;
+  border-color: red;
+}
+input:focus{
+  border-color: red;
+}
+
+span {
+  color: white !important;
+  background-color: #212121 !important; 
+  font-weight: bold !important;
+  /* text-align: center !important; */
+}
+
+span .input-group-text {
+
+  text-align: center !important;
+}
+
 .btn_sold{
   color: white;
   width: 350px !important;

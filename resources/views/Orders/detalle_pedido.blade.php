@@ -1,5 +1,5 @@
 @extends('Layout.head');
-@extends('Layout.navbar_pedidos');
+@extends('Layout.navbar');
 @extends('Layout.footer');
 @extends('Layout.scripts');
 
@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/css_pedidos.css">
 @endsection
 
-@section('navbar_pedidos')
+@section('navbar')
 @endsection
 
 
@@ -17,7 +17,7 @@
 <!------------------------------------------------------------------->
 <?php $precio = 0; ?>
 
-<div class="jumbotron jumbotron-fluid bg-transparent">
+<div class="jumbotron jumbotron-fluid jumbotron_letterDetails">
     <div class="container mt-5">
         <h1 class="display-4 text-white animate__animated animate__lightSpeedInLeft">Order details</h1>
 
@@ -30,7 +30,7 @@
     <div class="container text-white mb-5">
         <h2 class="display-5 text-white animate__animated animate__lightSpeedInLeft">Date/number</h2>
 
-        <table class="table table-bordered table-dark">
+        <table class="table table-bordered bg-transparent" style="border:0px;" >
             <tr>
                 <td class="col-8">Order number</td>
                 <td> {{ $dato->pedido_id }}</td>
@@ -51,7 +51,7 @@
     <div class="container text-white mb-5">
         <h2 class="display-5 text-white animate__animated animate__lightSpeedInLeft">Address information</h2>
 
-        <table class="table table-bordered table-dark">
+        <table class="table table-bordered bg-transparent">
             <tr>
                 <td class="col-8">Name addressee</td>
                 <td> {{ $dato->nombre_destinatario }}</td>
@@ -74,7 +74,7 @@
     <div class="container text-white mb-5">
         <h2 class="display-5 text-white animate__animated animate__lightSpeedInLeft">Payment information</h2>
 
-        <table class="table table-bordered table-dark">
+        <table class="table table-bordered bg-transparent">
             <tr>
                 <td class="col-8">Payment method</td>
                 <td> {{ $dato->metodo_pago }} terminated in {{ $dato->numero_tarjeta }}</td>
@@ -111,7 +111,7 @@
 
 <!--Productos-->
 <div class="container mb-5 ">
-    <table class="table table-hover table-dark table-bordered ">
+    <table class="table table-hover table-bordered bg-transparent ">
         <thead class="titulos_pedidos">
             <tr>
                 <th scope="col">Name</th>

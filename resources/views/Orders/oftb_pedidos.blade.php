@@ -1,5 +1,5 @@
 @extends('Layout.head');
-@extends('Layout.navbar_pedidos');
+@extends('Layout.navbar');
 @extends('Layout.footer');
 @extends('Layout.scripts');
 
@@ -7,33 +7,32 @@
     <link rel="stylesheet" href="../css/css_pedidos.css">
 @endsection
 
-@section('navbar_pedidos')
+@section('navbar')
 @endsection
 
 
 <!------------------------------------------------------------------->
 <!------------------------JUMBOTRON 1-------------------------------->
 <!------------------------------------------------------------------->
-<div class="jumbotron jumbotron-fluid bg-transparent">
+<div class="jumbotron jumbotron-fluid jumbotron_letter">
     <div class="container mt-5">
-        <h1 class="display-4 text-white animate__animated animate__lightSpeedInLeft">Mis pedidos</h1>
+        <h1 class="display-4 text-white animate__animated animate__lightSpeedInLeft">Orders</h1>
     </div>
 </div>
 
 <!--PEDIDOS-->
-<div class="container mb-5 ">
-    <table class="table table-hover table-dark ">
+<div class="container mb-4 mt-5">
+    <table class="table table-hover table-striped table-dark table-borderless ">
         <thead class="titulos_pedidos">
             <tr>
-                <th scope="col">Order date</th>
-                <th scope="col">Order number</th>
-                <th scope="col">Order status</th>
-                <th scope="col">Details</th>
+                <th scope="col" style="width:250px;">Order date</th>
+                <th scope="col" style="width:250px;">Order number</th>
+                <th scope="col" style="width:250px;">Order status</th>
+                <th scope="col" style="width:100px;">Details</th>
             </tr>
         </thead>
         <tbody>
             <!--1 ROW-->
-
             @foreach ($mispedidos as $pedido)
                 <form action="/detalles" method="POST">
                     @csrf
@@ -43,11 +42,10 @@
                             <td>{{ $pedido->pedido_id }}</td>
                             <td>{{ $pedido->estado }}</td>
                             <td>
-                                <button type="submit" class="boton_detalles rounded-left rounded-right rounded-top">
+                                <button type="submit" class="btn btn-danger rounded-left rounded-right rounded-top">
                                     Order details
                                 </button>
                             </td>
-
                     </tr>
                 </form>
             @endforeach
@@ -60,7 +58,7 @@
 <!--------------------------PAGINATION------------------------------->
 <!------------------------------------------------------------------->
 
-<div class="container">
+<div class="container mb-3">
     <div class="d-flex justify-content-center">
         {{ $mispedidos->links() }}
     </div>
