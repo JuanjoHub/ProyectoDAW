@@ -16,6 +16,13 @@
 
 }
 
+.right_payment {
+  
+  background-image: url(../Imagenes_OFTB/Imagenes_compra/negan.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
 .div_form {
   margin-left: 100px !important;
 }
@@ -42,7 +49,7 @@
 /*Efecto del boton del regisdtro*/
 .btn:hover {
   transition: 1s;
-  background: green;
+  background: rgba(255, 0, 0, 0.658);
 
 }
 

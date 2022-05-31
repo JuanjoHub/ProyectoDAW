@@ -18,19 +18,26 @@
 <!------------------------------------------------------------------->
 <!------------------------JUMBOTRON 1-------------------------------->
 <!------------------------------------------------------------------->
-<div class="jumbotron jumbotron-fluid jumbotron_cart">
+<div class="jumbotron jumbotron-fluid jumbotron_cart jumbotron_hasbeen">
     <div class="container mt-5">
-        <h1 class="display-4 text-white animate__animated animate__lightSpeedInLeft">Cart Results</h1>
+        <h1 class="display-4 text-white animate__animated animate__lightSpeedInLeft ">Cart Results</h1>
     </div>
 </div>
-@if (session()->has('message'))
-    <div class="alert alert-success text-center animate__animated animate__fadeInDown">
-        <button type="button" class="close" data-dismiss="alert">x</button>
-        {{ session()->get('message') }}
-    </div>
-@endif
 
+@include('Mensajes.mensajes') 
 <!--Carrito-->
+
+@if ($userCart->isEmpty())
+
+
+<div class="container mb-5 text-center">
+    <p> The cart is empty! </p>
+    <img src="../Imagenes_OFTB/Imagenes/empty_safe.jpg" class="img-fluid" alt="">
+</div>    
+@else
+    
+
+
 <div class="container mb-5 ">
     <table class="table table-hover table-dark table-bordered ">
         <thead class="titulos_pedidos">
@@ -53,13 +60,9 @@
                     <td>{{ $cart->price }}€</td>
                     <?php $total = $cart->quantity * $cart->price; ?>
                     <td>{{ $total }}€</td>
-                    {{-- <td class="text-center"> <a href="{{ url('delete', $cart->id) }}">
-                            <i class="fa-solid fa-trash-can fa-lg mt-2"></i>
-                            </a>
-                    </td> --}}
+                    
                     <td class="text-center">
-                        <i class="fa-solid fa-trash-can fa-lg mt-2" onclick="seleccionarAbrirModal( {{$cart->id}} )"></i>
-
+                         <i class="fa-solid fa-trash-can fa-lg mt-2 btn" onclick="seleccionarAbrirModal( {{$cart->id}} )"></i>
                     </td>
                     <?php $totalPrice = $totalPrice + $total; ?>
                 </tr>
@@ -73,17 +76,19 @@
                 </td>
 
             </tr>
+
         </tbody>
     </table>
 </div>
 
-
+@endif
 <!-- Modal -->
 <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content modalBody">
             <div class="modal-body">
-                ¿Estás seguro de que quieres borrar este articulo?
+                Are you sure you wanna delete this article?
+                
             </div>
             <div class="modal-footer">
                 <button type="button" onclick= "limpiarIdBorrado()" class="btn btn-danger" data-dismiss="modal">Cancel</button>
@@ -92,6 +97,7 @@
         </div>
     </div>
 </div>
+
 <script>
 
     let idBorrado = "";

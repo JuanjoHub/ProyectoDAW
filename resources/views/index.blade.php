@@ -12,13 +12,9 @@
   
 @endsection
 
- @if(session()->has('message'))
-                    <div class="alert alert-success text-center animate__animated animate__fadeInDown" style="margin-top:70px;">
-                    <button type="button" class="close" data-dismiss="alert">x</button>
-                    {{session()->get('message')}}
-                    </div>
- @endif    
- 
+@include('Mensajes.mensajes') 
+
+
     <!------------------------------------------------------------------->
     <!--------------------------CAROUSEL--------------------------------->
     <!------------------------------------------------------------------->

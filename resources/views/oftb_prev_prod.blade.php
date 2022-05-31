@@ -21,6 +21,7 @@
         <h1 class="display-4 text-white animate__animated animate__lightSpeedInLeft"></h1>
     </div>
 </div>
+
 @include('Mensajes.mensajesStock') 
 
 <!------------------------------------------------------------------->
@@ -65,7 +66,7 @@
                                 <div class="input-group-prepend mr-1">
                                     <span class="input-group-text">Amount</span>
                                 </div>
-                                <input type="number" value="1" min="1" name="quantity" class="rounded">
+                                <input type="number" value="1" min="1" name="quantity" maxlength="3" class="rounded">
                             </div>
                             <div class="form-group col-md-12 text-center">
                                 <button type="submit" class="btn btn_compra">Add to cart</button>

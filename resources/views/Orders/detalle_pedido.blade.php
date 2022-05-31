@@ -148,9 +148,6 @@
     </table>
 </div>
 
-
-
-
 @section('footer')
 @endsection
 @section('scripts')

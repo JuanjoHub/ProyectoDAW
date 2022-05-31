@@ -22,6 +22,7 @@
 
 <!--Resumen de pedidos-->
 <div class="container mb-5 ">
+<h2 class="display-5 text-white animate__animated animate__lightSpeedInLeft">Resume</h2>
     <table class="table table-hover table-bordered bg-transparent ">
         <thead class="titulos_pedidos">
             <tr>
@@ -55,7 +56,6 @@
 </div>
 
 
-<a name="" id="" class="btn btn-primary" href="#" role="button">Back Home</a>
 
 @section('footer')
 @endsection

@@ -1,30 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Out of the box</title>
+@extends('Layout.head_verify')
+@section('headVerify')
     <link rel="stylesheet" href="../css/css_registro.css">
     <link rel="stylesheet" href="../css/css_pago.css">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-
-</head>
-
-<body>
-
+@endsection
     <!----------------------------------------------------------------------->
     <!--DIV CONTENEDOR contiene los otros 2 divs que van formar esta pagina-->
     <!----------------------------------------------------------------------->
+
 
     <div class="container-halfs" id="test">
 
@@ -50,19 +32,19 @@
                         </div>
                         <div class="form-group col-md-6 text-left">
                             <!--Nombre completo-->
-                            <input type="text" class="form-control text-white" id="inputEmail4" name="nombre"
-                                placeholder="Name">
+                            <input type="text" class="form-control text-white" id="nombre" name="nombre"
+                                placeholder="Name" value="{{ old('nombre') }}">
                         </div>
                         <!--Dirección de facturación-->
                         <div class="form-group col-md-6 text-left">
-                            <input type="text" class="form-control text-white" id="inputPassword4" name="direccion"
-                                placeholder="Address">
+                            <input type="text" class="form-control text-white" id="direccion" name="direccion"
+                                placeholder="Address" value="{{ old('direccion') }}">
                         </div>
                     </div>
 
-                    <select class="custom-select custom-select-lg mb-3" name="ccaa" required>
+                    <select class="custom-select custom-select-lg mb-3" name="ccaa">
                         <option selected>Region</option>
-                        <option value="Galicia">Galicia</option>
+                        <option value="Galicia" {{ old('ccaa') == "Galicia" ? 'checked' : '' }}>Galicia</option>
                         <option value="Asturias">Asturias</option>
                         <option value="Cantabria">Cantabria</option>
                         <option value="Pais Vasco">País Vasco</option>
@@ -85,13 +67,13 @@
 
                     {{-- ----------------------------------------------------------------------------------------------- --}}
                     <div class="custom-control custom-radio mb-4 col-md-11">
-                        <input type="radio" id="customRadio1" name="metodo" class="custom-control-input" value="Visa">
+                        <input type="radio" id="customRadio1" name="metodo" class="custom-control-input" value="Visa" {{ old('metodo') == "Visa" ? 'checked' : '' }}>
                         <label class="custom-control-label d-flex justify-content-start ml-4" for="customRadio1">Credit/Debit Card </label>
                         <i class="fa-brands fa-cc-visa fa-lg fa-xl d-flex justify-content-end"></i>
                     </div>
 
                     <div class="custom-control custom-radio mb-4 col-md-11">
-                        <input type="radio" id="customRadio2" name="metodo" class="custom-control-input" value="Paypal">
+                        <input type="radio" id="customRadio2" name="metodo" class="custom-control-input" value="Paypal" {{ old('metodo') == "Paypal" ? 'checked' : '' }}>
                         <label class="custom-control-label d-flex justify-content-start ml-4"
                             for="customRadio2">Paypal</label>
                         <i class="fa-brands fa-cc-paypal fa-xl d-flex justify-content-end"></i>
@@ -99,9 +81,8 @@
                     </div>
 
                     <div class="custom-control custom-radio mb-4 col-md-11">
-                        <input type="radio" id="customRadio3" name="metodo" class="custom-control-input" value="Apple">
-                        <label class="custom-control-label d-flex justify-content-start ml-4" for="customRadio3">Apple
-                            Pay</label>
+                        <input type="radio" id="customRadio3" name="metodo" class="custom-control-input" value="Apple" {{ old('metodo') == "Apple" ? 'checked' : '' }}>
+                        <label class="custom-control-label d-flex justify-content-start ml-4" for="customRadio3">Apple Pay</label>
                         <i class="fa-brands fa-cc-apple-pay fa-xl d-flex justify-content-end"></i>
                     </div>
 
@@ -109,11 +90,11 @@
                         <!--Numero de la tarjeta-->
                         <label>Card Number</label>
                         <input type="text" class="form-control text-white mb-3" id="inputCard" name="tarjeta"
-                            placeholder="**** **** **** ****">
+                            placeholder="**** **** **** ****" value="{{ old('tarjeta') }}">
                         <!--Titular de la tarjeta-->
                         <label>Card Holder</label>
                         <input type="text" class="form-control text-white mb-3" name="titular"
-                            placeholder="Andrea Vicente Hernandez">
+                            placeholder="Andrea Vicente Hernandez" value="{{ old('titular') }}">
                     </div>
 
                     <h2 class="text-left mb-3">Expiration Date</h2>
@@ -121,8 +102,8 @@
                     <div class="form-row font-weight-bold text-left">
                    
                         <div class="form-group col-md-3">
-                            <label for="inputPassword4">Month</label>
-                            <select class="custom-select custom-select-md mb-3" name="month" required>
+                            <label>Month</label>
+                            <select class="custom-select custom-select-md mb-3" name="month" required value="{{ old('month') }}">
                                 @for ($i = 1; $i < 13; $i++)
                                     <option value="{{ $i }}">{{ $i }}</option>
                                 @endfor
@@ -133,7 +114,7 @@
 
                         <label for="inputPassword4">Year</label>
                             <?php $current_year = date('Y'); ?>
-                            <select class="custom-select custom-select-md mb-3" name="year" required>
+                            <select class="custom-select custom-select-md mb-3" name="year" required value="{{ old('year') }}">
                                 <option selected="1">{{ $current_year }}</option>
                                 @for ($i = 1; $i < 6; $i++)
                                     <option value="{{ $i }}">{{ $current_year + $i }}</option>
@@ -146,7 +127,7 @@
                         <div class="form-group col-md-6 text-left">
                             <label for="inputPassword4">CVC</label>
                             <input type="text" class="form-control text-white" id="inputPassword4" placeholder="CVC"
-                                name="cvc" maxlength="3">
+                                name="cvc" maxlength="3" value="{{ old('cvc') }}">
                         </div>
                     </div>
 
@@ -200,7 +181,7 @@
             }
 
         }
-        var ancho = window.matchMedia("(max-width:1400px)");
+        var ancho = window.matchMedia("(max-width:1300px)");
         var alto = window.matchMedia("(max-height:200px)");
         var elefecto = document.getElementsByClassName("efecto");
         var divPrincipal = document.getElementById("test");
@@ -208,8 +189,6 @@
         ancho.addListener(doblediv_registro);
         alto.addListener(doblediv_registro);
     </script>
-
-
 
 
     <!--Estos Scrips los necesitamos para poder usar las funcionalidades del bootstrap-->

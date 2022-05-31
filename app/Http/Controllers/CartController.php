@@ -103,7 +103,7 @@ class CartController extends Controller
 
                 } 
             
-                return redirect()->to("/home")->with('message','Product Added Successfully!');
+                return redirect()->to("/home")->with('product','Product Added to cart Successfully!');
                
 
             }else{
@@ -164,7 +164,7 @@ class CartController extends Controller
         
         $data->delete();
        
-        return redirect()->back()->with('message','Item Deleted Successfully!');
+        return redirect()->back()->with('cart','Item Deleted Successfully!');
      }
 
      

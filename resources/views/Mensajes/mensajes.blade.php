@@ -1,4 +1,7 @@
-{{-- layouts/partials/mensajes --}}
+@extends('Layout.head')
+@section('head')
+@endsection
+
 
 {{-- Mensajes de error --}}
 
@@ -11,6 +14,32 @@
         </ul>
     </div>
 @endif
+
+{{-- Mensaje de Cuenta creada exitosamente --}}
+@if (session()->has('success'))
+    <div class="alert alert-success text-center animate__animated animate__fadeInDown container">
+        {{ session()->get('success') }}
+    </div>
+@endif
+
+{{-- Mensaje producto añadido correctamente --}}
+@if (session()->has('product'))
+    <div class="alert alert-success text-center animate__animated animate__fadeInDown" style="margin-top:70px;">
+        <button type="button" class="close" data-dismiss="alert">x</button>
+        {{ session()->get('product') }}
+    </div>
+@endif
+
+{{-- Mensaje producto borrado del carrito correctamente --}}
+@if (session()->has('cart'))
+    <div class="alert alert-success text-center animate__animated animate__fadeInDown">
+        <button type="button" class="close" data-dismiss="alert">x</button>
+        {{ session()->get('cart') }}
+    </div>
+@endif
+
+
+
 
 {{-- @if ($errors->has('password'))
     <li class="list-unstyled mb-0"> {{ $errorPass }} </li>

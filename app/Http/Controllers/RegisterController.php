@@ -29,7 +29,7 @@ class RegisterController extends Controller
        //Creamos el objeto que va a contener los datos del formulario de registro y los insertamos si estan validados
         $user = User::create($request->validated());
         // /*Una vez validado le pasemos un return con un redirect al login con un mensaje */
-        return redirect('/login')->with('success', 'Account created successfuly');
+        return redirect('/login')->with('success', 'Account created successfully!');
         
     }
 }
