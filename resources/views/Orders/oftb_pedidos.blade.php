@@ -5,6 +5,7 @@
 
 @section('head')
     <link rel="stylesheet" href="../css/css_pedidos.css">
+    <link rel="stylesheet" href="../css/css_plantilla.css">
 @endsection
 
 @section('navbar')

@@ -27,7 +27,8 @@ use App\Http\Controllers\PagoReadyController;
 /*Carrito */
 use App\Http\Controllers\CartController;
 
-
+/* Contacto */
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Controller;
 
 use App\Models\User;

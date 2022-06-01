@@ -37,10 +37,10 @@
                     <h6 class="text uppercase font-weight-bold">Products</h6>
                     <hr class="myhrfooter mb-4 mt-0 d-inline-block mx-auto" style="width: 70px; height: 2px;">
                     <ul class="list-unstyled">
-                        <li class="my-2"><a href="#" class="text-white">Peliculas</a></li>
-                        <li class="my-2"><a href="#" class="text-white">Series</a></li>
-                        <li class="my-2"><a href="#" class="text-white">Videojuegos</a></li>
-                        <li class="my-2"><a href="#" class="text-white">Otros</a></li>
+                        <li class="my-2"><a href="Peliculas/dc" class="text-white">Films</a></li>
+                        <li class="my-2"><a href="Series/got" class="text-white">Series</a></li>
+                        <li class="my-2"><a href="Videojuegos/mk" class="text-white">Videogames</a></li>
+                        <li class="my-2"><a href="/home" class="text-white">Bestsellings</a></li>
                     </ul>
                 </div>
 
@@ -48,10 +48,10 @@
                     <h6 class="text uppercase font-weight-bold">Usefull links</h6>
                     <hr class="myhrfooter mb-4 mt-0 d-inline-block mx-auto" style="width: 95px; height: 2px;">
                     <ul class="list-unstyled">
-                        <li class="my-2"><a href="#" class="text-white">Home</a></li>
-                        <li class="my-2"><a href="#" class="text-white">About</a></li>
-                        <li class="my-2"><a href="#" class="text-white">Services</a></li>
-                        <li class="my-2"><a href="#" class="text-white">Contact</a></li>
+                        <li class="my-2"><a href="/home" class="text-white">Home</a></li>
+                        <li class="my-2"><a href="/contact" class="text-white">About</a></li>
+                        <li class="my-2"><a href="/contact" class="text-white">Services</a></li>
+                        <li class="my-2"><a href="/contact" class="text-white">Contact</a></li>
                     </ul>
                 </div>
 

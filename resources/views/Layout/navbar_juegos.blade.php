@@ -99,7 +99,7 @@
                     </li>
                 @endauth
                 <li class="nav-item">
-                    <a class="nav-link" href="/contacto">Contact</a>
+                    <a class="nav-link" href="/contact">Contact</a>
                 </li>
             </ul>
             <div class="text-center">

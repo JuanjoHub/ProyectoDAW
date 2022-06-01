@@ -72,7 +72,7 @@
                 <td colspan="2"></td>
                 <td>Subtotal</td>
                 <td> {{ $totalPrice }}€</td>
-                <td class="text-center"><a name="" class="btn btn-primary" href="/pago" role="button">Buy now</a>
+                <td class="text-center"><a name="" class="btn btn-success" href="/pago" role="button">Buy now</a>
                 </td>
 
             </tr>
@@ -92,7 +92,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" onclick= "limpiarIdBorrado()" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                <button type="button" onclick= "borrarDeCarrito()" class="btn btn-primary">Delete Article</button>
+                <button type="button" onclick= "borrarDeCarrito()" class="btn btn-success">Delete Article</button>
             </div>
         </div>
     </div>
