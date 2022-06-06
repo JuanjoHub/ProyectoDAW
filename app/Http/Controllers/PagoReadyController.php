@@ -97,10 +97,10 @@ class PagoReadyController extends Controller
                 }
                 //Borramos el carrito de la BBDD
                 $deleted = DB::table('carts')->where('username', '=', $user)->delete();
+                $count = 0;
 
 
-
-                return view('test', ['resume' => $resume, 'quantityCard' => $count, 'orderResume' => $lastPage, 'total' => $totalOrders]);
+                return view('exito_pago', ['resume' => $resume, 'quantityCard' => $count, 'orderResume' => $lastPage, 'total' => $totalOrders]);
             }
             // return redirect()->to('/test');
         }
@@ -252,4 +252,4 @@ function comprobarMsg(Request $request) {
     }
 
     return $errores;
-}
+} 

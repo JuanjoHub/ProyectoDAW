@@ -19,6 +19,5 @@ class Articulo extends Model
         'stock',
         'precio',
         'ventas_totales',
-        'ventas_totales',
     ];
 }

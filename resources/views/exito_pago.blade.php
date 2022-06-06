@@ -15,13 +15,14 @@
 <!------------------------------------------------------------------->
 <div class="jumbotron jumbotron-fluid jumbotron_orderMake jumbotron_hasbeen">
     <div class="container">
-        <h1 class="display-4 text-white animate__animated animate__fadeInDown"> Order made successfully</h1>
+        <h1 class="display-4 text-white animate__animated animate__fadeInDown"> Order made successfully!</h1>
     </div>
 </div>
 
 
 <!--Resumen de pedidos-->
 <div class="container mb-5 ">
+<h2 class="text-center mb-2 text-white"> Thank you for shopping in our store ! </h2>
 <h2 class="display-5 text-white animate__animated animate__lightSpeedInLeft">Resume</h2>
     <table class="table table-hover table-bordered bg-transparent ">
         <thead class="titulos_pedidos">

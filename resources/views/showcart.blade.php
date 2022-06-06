@@ -8,10 +8,8 @@
     <link rel="stylesheet" href="../css/css_pedidos.css">
 @endsection
 
-@section('navbar')
-    <div>
-
-    </div>
+@section('standard_navbar')
+    
 @endsection
 
 
@@ -31,7 +29,7 @@
 
 
 <div class="container mb-5 text-center">
-    <p> The cart is empty! </p>
+    <h2 class="text-white"> Ups, the cart is empty! </h2>
     <img src="../Imagenes_OFTB/Imagenes/empty_safe.jpg" class="img-fluid" alt="">
 </div>    
 @else

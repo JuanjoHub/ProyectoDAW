@@ -120,6 +120,7 @@ class CartController extends Controller
     public function show() {
 
         $user = Auth::user();
+        // $admin = $user->administrador;
         $count = Cart::where('username',$user->username)->count();
         $cartDetails=DB::table('carts')
         ->select('id','product_title','quantity','price')
@@ -127,7 +128,7 @@ class CartController extends Controller
         ->get();
         // dd($cartDetails);
     
-         return view('showcart', ['quantityCard' => $count , 'userCart'=>$cartDetails]); 
+         return view('showcart', ['quantityCard' => $count , 'userCart'=>$cartDetails ]); 
           
      }
 

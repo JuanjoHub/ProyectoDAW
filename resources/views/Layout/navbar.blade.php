@@ -1,4 +1,5 @@
     <body style="margin-top: -24px;">
+   
         <!------------------------------------------------------------------->
         <!--------------------------NAVBAR----------------------------------->
         <!------------------------------------------------------------------->
@@ -144,6 +145,10 @@
                                     <a class="dropdown-item" href="/pedidos">Orders</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="/logout">Logout</a>
+                                        {{-- @if ($admin == 1)
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="/oftb_admin">Admin</a>
+                                        @endif    --}}
                                 </div>
                             </li>
 
