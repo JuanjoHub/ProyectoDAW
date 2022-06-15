@@ -13,7 +13,6 @@ class PedidosController extends Controller
     {
 
         $usuario = Auth::user()->username;
-        $idUsuario = Auth::user()->id;
         $user = Auth::user();
         $count = Cart::where('username',$user->username)->count();
         $cartDetails=DB::table('carts')

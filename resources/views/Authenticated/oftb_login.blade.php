@@ -51,7 +51,7 @@
                     
                     {{-- Username / Email --}}
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control text-white" id="floatingInput" placeholder="name@example.com" name="username">
+                        <input type="text" class="form-control text-white" id="floatingInput" placeholder="name@example.com" name="username" value="{{ old('username') }}">
                         <label for="floatingInput">Username/Email</label>
                     </div>
                     {{-- Password --}}

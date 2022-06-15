@@ -49,6 +49,7 @@ use App\Models\User;
 
 /*Index */
 Route::get('/home', [HomeController::class,'index']);
+
 Route::post('/home', [HomeController::class,'index']);
 Route::post('/home2', [Home2Controller::class,'show']);
 Route::get('/home2', [Home2Controller::class,'show']);

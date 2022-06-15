@@ -203,7 +203,7 @@ function comprobarCVC($cvc)
 
 function comprobarDireccion($direccion){
     $address = false;
-    if($direccion="" || $direccion = null) {
+    if($direccion =="" || $direccion == null) {
         $address = true;
     }
     return $address;
@@ -247,7 +247,7 @@ function comprobarMsg(Request $request) {
     if (!comprobarCVC($cvc)) {
         $errores[] = "The CVC format is invalid";
     }
-    if (!comprobarDireccion($direccion)) {
+    if (comprobarDireccion($direccion)) {
         $errores[] = "The field Address cannot be empty";
     }
 

@@ -44,16 +44,17 @@
   font-size: 20px !important;
 }
 
+/*Div que contiene el nombre de la categoria y el tipo*/
 .div_cns {
   border-radius: 30px;
   background: #424242;
   height: 55px;
-  width: 350px;
+  width: 380px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/*Estilos del boton de COMPRA*/
+/*Estilos del boton de añadir al carrito*/
 
 .btn_compra {
   color: white;
@@ -69,8 +70,8 @@
 }
 
 .btn_compra:hover {
-  transition: 1s;
-  background: #424242 !important;
+  transition: 0.75s;
+  background: orange !important;
   
 
 }

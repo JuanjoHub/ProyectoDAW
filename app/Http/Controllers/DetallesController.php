@@ -43,11 +43,6 @@ class DetallesController extends Controller
 
         $user = Auth::user();
         $count = Cart::where('username',$user->username)->count();
-        $cartDetails=DB::table('carts')
-            ->select('id','product_title','quantity','price')
-            ->where('username', $user->username)
-            ->get();
-        
 
         return view('Orders.detalle_pedido', ['detalles' => $detalles,'dameDatos' => $detalles_pedido,'quantityCard' => $count ]);
     }

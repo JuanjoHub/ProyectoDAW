@@ -38,19 +38,19 @@
                             <div class="form-group col-md-6 text-left">
                                 <label>Username</label>
                                 <input type="text" class="form-control text-white" name="username" id="inputEmail4" maxlength="25"
-                                    placeholder="Nick name">
+                                    placeholder="Nick name" value="{{ old('username') }}">
                             </div>
                             <div class="form-group col-md-6 text-left">
                                 <label>Phone</label>
                                 <input type="text" class="form-control text-white" name ="phone" id="inputPassword4"
-                                    placeholder="+34630678930">
+                                    placeholder="+34630678930" value="{{ old('phone') }}">
                             </div>
                         </div>
-
+ 
                           <div class="text-left font-weight-bold mb-4">
                                 <label>Email</label>
                                 <input type="email" class="form-control text-white" name="email" id="inputPassword4"
-                                    placeholder="peake_user@gmail.com">
+                                    placeholder="peake_user@gmail.com" value="{{ old('email') }}">
                             </div>
                         <!--Contraseña / confirmacion contraseña-->
                         <div class="form-row font-weight-bold">

@@ -10,25 +10,20 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
+
 class HomeController extends Controller
 {
     public function index(){
 
-      
-        $user = Auth::user();
+      //Variable que vamos a utilizar para asignar los datos del usuario autentificado
+       $user = Auth::user();
        //Query para seleccionar los ultimos 6 articulos
        $novedades = DB::select('select * from articulos order by fecha_insercion desc LIMIT 6 ');
        //Query para seleccionar los 6 articulos mas vendidos
        $artMV = DB::select('select * from articulos order by ventas_totales desc LIMIT 6 ');
-       //Query para saber el numero de productos que tiene en el carrito
 
-
-      
-        
        if (Auth::check()) {
-          
-            $user = Auth::user();
-            // $admin = $user->administrador;
+          //Variable para contar los articulos que se encuentran dentro del carrito del usuario
             $count = Cart::where('username',$user->username)->count();
             return view('index',['articulos_a' => $novedades, 'articulos_b' => $artMV , 'quantityCard' => $count]); 
        }
@@ -36,9 +31,6 @@ class HomeController extends Controller
         return view('index',['articulos_a' => $novedades, 'articulos_b' => $artMV ]); 
          
     }
-
-    //Create an instance; passing `true` enables exceptions
-        
-
-    
+   
 }
+

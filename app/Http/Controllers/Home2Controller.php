@@ -12,22 +12,17 @@ class Home2Controller extends Controller
 {
     public function show(Request $request){
 
-      
+        $user = Auth::user();
         $texto = trim($request->input(key:'texto'));
         $articulos = Articulo::where('nombre_articulo','LIKE','%'.$texto.'%')
         ->orderBy('ventas_totales')
         ->paginate(200);
-        $user = Auth::user();
+        
+        if (Auth::check()) {
         $count = Cart::where('username',$user->username)->count();
-        $cartDetails=DB::table('carts')
-        ->select('id','product_title','quantity','price')
-        ->where('username', $user->username)
-        ->get();
-
-    
         return view('index2',['articulos' => $articulos,'texto' => $texto, 'quantityCard' => $count]);
         
-        
-      
+        }
+        return view('index2',['articulos' => $articulos,'texto' => $texto]);
     }
 }

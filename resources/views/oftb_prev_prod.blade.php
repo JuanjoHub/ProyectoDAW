@@ -46,8 +46,9 @@
                 <div class="div_cns mb-3 mt-4 p-3">
                     <p class="d-flex justify-content-center">
                         @if ($prod->stock > 0)
-                            {{ ' Stock' }}<i
-                                class="fa-solid fa-check icon-green fa-lg text-center ml-2 mt-auto mb-auto"></i>
+                            @foreach ($category as $cat)
+                           {{ $cat->nombre_categoria }} | {{ $cat->tipo }} | {{ ' Stock' }}<i class="fa-solid fa-check icon-green fa-lg text-center ml-2 mt-auto mb-auto"></i>
+                           @endforeach
                         @else
                             {{ ' Fuera de stock' }}<i
                                 class="fa-solid fa-xmark icon_stock fa-lg text-center ml-2 mt-auto mb-auto "></i>

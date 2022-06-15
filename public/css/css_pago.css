@@ -48,8 +48,8 @@
 
 /*Efecto del boton del regisdtro*/
 .btn:hover {
-  transition: 1s;
-  background: rgba(255, 0, 0, 0.658);
+  transition: 0.75s;
+  background: orange;
 
 }
 
