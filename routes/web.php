@@ -49,7 +49,6 @@ use App\Models\User;
 
 /*Index */
 Route::get('/home', [HomeController::class,'index']);
-
 Route::post('/home', [HomeController::class,'index']);
 Route::post('/home2', [Home2Controller::class,'show']);
 Route::get('/home2', [Home2Controller::class,'show']);
@@ -81,16 +80,14 @@ Route::get('/oftb_prev_prod', [PrevController::class,'prev_Articulo']);
 /* Pago */
 Route::post('/pago', [PagoController::class,'show']);
 Route::get('/pago', [PagoController::class,'show']);
-
 Route::POST('/pago_realizado',[PagoReadyController::class,'pago']);
-// Route::POST('/pago_unico',[PagoReadyController::class,'pagoUnico']);
-
 
 /* Carrito */
 Route::post('/addcart/{cod_articulo}',[CartController::class,'addcart']);
 Route::get('/showcart',[CartController::class,'show']);
 Route::get('/delete/{id}',[CartController::class,'deletecart']);
 
+/* Contacto */
 Route::get('/contact',[ContactController::class,'show']);
 
 
