@@ -55,7 +55,7 @@ class PagoReadyController extends Controller
             ->groupBy('price')
             ->get();
         $totalOrders = (float)$orders->sum('price');
-        // dd($totalOrders);  
+         
 
 
         if (
@@ -102,20 +102,16 @@ class PagoReadyController extends Controller
 
                 return view('exito_pago', ['resume' => $resume, 'quantityCard' => $count, 'orderResume' => $lastPage, 'total' => $totalOrders]);
             }
-            // return redirect()->to('/test');
+         
         }
 
         $validator = comprobarMsg($request);
 
         return redirect()->to('/pago')->withErrors($validator);
-        // dd($caducidad);
-        // return comprobarCVC($cvc) ? redirect()->to('/test') : redirect()->to('/pago');
+       
     }
 }
 
-/* Codigo postal : ^d{5}(?:[-s]d{4})?$ */
-/* Telefono español: /^\+?(6\d{2}|7[1-9]\d{1})\d{6}$
-/ */
 /* Comprobamos la tarjeta  */
 function comprobarTarjeta($tarjeta)
 {

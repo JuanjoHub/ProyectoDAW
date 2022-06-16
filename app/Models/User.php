@@ -11,14 +11,14 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
-
      /* Metodo que proporciona laravel para en el que indicamos que campos va a rellenar cuando ingresemos un usario */
+     /* Cuando se intente guardar un registro, Laravel lo va a comparar cone estas propiedades para saber que es lo que tiene que insertar 
+     a la base de datos y que no*/
     protected $fillable = [
         'name',
         'email',
@@ -26,12 +26,15 @@ class User extends Authenticatable
         'password',
         'phone',
     ];
-
     /**
      * The attributes that should be hidden for serialization.
      *
      * @var array<int, string>
      */
+
+     /*Informacion que se va a ocultar y no va a serializar con el siguiente método estandar que nos proporciona Laravel
+     en este caso la contraseña y el token*/ 
+     /*la serialización consiste en un proceso de codificación de un objeto en un medio de almacenamiento con el fin de transmitirlo a través de una conexión en red */
     protected $hidden = [
         'password',
         'remember_token',
@@ -46,7 +49,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     /* Metodo para poder encriptar la contraseña */
-    /*Mutator */
     public function setPasswordAttribute($value){
         $this->attributes['password'] = bcrypt($value);
     }

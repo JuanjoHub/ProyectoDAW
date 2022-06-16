@@ -24,7 +24,7 @@ class LoginController extends Controller
         //Primero Obtenemos las credenciales
         $credentials = $request->getCredentials();
 
-        //Si falla la autenticacion nos redigira al login conel mensaje de error
+        //Si falla la autenticacion nos redigira al login con el mensaje de error
         if (!Auth::validate($credentials)) {
             return redirect()->to('/login')->withErrors('Username or password incorrect');
         }
